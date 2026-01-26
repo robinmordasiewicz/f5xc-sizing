@@ -209,28 +209,31 @@ body,
   position: relative;
 }
 
-/* Extend sidebar background to left edge and up to nav tabs */
-.md-sidebar--primary::before {
-  content: '';
-  position: absolute;
-  top: -100px; /* Extend upward to cover gap above sidebar */
-  right: 100%;
-  bottom: 0;
-  width: 100vw;
-  background-color: var(--f5-bg-subtle);
-  pointer-events: none;
+/* Create full-height sidebar background column from nav tabs to bottom */
+.md-container {
+  position: relative;
 }
 
-/* Extend sidebar background upward to meet nav tabs */
-.md-sidebar--primary::after {
+.md-container::before {
   content: '';
   position: absolute;
-  top: -100px; /* Extend upward to cover gap above sidebar */
+  top: 0;
   left: 0;
-  right: 0;
-  height: 100px;
+  width: 300px; /* Width of sidebar column */
+  bottom: 0;
   background-color: var(--f5-bg-subtle);
   pointer-events: none;
+  z-index: 0;
+}
+
+/* Ensure main content is above the background */
+.md-main {
+  position: relative;
+  z-index: 1;
+}
+
+.md-sidebar--primary {
+  z-index: 2;
 }
 
 .md-nav__title {
