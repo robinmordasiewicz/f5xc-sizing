@@ -89,4 +89,4 @@ This sizing guide covers the following F5 Distributed Cloud service categories:
 ---
 
 !!! tip "Save as PDF"
-    Use the [Print Site](print_page/) option in the navigation to generate a complete PDF version of this sizing guide with all your responses.
+    Use your browser's print function (Ctrl+P / Cmd+P) and select "Save as PDF" to generate a PDF version of any page. A complete PDF of the entire guide is generated during the build process.

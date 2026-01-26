@@ -59,11 +59,11 @@ mkdocs build
 
 ## PDF Export
 
-The guide includes a print-site plugin that allows exporting the entire guide to PDF:
+The guide uses the `mkdocs-with-pdf` plugin to generate a complete PDF of the sizing guide:
 
-1. Navigate to the "Print Site" page in the navigation
-2. Use your browser's print function (Ctrl+P / Cmd+P)
-3. Select "Save as PDF"
+1. PDF is automatically generated during the build when `ENABLE_PDF_EXPORT=1`
+2. Alternatively, use your browser's print function (Ctrl+P / Cmd+P) on any page
+3. Select "Save as PDF" as the destination
 
 ## Contributing
 

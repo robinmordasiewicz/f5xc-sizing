@@ -38,18 +38,20 @@ theme:
 
 plugins:
   - search
-  - print-site:
-      add_to_navigation: true
-      print_page_title: 'F5 XC Sizing Guide - Print Version'
-      add_print_site_banner: false
-      add_table_of_contents: true
-      toc_title: 'Table of Contents'
-      toc_depth: 3
-      add_full_urls: false
-      enumerate_headings: true
-      enumerate_figures: true
-      enumerate_tables: true
-      enabled: true
+  - with-pdf:
+      author: F5 Networks
+      cover_title: F5 Distributed Cloud
+      cover_subtitle: Customer Scoping and Requirements Guide
+      cover_logo: assets/f5-logo.svg
+      toc_title: Table of Contents
+      heading_shift: false
+      toc_level: 3
+      ordered_chapter_level: 2
+      exclude_pages:
+        - 'tags/'
+      enabled_if_env: ENABLE_PDF_EXPORT
+      debug_html: false
+      verbose: false
 
 markdown_extensions:
   - pymdownx.highlight:

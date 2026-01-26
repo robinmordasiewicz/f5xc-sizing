@@ -26,9 +26,11 @@ After completing this sizing guide, follow these steps to proceed with your F5 D
 
 ### Generate PDF
 
-1. Click **Print Site** in the navigation menu
-2. Select **Save as PDF** in the print dialog
+1. Use your browser's print function (Ctrl+P / Cmd+P)
+2. Select **Save as PDF** as the destination
 3. Name the file: `[CompanyName]-F5XC-Sizing-[Date].pdf`
+
+Alternatively, download the pre-generated PDF from the documentation site if available.
 
 ### Submit to F5
 
