@@ -219,7 +219,7 @@ body,
   position: absolute;
   top: 0;
   left: 0;
-  width: 300px; /* Width of sidebar column */
+  width: 280px; /* Match F5 docs sidebar width exactly */
   bottom: 0;
   background-color: var(--f5-bg-subtle);
   pointer-events: none;
@@ -251,6 +251,9 @@ body,
   border-left: 3px solid transparent;
   margin-left: -0.75rem;
   transition: all 0.15s ease;
+  /* Remove MkDocs Material default white background and shadow */
+  background-color: transparent !important;
+  box-shadow: none !important;
 }
 
 .md-nav__link:hover {
