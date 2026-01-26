@@ -219,7 +219,7 @@ body,
   position: absolute;
   top: 0;
   left: 0;
-  width: 280px; /* Match F5 docs sidebar width exactly */
+  width: 340px; /* Cover full sidebar area (sidebar extends to ~338px) */
   bottom: 0;
   background-color: var(--f5-bg-subtle);
   pointer-events: none;
