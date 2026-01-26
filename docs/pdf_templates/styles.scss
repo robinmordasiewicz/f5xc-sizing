@@ -1,0 +1,147 @@
+/* Custom PDF styles to fix CSS grid compatibility with WeasyPrint */
+
+/* Override grid layouts - WeasyPrint doesn't support CSS grid properly */
+.grid,
+.grid.cards,
+[class*="grid"] {
+    display: block !important;
+}
+
+.grid.cards > ul,
+.md-typeset .grid > ul {
+    display: block !important;
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.grid.cards > ul > li,
+.md-typeset .grid > ul > li {
+    display: block !important;
+    margin-bottom: 1.5em !important;
+    padding: 1em !important;
+    border: 1px solid #ccc !important;
+    border-radius: 4px !important;
+    background: #fafafa !important;
+}
+
+/* Hero section */
+.hero-section {
+    text-align: center;
+    padding: 2em 0;
+    margin-bottom: 2em;
+}
+
+/* Hide interactive elements in PDF */
+.md-button,
+.md-button--primary,
+[href*="pdf/document.pdf"] {
+    display: none !important;
+}
+
+/* Table styling */
+table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    margin: 1em 0 !important;
+}
+
+th, td {
+    border: 1px solid #ddd !important;
+    padding: 8px 12px !important;
+    text-align: left !important;
+}
+
+th {
+    background-color: #f5f5f5 !important;
+    font-weight: bold !important;
+}
+
+/* Admonitions */
+.admonition {
+    border: 1px solid #448aff !important;
+    border-left-width: 4px !important;
+    border-radius: 4px !important;
+    padding: 1em !important;
+    margin: 1em 0 !important;
+    background: #f8f9fa !important;
+}
+
+.admonition.info {
+    border-color: #00b0ff !important;
+}
+
+.admonition.tip {
+    border-color: #00c853 !important;
+}
+
+.admonition.warning {
+    border-color: #ff9100 !important;
+}
+
+.admonition-title {
+    font-weight: bold !important;
+    margin-bottom: 0.5em !important;
+}
+
+/* Page break control */
+h1, h2 {
+    page-break-after: avoid !important;
+}
+
+h3, h4 {
+    page-break-after: avoid !important;
+}
+
+.admonition,
+table,
+pre,
+.highlight {
+    page-break-inside: avoid !important;
+}
+
+/* Task lists */
+.task-list-item {
+    list-style: none !important;
+}
+
+.task-list-control {
+    margin-right: 0.5em !important;
+}
+
+/* Code blocks */
+pre {
+    background: #f5f5f5 !important;
+    padding: 1em !important;
+    border-radius: 4px !important;
+    overflow-x: auto !important;
+}
+
+code {
+    background: #f0f0f0 !important;
+    padding: 0.2em 0.4em !important;
+    border-radius: 3px !important;
+    font-size: 0.9em !important;
+}
+
+/* Icons - replace with text or hide */
+.twemoji,
+.emojione,
+[class*="material-"] {
+    display: none !important;
+}
+
+/* Cover page styling */
+.pdf-cover {
+    text-align: center;
+}
+
+.pdf-cover h1 {
+    font-size: 2.5em;
+    margin-top: 2em;
+}
+
+.pdf-cover h2 {
+    font-size: 1.5em;
+    color: #666;
+}

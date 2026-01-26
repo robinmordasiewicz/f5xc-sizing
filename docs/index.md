@@ -19,53 +19,41 @@ To accurately evaluate your environment and provide you with an accurate proposa
 
 This sizing guide covers the following F5 Distributed Cloud service categories:
 
-<div class="grid cards" markdown>
+### Security Services
 
--   :material-shield-check:{ .lg .middle } **Security Services**
+- Web Application Firewall (WAF)
+- API Security & Discovery
+- Bot Defense
+- DDoS Protection (L3-L7)
+- Client-Side Defense
 
-    ---
+[View Security Questionnaire](security/index.md){ .md-button }
 
-    - Web Application Firewall (WAF)
-    - API Security & Discovery
-    - Bot Defense
-    - DDoS Protection (L3-L7)
-    - Client-Side Defense
+### Networking Services
 
-    [:octicons-arrow-right-24: Security Questionnaire](security/index.md)
+- HTTP Load Balancing
+- TCP Load Balancing
+- DNS Services & GSLB
+- Multi-Cloud Networking
+- App Connect
 
--   :material-wan:{ .lg .middle } **Networking Services**
+[View Networking Questionnaire](networking/index.md){ .md-button }
 
-    ---
+### Performance Services
 
-    - HTTP Load Balancing
-    - TCP Load Balancing
-    - DNS Services & GSLB
-    - Multi-Cloud Networking
-    - App Connect
+- Content Delivery Network (CDN)
+- Edge Compute
+- Cache Optimization
 
-    [:octicons-arrow-right-24: Networking Questionnaire](networking/index.md)
+[View Performance Questionnaire](performance/index.md){ .md-button }
 
--   :material-speedometer:{ .lg .middle } **Performance Services**
+### Infrastructure
 
-    ---
+- Customer Edge Sites
+- Cloud Sites (AWS, Azure, GCP)
+- On-Premises Deployments
 
-    - Content Delivery Network (CDN)
-    - Edge Compute
-    - Cache Optimization
-
-    [:octicons-arrow-right-24: Performance Questionnaire](performance/index.md)
-
--   :material-server:{ .lg .middle } **Infrastructure**
-
-    ---
-
-    - Customer Edge Sites
-    - Cloud Sites (AWS, Azure, GCP)
-    - On-Premises Deployments
-
-    [:octicons-arrow-right-24: Infrastructure Questionnaire](infrastructure/index.md)
-
-</div>
+[View Infrastructure Questionnaire](infrastructure/index.md){ .md-button }
 
 ## Quick Start
 

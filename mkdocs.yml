@@ -52,6 +52,7 @@ plugins:
       enabled_if_env: ENABLE_PDF_EXPORT
       debug_html: false
       verbose: false
+      custom_template_path: docs/pdf_templates
 
 markdown_extensions:
   - pymdownx.highlight:
