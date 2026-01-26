@@ -1,6 +1,6 @@
 # F5 Distributed Cloud Sizing Guide
 
-<div class="hero-section">
+<div class="hero-section" markdown>
 
 Welcome to the **F5 Distributed Cloud Customer Scoping and Requirements Guide**. This comprehensive questionnaire will help accurately evaluate your environment prior to deploying F5 Distributed Cloud solutions.
 
