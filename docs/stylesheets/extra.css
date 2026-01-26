@@ -18,7 +18,8 @@
   --f5-text-breadcrumb: #6C778C;
 
   /* Backgrounds */
-  --f5-bg-page: #F7F8FA;
+  --f5-bg-page: #FFFFFF;
+  --f5-bg-subtle: #F7F8FA;
   --f5-bg-card: #FFFFFF;
   --f5-bg-note: rgba(79, 115, 255, 0.1);
 
@@ -137,7 +138,7 @@ body,
 
 /* Search - Filled style matching F5 docs exactly */
 .md-search__form {
-  background-color: var(--f5-bg-page) !important;
+  background-color: var(--f5-bg-subtle) !important;
   border-radius: 4px !important;
 }
 
