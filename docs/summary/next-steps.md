@@ -24,13 +24,11 @@ After completing this sizing guide, follow these steps to proceed with your F5 D
 
 ## 2. Export and Submit
 
-### Generate PDF
+### Download PDF
 
-1. Use your browser's print function (Ctrl+P / Cmd+P)
-2. Select **Save as PDF** as the destination
-3. Name the file: `[CompanyName]-F5XC-Sizing-[Date].pdf`
-
-Alternatively, download the pre-generated PDF from the documentation site if available.
+1. Click the **Download Complete PDF Guide** button on the [home page](../index.md)
+2. Or download directly: [PDF Guide](../pdf/document.pdf)
+3. Rename the file to: `[CompanyName]-F5XC-Sizing-[Date].pdf`
 
 ### Submit to F5
 

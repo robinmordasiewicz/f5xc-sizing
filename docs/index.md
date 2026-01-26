@@ -4,6 +4,8 @@
 
 Welcome to the **F5 Distributed Cloud Customer Scoping and Requirements Guide**. This comprehensive questionnaire will help accurately evaluate your environment prior to deploying F5 Distributed Cloud solutions.
 
+[:material-file-pdf-box: Download Complete PDF Guide](pdf/document.pdf){ .md-button .md-button--primary }
+
 </div>
 
 ## Purpose
@@ -71,7 +73,7 @@ This sizing guide covers the following F5 Distributed Cloud service categories:
 2. **Compare** the [Service Tiers](getting-started/service-tiers.md) (Standard vs Advanced)
 3. **Complete** each relevant section based on your requirements
 4. **Review** the [Requirements Summary](summary/requirements-summary.md) for your consolidated answers
-5. **Export** to PDF using the print function for submission to your F5 representative
+5. **Download** the [PDF Guide](pdf/document.pdf) for submission to your F5 representative
 
 ---
 
@@ -88,5 +90,5 @@ This sizing guide covers the following F5 Distributed Cloud service categories:
 
 ---
 
-!!! tip "Save as PDF"
-    Use your browser's print function (Ctrl+P / Cmd+P) and select "Save as PDF" to generate a PDF version of any page. A complete PDF of the entire guide is generated during the build process.
+!!! tip "Download PDF"
+    Click the **Download Complete PDF Guide** button above to download a PDF version of the entire sizing guide. You can also use your browser's print function (Ctrl+P / Cmd+P) to print individual pages.
