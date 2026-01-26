@@ -209,14 +209,26 @@ body,
   position: relative;
 }
 
-/* Extend sidebar background to left edge of viewport */
+/* Extend sidebar background to left edge and up to nav tabs */
 .md-sidebar--primary::before {
   content: '';
   position: absolute;
-  top: 0;
+  top: -100px; /* Extend upward to cover gap above sidebar */
   right: 100%;
   bottom: 0;
   width: 100vw;
+  background-color: var(--f5-bg-subtle);
+  pointer-events: none;
+}
+
+/* Extend sidebar background upward to meet nav tabs */
+.md-sidebar--primary::after {
+  content: '';
+  position: absolute;
+  top: -100px; /* Extend upward to cover gap above sidebar */
+  left: 0;
+  right: 0;
+  height: 100px;
   background-color: var(--f5-bg-subtle);
   pointer-events: none;
 }
