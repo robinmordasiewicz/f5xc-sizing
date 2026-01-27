@@ -139,7 +139,7 @@ Total health checks needed: _____
 
 !!! info "DNSSEC"
     DNSSEC provides authentication of DNS responses, preventing DNS spoofing and
-cache poisoning attacks.
+    cache poisoning attacks.
 
 ### DNS DDoS Protection
 

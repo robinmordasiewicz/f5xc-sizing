@@ -33,7 +33,7 @@ For each major application, provide the following:
 
 !!! info "Additional Applications"
     If you have more than 5 applications, please attach a separate spreadsheet
-with complete details.
+    with complete details.
 
 ### Application Architecture
 

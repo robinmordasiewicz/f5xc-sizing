@@ -116,7 +116,7 @@ Are you subject to PCI-DSS compliance?
 
 !!! info "PCI-DSS 4.0"
     PCI-DSS 4.0 includes requirements (6.4.3 and 11.6.1) for monitoring and
-controlling client-side scripts on payment pages.
+    controlling client-side scripts on payment pages.
 
 ### Other Compliance
 

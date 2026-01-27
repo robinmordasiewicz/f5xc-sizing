@@ -18,7 +18,7 @@ Do you have complete documentation of all your APIs?
 
 !!! info "Shadow API Discovery"
     F5 XC can automatically discover APIs in your traffic, including
-undocumented "shadow" APIs that may pose security risks.
+    undocumented "shadow" APIs that may pose security risks.
 
 ### Known API Count
 
@@ -249,7 +249,7 @@ Where are your API specifications stored?
 
 !!! warning "Advanced Tier Required"
     Behavioral API security with ML-based anomaly detection requires the
-Advanced tier.
+    Advanced tier.
 
 ### API Posture Management
 

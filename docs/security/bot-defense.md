@@ -58,7 +58,7 @@ List the fully qualified domain names requiring bot defense:
 
 !!! note "Standard Tier"
     Standard Bot Defense includes protection for 2 FQDNs. Additional FQDNs
-require add-ons.
+    require add-ons.
 
 ### Mobile Applications
 
