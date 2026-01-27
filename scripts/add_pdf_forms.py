@@ -453,6 +453,11 @@ Widgets are placed directly over pattern text with white backgrounds.
         help='Process all PDFs in directory recursively'
     )
     parser.add_argument(
+        '--markdown-dir',
+        type=Path,
+        help='Markdown documentation directory (optional, for future enhancement)'
+    )
+    parser.add_argument(
         '--verbose', '-v',
         action='store_true',
         help='Verbose output showing per-page details'
