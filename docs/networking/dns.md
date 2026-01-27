@@ -1,36 +1,35 @@
 # DNS Services Sizing
 
-F5 Distributed Cloud DNS provides geo-distributed DNS services with global server load balancing (GSLB), automatic failover, health checking, and DDoS protection.
+F5 Distributed Cloud DNS provides geo-distributed DNS services with global
+server load balancing (GSLB), automatic failover, health checking, and DDoS
+protection.
 
 ---
 
-## Section 1: DNS Requirements Assessment
-
-### 1.1 Do You Need F5 DNS Services?
+## DNS Requirements Assessment
 
 - [ ] Yes - Primary DNS hosting
 - [ ] Yes - Secondary DNS (backup)
 - [ ] Yes - DNS Load Balancing (GSLB) only
-- [ ] No - Skip this section
 
-### 1.2 Current DNS Provider
+### Current DNS Provider
 
 Who is your current DNS provider?
 
 | Current Provider | Keep or Migrate |
-|-----------------|-----------------|
+| --- | --- |
 | _____________ | [ ] Migrate to F5 [ ] Keep as primary [ ] Keep as secondary |
 
 ---
 
-## Section 2: DNS Zone Configuration
+## DNS Zone Configuration
 
-### 2.1 Zone Count
+### Zone Count
 
 How many DNS zones do you need?
 
 | Zone Type | Count |
-|-----------|-------|
+| --- | --- |
 | Primary zones | _____ |
 | Secondary zones | _____ |
 | **Total zones** | _____ |
@@ -38,19 +37,19 @@ How many DNS zones do you need?
 !!! note "Base Package"
     Standard includes 250 primary or secondary zones.
 
-### 2.2 Zone Details
+### Zone Details
 
 List your primary domains/zones:
 
 | Domain | Zone Type | Records (est.) | Query Volume |
-|--------|-----------|---------------|--------------|
+| --- | --- | --- | --- |
 | _____________ | [ ] Primary [ ] Secondary | _____ | _____ qps |
 | _____________ | [ ] Primary [ ] Secondary | _____ | _____ qps |
 | _____________ | [ ] Primary [ ] Secondary | _____ | _____ qps |
 | _____________ | [ ] Primary [ ] Secondary | _____ | _____ qps |
 | _____________ | [ ] Primary [ ] Secondary | _____ | _____ qps |
 
-### 2.3 Record Types
+### Record Types
 
 What DNS record types do you use?
 
@@ -69,9 +68,7 @@ Total estimated DNS records: _____
 
 ---
 
-## Section 3: DNS Load Balancing (GSLB)
-
-### 3.1 Do You Need DNS Load Balancing?
+## DNS Load Balancing (GSLB)
 
 - [ ] Yes - Distribute traffic across multiple locations
 - [ ] No - Basic DNS hosting only
@@ -79,7 +76,7 @@ Total estimated DNS records: _____
 !!! note "Base Package"
     Standard includes 50 DNS load balancer records and 200 health checks.
 
-### 3.2 Load Balancing Use Cases
+### Load Balancing Use Cases
 
 What DNS load balancing capabilities do you need?
 
@@ -89,12 +86,12 @@ What DNS load balancing capabilities do you need?
 - [ ] **Performance-based** - Route based on health/latency
 - [ ] **Disaster recovery** - Manual failover capability
 
-### 3.3 DNS Load Balancer Records
+### DNS Load Balancer Records
 
 How many DNS load balancer records do you need?
 
 | Record/Domain | Type | Locations |
-|--------------|------|-----------|
+| --- | --- | --- |
 | _____________ | [ ] Geo [ ] Failover [ ] Weighted | _____ |
 | _____________ | [ ] Geo [ ] Failover [ ] Weighted | _____ |
 | _____________ | [ ] Geo [ ] Failover [ ] Weighted | _____ |
@@ -104,11 +101,9 @@ Total DNS LB records needed: _____
 
 ---
 
-## Section 4: Health Checking
+## Health Checking
 
-### 4.1 Health Check Requirements
-
-Do you need health checks for DNS failover?
+### Health Check Requirements
 
 - [ ] Yes
 - [ ] No
@@ -116,7 +111,7 @@ Do you need health checks for DNS failover?
 Health check details:
 
 | Target | Check Type | Interval |
-|--------|------------|----------|
+| --- | --- | --- |
 | _____________ | [ ] HTTP [ ] HTTPS [ ] TCP [ ] ICMP | _____ sec |
 | _____________ | [ ] HTTP [ ] HTTPS [ ] TCP [ ] ICMP | _____ sec |
 | _____________ | [ ] HTTP [ ] HTTPS [ ] TCP [ ] ICMP | _____ sec |
@@ -124,10 +119,10 @@ Health check details:
 
 Total health checks needed: _____
 
-### 4.2 Failover Configuration
+### Failover Configuration
 
 | Parameter | Value |
-|-----------|-------|
+| --- | --- |
 | Health check interval | _____ seconds |
 | Failure threshold | _____ consecutive failures |
 | Recovery threshold | _____ consecutive successes |
@@ -135,21 +130,18 @@ Total health checks needed: _____
 
 ---
 
-## Section 5: DNS Security
+## DNS Security
 
-### 5.1 DNSSEC
-
-Do you need DNSSEC (DNS Security Extensions)?
+### DNSSEC
 
 - [ ] Yes - Sign DNS responses cryptographically
 - [ ] No
 
 !!! info "DNSSEC"
-    DNSSEC provides authentication of DNS responses, preventing DNS spoofing and cache poisoning attacks.
+    DNSSEC provides authentication of DNS responses, preventing DNS spoofing and
+cache poisoning attacks.
 
-### 5.2 DNS DDoS Protection
-
-Do you need DNS-specific DDoS protection?
+### DNS DDoS Protection
 
 - [ ] Yes - Standard DNS DDoS protection (included)
 - [ ] Yes - Advanced DNS DDoS protection
@@ -162,9 +154,7 @@ Have you experienced DNS attacks?
 - [ ] Yes - NXDOMAIN attacks
 - [ ] No
 
-### 5.3 Access Control
-
-Do you need DNS access control?
+### Access Control
 
 - [ ] TSIG authentication for zone transfers
 - [ ] IP-based access restrictions
@@ -172,11 +162,9 @@ Do you need DNS access control?
 
 ---
 
-## Section 6: Zone Management
+## Zone Management
 
-### 6.1 Zone Transfer
-
-Do you need zone transfers?
+### Zone Transfer
 
 - [ ] Yes - F5 as primary, transfer to secondary
 - [ ] Yes - External primary, F5 as secondary
@@ -185,11 +173,11 @@ Do you need zone transfers?
 External DNS servers for zone transfer:
 
 | Server | IP Address | Direction |
-|--------|-----------|-----------|
+| --- | --- | --- |
 | _____________ | _____________ | [ ] To F5 [ ] From F5 |
 | _____________ | _____________ | [ ] To F5 [ ] From F5 |
 
-### 6.2 Zone Import
+### Zone Import
 
 Do you have existing zone files to import?
 
@@ -199,7 +187,7 @@ Do you have existing zone files to import?
 
 Number of zone files to import: _____
 
-### 6.3 DNS Management Integration
+### DNS Management Integration
 
 How will DNS be managed?
 
@@ -210,23 +198,23 @@ How will DNS be managed?
 
 ---
 
-## Section 7: Query Volume
+## Query Volume
 
-### 7.1 DNS Query Metrics
+### DNS Query Metrics
 
 | Metric | Value |
-|--------|-------|
+| --- | --- |
 | Average queries per second | _____ |
 | Peak queries per second | _____ |
 | Daily query volume | _____ |
 | Monthly query volume | _____ |
 
-### 7.2 Query Sources
+### Query Sources
 
 Where do DNS queries originate?
 
 | Region | Percentage |
-|--------|------------|
+| --- | --- |
 | North America | _____% |
 | Europe | _____% |
 | Asia-Pacific | _____% |
@@ -235,25 +223,19 @@ Where do DNS queries originate?
 
 ---
 
-## Section 8: Advanced Features
+## Advanced Features
 
-### 8.1 Split-Horizon DNS
-
-Do you need split-horizon (split-brain) DNS?
+### Split-Horizon DNS
 
 - [ ] Yes - Different responses for internal vs external
 - [ ] No
 
-### 8.2 Dynamic DNS
-
-Do you need dynamic DNS updates?
+### Dynamic DNS
 
 - [ ] Yes - Programmatic record updates
 - [ ] No
 
-### 8.3 GeoDNS Customization
-
-Do you need custom geographic routing rules?
+### GeoDNS Customization
 
 - [ ] Yes - By country
 - [ ] Yes - By region/continent
@@ -263,9 +245,9 @@ Do you need custom geographic routing rules?
 
 ---
 
-## Section 9: Domain Delegation
+## Domain Delegation
 
-### 9.1 Domain Registrar
+### Domain Registrar
 
 Will you delegate domains to F5 nameservers?
 
@@ -274,7 +256,7 @@ Will you delegate domains to F5 nameservers?
 
 Current registrar: _________________
 
-### 9.2 Nameserver Configuration
+### Nameserver Configuration
 
 Nameserver preference:
 
@@ -286,7 +268,7 @@ Nameserver preference:
 ## Summary: DNS Requirements
 
 | Requirement | Value |
-|-------------|-------|
+| --- | --- |
 | Total DNS Zones | _____ |
 | Primary Zones | _____ |
 | Secondary Zones | _____ |
@@ -298,7 +280,7 @@ Nameserver preference:
 
 Domains to migrate:
 
-```
+```text
 1. _____________________________________________________________
 2. _____________________________________________________________
 3. _____________________________________________________________
@@ -306,7 +288,7 @@ Domains to migrate:
 
 Additional notes:
 
-```
+```text
 _____________________________________________________________
 _____________________________________________________________
 ```

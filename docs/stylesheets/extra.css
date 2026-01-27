@@ -140,6 +140,9 @@ body,
 .md-search__form {
   background-color: var(--f5-bg-subtle) !important;
   border-radius: 4px !important;
+  display: flex;
+  align-items: center;
+  height: 2.4rem;
 }
 
 .md-search__input {
@@ -148,6 +151,9 @@ body,
   border-radius: 4px;
   color: rgba(0, 0, 0, 0.87) !important;
   transition: background-color 0.2s ease;
+  height: 100%;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
 }
 
 .md-search__input::placeholder {
@@ -161,6 +167,11 @@ body,
 
 .md-search__icon {
   color: var(--f5-primary-blue) !important;
+}
+
+.md-search__icon[for="__search"] {
+  top: 50% !important;
+  transform: translateY(-50%) !important;
 }
 
 [data-md-color-scheme="slate"] .md-search__form {
@@ -209,6 +220,17 @@ body,
   position: relative;
 }
 
+/* Reduce primary sidebar width for more content space */
+.md-sidebar--primary {
+  width: 10rem;
+}
+
+@media screen and (min-width: 76.25em) {
+  .md-sidebar--primary {
+    width: 12.75rem;
+  }
+}
+
 /* Create full-height sidebar background column from nav tabs to bottom */
 .md-container {
   position: relative;
@@ -219,7 +241,7 @@ body,
   position: absolute;
   top: 0;
   left: 0;
-  width: 340px; /* Cover full sidebar area (sidebar extends to ~338px) */
+  width: 240px; /* Cover sidebar area from edge */
   bottom: 0;
   background-color: var(--f5-bg-subtle);
   pointer-events: none;
@@ -234,26 +256,78 @@ body,
 
 .md-sidebar--primary {
   z-index: 2;
+  width: 12.75rem;
+}
+
+/* Reduce inner padding of sidebar - position nav close to left edge */
+.md-sidebar__inner {
+  padding: 0.5rem 0.4rem 0.5rem 0;
+  margin-left: 0;
+}
+
+.md-sidebar__scrollwrap {
+  margin: 0;
+  padding-left: 0;
+}
+
+/* Position sidebar at left edge with 20px padding */
+.md-sidebar--primary {
+  left: 0;
+}
+
+.md-sidebar--primary .md-sidebar__inner {
+  padding-left: 20px;
+}
+
+/* Compact navigation items */
+.md-nav__item {
+  padding: 0;
+  margin: 0;
+}
+
+/* Reduce spacing in nested navigation lists */
+.md-nav__list {
+  margin: 0;
+  padding: 0;
+}
+
+/* Navigation toggle (expand/collapse arrows) */
+.md-nav__toggle ~ .md-nav__link::after,
+.md-nav__link--index[for]::after {
+  transform: scale(0.8);
+}
+
+/* Section labels in collapsible nav */
+.md-nav__item--section > .md-nav__link {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--f5-text-secondary);
+  padding-top: 0.15rem;
+  padding-bottom: 0.15rem;
 }
 
 .md-nav__title {
-  font-size: 0.9rem;
+  font-size: 0.7rem;
   font-weight: 600;
   color: var(--f5-text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  padding: 0.25rem 0.3rem 0.25rem 0;
 }
 
 .md-nav__link {
   color: var(--f5-text-primary);
-  font-size: 0.875rem;
-  padding: 0.5rem 0.75rem;
+  font-size: 0.75rem;
+  padding: 0.2rem 0.3rem 0.2rem 0;
   border-left: 3px solid transparent;
-  margin-left: -0.75rem;
+  margin-left: 0;
   transition: all 0.15s ease;
   /* Remove MkDocs Material default white background and shadow */
   background-color: transparent !important;
   box-shadow: none !important;
+  line-height: 1.3;
 }
 
 .md-nav__link:hover {
@@ -269,10 +343,51 @@ body,
   background-color: var(--f5-bg-note);
 }
 
-/* Secondary navigation (TOC) */
+/* Secondary navigation (TOC - "On this page" right sidebar) */
 .md-nav--secondary .md-nav__title {
-  font-size: 0.9rem;
+  font-size: 0.65rem;
   font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--f5-text-secondary);
+  padding: 0.2rem 0;
+}
+
+.md-nav--secondary .md-nav__link {
+  font-size: 0.7rem;
+  padding: 0.15rem 0.5rem;
+  margin-left: 0;
+  border-left: none;
+  line-height: 1.25;
+}
+
+.md-nav--secondary .md-nav__link:hover {
+  color: var(--f5-primary-blue);
+  background-color: transparent;
+}
+
+.md-nav--secondary .md-nav__link--active {
+  color: var(--f5-primary-blue);
+  font-weight: 500;
+  border-left: none;
+  background-color: transparent;
+}
+
+/* Nested TOC items */
+.md-nav--secondary .md-nav__item--nested > .md-nav__link {
+  font-size: 0.7rem;
+}
+
+.md-nav--secondary .md-nav .md-nav__link {
+  font-size: 0.65rem;
+  padding-left: 0.75rem;
+  padding-top: 0.1rem;
+  padding-bottom: 0.1rem;
+}
+
+/* Right sidebar container */
+.md-sidebar--secondary {
+  background-color: transparent;
 }
 
 /* --------------------------------------------------------------------------
@@ -280,6 +395,13 @@ body,
    -------------------------------------------------------------------------- */
 .md-main__inner {
   margin-top: 0;
+}
+
+/* Override MkDocs Material centering to position nav at left edge */
+.md-main__inner.md-grid {
+  margin-left: 0 !important;
+  margin-right: auto;
+  max-width: none;
 }
 
 .md-content {

@@ -1,28 +1,30 @@
 # Web Application Firewall (WAF) Sizing
 
-The F5 Distributed Cloud WAF provides comprehensive protection against web application attacks including OWASP Top 10 vulnerabilities, injection attacks, cross-site scripting, and advanced threats.
+The F5 Distributed Cloud WAF provides comprehensive protection against web
+application attacks including OWASP Top 10 vulnerabilities, injection attacks,
+cross-site scripting, and advanced threats.
 
 ---
 
-## Section 1: Application Inventory
+## Application Inventory
 
-### 1.1 Application Count
+### Application Count
 
 How many web applications require WAF protection?
 
 | Category | Count |
-|----------|-------|
+| --- | --- |
 | Production Applications | _____ |
 | Staging/QA Applications | _____ |
 | Development Applications | _____ |
 | **Total Applications** | _____ |
 
-### 1.2 Application Details
+### Application Details
 
 For each major application, provide the following:
 
 | Application Name | Domain/FQDN | Environment | Protocol | Criticality |
-|-----------------|-------------|-------------|----------|-------------|
+| --- | --- | --- | --- | --- |
 | _____________ | _____________ | [ ] Prod [ ] Stage [ ] Dev | [ ] HTTP [ ] HTTPS | [ ] Critical [ ] High [ ] Medium [ ] Low |
 | _____________ | _____________ | [ ] Prod [ ] Stage [ ] Dev | [ ] HTTP [ ] HTTPS | [ ] Critical [ ] High [ ] Medium [ ] Low |
 | _____________ | _____________ | [ ] Prod [ ] Stage [ ] Dev | [ ] HTTP [ ] HTTPS | [ ] Critical [ ] High [ ] Medium [ ] Low |
@@ -30,9 +32,10 @@ For each major application, provide the following:
 | _____________ | _____________ | [ ] Prod [ ] Stage [ ] Dev | [ ] HTTP [ ] HTTPS | [ ] Critical [ ] High [ ] Medium [ ] Low |
 
 !!! info "Additional Applications"
-    If you have more than 5 applications, please attach a separate spreadsheet with complete details.
+    If you have more than 5 applications, please attach a separate spreadsheet
+with complete details.
 
-### 1.3 Application Architecture
+### Application Architecture
 
 What types of applications are you protecting?
 
@@ -46,14 +49,14 @@ What types of applications are you protecting?
 
 ---
 
-## Section 2: Traffic Volume
+## Traffic Volume
 
-### 2.1 Request Volume
+### Request Volume
 
 Provide estimated request volumes:
 
 | Metric | Average | Peak |
-|--------|---------|------|
+| --- | --- | --- |
 | Requests per Second (RPS) | _____ | _____ |
 | Requests per Day | _____ | _____ |
 | Requests per Month | _____ | _____ |
@@ -61,20 +64,20 @@ Provide estimated request volumes:
 !!! note "Base Package Includes"
     Standard tier includes 30 million requests per month from Regional Edges.
 
-### 2.2 Bandwidth
+### Bandwidth
 
 | Metric | Value | Unit |
-|--------|-------|------|
+| --- | --- | --- |
 | Average Inbound Bandwidth | _____ | Mbps |
 | Peak Inbound Bandwidth | _____ | Mbps |
 | Average Response Size | _____ | KB |
 
-### 2.3 Geographic Distribution
+### Geographic Distribution
 
 Where are your users located?
 
 | Region | Percentage of Traffic |
-|--------|----------------------|
+| --- | --- |
 | North America | _____% |
 | Europe | _____% |
 | Asia-Pacific | _____% |
@@ -84,9 +87,9 @@ Where are your users located?
 
 ---
 
-## Section 3: WAF Features Required
+## WAF Features Required
 
-### 3.1 Core Protection
+### Core Protection
 
 Which attack types do you need to protect against?
 
@@ -102,19 +105,19 @@ Which attack types do you need to protect against?
 - [ ] HTTP Request Smuggling
 - [ ] All OWASP Top 10
 
-### 3.2 Advanced Features
+### Advanced Features
 
 Do you require the following advanced features?
 
 | Feature | Required | Notes |
-|---------|----------|-------|
+| --- | --- | --- |
 | Automatic Signature Tuning | [ ] Yes [ ] No | Reduces false positives automatically |
 | Threat Campaigns | [ ] Yes [ ] No | Advanced tier - vetted attack signatures |
 | Malicious User Detection | [ ] Yes [ ] No | Advanced tier - behavioral scoring |
 | Data Masking | [ ] Yes [ ] No | Mask sensitive data in logs |
 | Custom Rules | [ ] Yes [ ] No | Organization-specific signatures |
 
-### 3.3 Operating Mode
+### Operating Mode
 
 What WAF operating mode do you prefer?
 
@@ -126,21 +129,21 @@ Tuning period preference: _____ days/weeks
 
 ---
 
-## Section 4: Origin Infrastructure
+## Origin Infrastructure
 
-### 4.1 Origin Server Locations
+### Origin Server Locations
 
 Where are your application origin servers hosted?
 
 | Location | Count | Provider |
-|----------|-------|----------|
+| --- | --- | --- |
 | AWS | _____ | Region(s): _____________ |
 | Azure | _____ | Region(s): _____________ |
 | Google Cloud | _____ | Region(s): _____________ |
 | On-Premises Data Center | _____ | Location(s): _____________ |
 | Other Cloud | _____ | Provider: _____________ |
 
-### 4.2 Origin Connectivity
+### Origin Connectivity
 
 How will F5 XC connect to your origin servers?
 
@@ -149,7 +152,7 @@ How will F5 XC connect to your origin servers?
 - [ ] Direct cloud connectivity (AWS Direct Connect, Azure ExpressRoute, etc.)
 - [ ] VPN tunnels
 
-### 4.3 High Availability
+### High Availability
 
 Do you have multiple origin servers per application?
 
@@ -161,9 +164,9 @@ Number of origin servers per application: _____
 
 ---
 
-## Section 5: TLS/SSL Configuration
+## TLS/SSL Configuration
 
-### 5.1 Certificate Management
+### Certificate Management
 
 How do you want to manage TLS certificates?
 
@@ -171,15 +174,15 @@ How do you want to manage TLS certificates?
 - [ ] **Custom** - We will provide our own certificates
 - [ ] **Mixed** - Automatic for some, custom for others
 
-### 5.2 Certificate Details (if Custom)
+### Certificate Details (if Custom)
 
 | Domain | Certificate Type | Expiration | Notes |
-|--------|-----------------|------------|-------|
+| --- | --- | --- | --- |
 | _____________ | [ ] Single [ ] Wildcard [ ] SAN | _________ | _____ |
 | _____________ | [ ] Single [ ] Wildcard [ ] SAN | _________ | _____ |
 | _____________ | [ ] Single [ ] Wildcard [ ] SAN | _________ | _____ |
 
-### 5.3 TLS Requirements
+### TLS Requirements
 
 - Minimum TLS version required: [ ] TLS 1.2 [ ] TLS 1.3
 - Do you require mTLS (Mutual TLS)? [ ] Yes [ ] No
@@ -187,11 +190,9 @@ How do you want to manage TLS certificates?
 
 ---
 
-## Section 6: Service Policies
+## Service Policies
 
-### 6.1 Access Control Requirements
-
-Do you need IP-based access controls?
+### Access Control Requirements
 
 - [ ] IP Allowlisting (only allow specific IPs)
 - [ ] IP Denylisting (block specific IPs)
@@ -199,9 +200,7 @@ Do you need IP-based access controls?
 
 Number of IP prefixes to manage: _____
 
-### 6.2 Rate Limiting
-
-Do you need rate limiting?
+### Rate Limiting
 
 - [ ] Yes
 - [ ] No
@@ -209,14 +208,12 @@ Do you need rate limiting?
 If yes, provide requirements:
 
 | Scope | Limit | Time Window |
-|-------|-------|-------------|
+| --- | --- | --- |
 | Per IP Address | _____ requests | _____ seconds |
 | Per User | _____ requests | _____ seconds |
 | Per API Endpoint | _____ requests | _____ seconds |
 
-### 6.3 Geographic Blocking (OFAC Compliance)
-
-Do you need to block traffic from specific countries?
+### Geographic Blocking (OFAC Compliance)
 
 - [ ] Yes - OFAC sanctioned countries
 - [ ] Yes - Custom country list
@@ -226,9 +223,9 @@ Countries to block: _________________
 
 ---
 
-## Section 7: Logging and Observability
+## Logging and Observability
 
-### 7.1 Log Requirements
+### Log Requirements
 
 What logging capabilities do you need?
 
@@ -237,7 +234,7 @@ What logging capabilities do you need?
 - [ ] Performance metrics
 - [ ] Custom log formats
 
-### 7.2 Log Destinations
+### Log Destinations
 
 Where should logs be sent?
 
@@ -249,15 +246,15 @@ Where should logs be sent?
 - [ ] Sumo Logic
 - [ ] Other SIEM: _________________
 
-### 7.3 Retention Requirements
+### Retention Requirements
 
 Log retention period required: _____ days
 
 ---
 
-## Section 8: Support and Management
+## Support and Management
 
-### 8.1 Support Requirements
+### Support Requirements
 
 What level of support do you need?
 
@@ -265,7 +262,7 @@ What level of support do you need?
 - [ ] **Enhanced** - 24x7 support with named resources
 - [ ] **Enhanced Plus** - 24x7 support with dedicated resources + SOC
 
-### 8.2 Managed Services
+### Managed Services
 
 Do you want F5 to manage WAF policies?
 
@@ -278,7 +275,7 @@ Do you want F5 to manage WAF policies?
 ## Summary: WAF Requirements
 
 | Requirement | Value |
-|-------------|-------|
+| --- | --- |
 | Number of Applications | _____ |
 | Estimated Monthly Requests | _____ |
 | Tier Required | [ ] Standard [ ] Advanced |
@@ -287,7 +284,7 @@ Do you want F5 to manage WAF policies?
 
 Additional notes or special requirements:
 
-```
+```text
 _____________________________________________________________
 _____________________________________________________________
 _____________________________________________________________

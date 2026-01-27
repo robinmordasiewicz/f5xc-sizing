@@ -1,18 +1,14 @@
 # Client-Side Defense Sizing
 
-F5 Distributed Cloud Client-Side Defense provides protection against Magecart, formjacking, digital skimming, and other malicious JavaScript supply chain attacks.
+F5 Distributed Cloud Client-Side Defense provides protection against Magecart,
+formjacking, digital skimming, and other malicious JavaScript supply chain
+attacks.
 
 ---
 
-## Section 1: Requirements Assessment
+## Requirements Assessment
 
-### 1.1 Do You Need Client-Side Defense?
-
-- [ ] Yes - We handle sensitive data in web forms
-- [ ] No - Skip this section
-- [ ] Unsure - We need to assess our client-side risk
-
-### 1.2 Client-Side Security Concerns
+### Client-Side Security Concerns
 
 What client-side threats are you concerned about?
 
@@ -31,14 +27,14 @@ Have you experienced client-side attacks?
 
 ---
 
-## Section 2: Application Scope
+## Application Scope
 
-### 2.1 Pages Requiring Protection
+### Pages Requiring Protection
 
 Which pages handle sensitive data and require protection?
 
 | Page Type | URL Pattern | Sensitive Data Type |
-|-----------|-------------|---------------------|
+| --- | --- | --- |
 | Login pages | _____________ | [ ] Credentials |
 | Registration forms | _____________ | [ ] PII |
 | Checkout/Payment | _____________ | [ ] Payment card data |
@@ -46,12 +42,12 @@ Which pages handle sensitive data and require protection?
 | Contact forms | _____________ | [ ] PII |
 | Other: _______ | _____________ | _____________ |
 
-### 2.2 Transaction Volume
+### Transaction Volume
 
 Estimated monthly transactions on protected pages:
 
 | Metric | Monthly Volume |
-|--------|----------------|
+| --- | --- |
 | Total page views (protected pages) | _____ |
 | Form submissions | _____ |
 | Payment transactions | _____ |
@@ -61,14 +57,14 @@ Estimated monthly transactions on protected pages:
 
 ---
 
-## Section 3: JavaScript Environment
+## JavaScript Environment
 
-### 3.1 Third-Party Scripts
+### Third-Party Scripts
 
 How many third-party JavaScript resources are loaded on your pages?
 
 | Category | Estimated Count |
-|----------|-----------------|
+| --- | --- |
 | Analytics (Google Analytics, etc.) | _____ |
 | Marketing/Advertising | _____ |
 | Social media widgets | _____ |
@@ -78,7 +74,7 @@ How many third-party JavaScript resources are loaded on your pages?
 | Other third-party scripts | _____ |
 | **Total third-party scripts** | _____ |
 
-### 3.2 Script Sources
+### Script Sources
 
 Where do your JavaScript resources come from?
 
@@ -90,13 +86,13 @@ Where do your JavaScript resources come from?
 List critical third-party script sources:
 
 | Script Purpose | Source Domain | Critical? |
-|---------------|---------------|-----------|
+| --- | --- | --- |
 | _____________ | _____________ | [ ] Yes [ ] No |
 | _____________ | _____________ | [ ] Yes [ ] No |
 | _____________ | _____________ | [ ] Yes [ ] No |
 | _____________ | _____________ | [ ] Yes [ ] No |
 
-### 3.3 Content Security Policy (CSP)
+### Content Security Policy (CSP)
 
 Do you currently have a Content Security Policy?
 
@@ -107,9 +103,9 @@ Do you currently have a Content Security Policy?
 
 ---
 
-## Section 4: Compliance Requirements
+## Compliance Requirements
 
-### 4.1 PCI-DSS Requirements
+### PCI-DSS Requirements
 
 Are you subject to PCI-DSS compliance?
 
@@ -119,9 +115,10 @@ Are you subject to PCI-DSS compliance?
 - [ ] No
 
 !!! info "PCI-DSS 4.0"
-    PCI-DSS 4.0 includes requirements (6.4.3 and 11.6.1) for monitoring and controlling client-side scripts on payment pages.
+    PCI-DSS 4.0 includes requirements (6.4.3 and 11.6.1) for monitoring and
+controlling client-side scripts on payment pages.
 
-### 4.2 Other Compliance
+### Other Compliance
 
 Which other compliance frameworks apply?
 
@@ -133,9 +130,9 @@ Which other compliance frameworks apply?
 
 ---
 
-## Section 5: Detection and Alerting
+## Detection and Alerting
 
-### 5.1 Detection Capabilities
+### Detection Capabilities
 
 What detection capabilities do you need?
 
@@ -145,7 +142,7 @@ What detection capabilities do you need?
 - [ ] **DOM manipulation detection** - Detect unauthorized page changes
 - [ ] **Page tamper detection** - Detect payment page modifications
 
-### 5.2 Alerting Requirements
+### Alerting Requirements
 
 How should you be notified of detected threats?
 
@@ -157,7 +154,7 @@ How should you be notified of detected threats?
 Alert severity thresholds:
 
 | Alert Type | Severity |
-|------------|----------|
+| --- | --- |
 | New third-party script detected | [ ] Critical [ ] High [ ] Medium [ ] Low |
 | Script behavior change | [ ] Critical [ ] High [ ] Medium [ ] Low |
 | Data exfiltration attempt | [ ] Critical [ ] High [ ] Medium [ ] Low |
@@ -165,20 +162,20 @@ Alert severity thresholds:
 
 ---
 
-## Section 6: Mitigation Actions
+## Mitigation Actions
 
-### 6.1 Response Actions
+### Response Actions
 
 What actions should be taken when threats are detected?
 
 | Threat Type | Action |
-|-------------|--------|
+| --- | --- |
 | Malicious script detected | [ ] Block [ ] Alert only |
 | Data exfiltration attempt | [ ] Block [ ] Alert only |
 | Unauthorized form access | [ ] Block [ ] Alert only |
 | Page tampering | [ ] Block [ ] Alert only |
 
-### 6.2 Blocking Method
+### Blocking Method
 
 If blocking, how should blocking be implemented?
 
@@ -188,9 +185,9 @@ If blocking, how should blocking be implemented?
 
 ---
 
-## Section 7: Integration
+## Integration
 
-### 7.1 Deployment Method
+### Deployment Method
 
 How will Client-Side Defense be deployed?
 
@@ -199,7 +196,7 @@ How will Client-Side Defense be deployed?
 - [ ] BIG-IP integration (iApp or native module)
 - [ ] CDN integration
 
-### 7.2 Existing BIG-IP
+### Existing BIG-IP
 
 Do you have F5 BIG-IP that could integrate with Client-Side Defense?
 
@@ -208,23 +205,18 @@ Do you have F5 BIG-IP that could integrate with Client-Side Defense?
 
 ---
 
-## Section 8: Page Tamper Protection
+## Page Tamper Protection
 
-### 8.1 Payment Page Monitoring
-
-Do you need Page Tamper Protection for payment pages?
-
-- [ ] Yes - Monitor payment page integrity
-- [ ] No
+### Payment Page Monitoring
 
 If yes, provide payment page URLs:
 
 | Payment Page URL | Expected Update Frequency |
-|-----------------|--------------------------|
+| --- | --- |
 | _____________ | [ ] Rarely [ ] Monthly [ ] Weekly [ ] Daily |
 | _____________ | [ ] Rarely [ ] Monthly [ ] Weekly [ ] Daily |
 
-### 8.2 Baseline Management
+### Baseline Management
 
 How often do your payment pages legitimately change?
 
@@ -238,7 +230,7 @@ How often do your payment pages legitimately change?
 ## Summary: Client-Side Defense Requirements
 
 | Requirement | Value |
-|-------------|-------|
+| --- | --- |
 | Number of Protected Pages | _____ |
 | Estimated Monthly Transactions | _____ |
 | Third-Party Scripts to Monitor | _____ |
@@ -248,7 +240,7 @@ How often do your payment pages legitimately change?
 
 Critical pages requiring protection:
 
-```
+```text
 1. _____________________________________________________________
 2. _____________________________________________________________
 3. _____________________________________________________________
@@ -256,7 +248,7 @@ Critical pages requiring protection:
 
 Additional notes or special requirements:
 
-```
+```text
 _____________________________________________________________
 _____________________________________________________________
 _____________________________________________________________

@@ -1,18 +1,14 @@
 # API Security Sizing
 
-F5 Distributed Cloud API Security provides comprehensive protection for your APIs including automatic discovery, schema validation, rate limiting, and behavioral analysis.
+F5 Distributed Cloud API Security provides comprehensive protection for your
+APIs including automatic discovery, schema validation, rate limiting, and
+behavioral analysis.
 
 ---
 
-## Section 1: API Inventory
+## API Inventory
 
-### 1.1 Do You Need API Security?
-
-- [ ] Yes - We have APIs that need protection
-- [ ] No - Skip this section
-- [ ] Unsure - We need API discovery to understand our API landscape
-
-### 1.2 API Discovery Requirements
+### API Discovery Requirements
 
 Do you have complete documentation of all your APIs?
 
@@ -21,25 +17,26 @@ Do you have complete documentation of all your APIs?
 - [ ] No - We need to discover our API landscape
 
 !!! info "Shadow API Discovery"
-    F5 XC can automatically discover APIs in your traffic, including undocumented "shadow" APIs that may pose security risks.
+    F5 XC can automatically discover APIs in your traffic, including
+undocumented "shadow" APIs that may pose security risks.
 
-### 1.3 Known API Count
+### Known API Count
 
 If you know your API landscape, provide details:
 
 | Category | Count |
-|----------|-------|
+| --- | --- |
 | Public APIs (internet-facing) | _____ |
 | Partner APIs (B2B) | _____ |
 | Internal APIs | _____ |
 | **Total API Endpoints** | _____ |
 
-### 1.4 API Details
+### API Details
 
 For major API services, provide:
 
 | API Name/Service | Base Path | Protocol | Auth Method | Documentation |
-|-----------------|-----------|----------|-------------|---------------|
+| --- | --- | --- | --- | --- |
 | _____________ | /api/v1/... | [ ] REST [ ] GraphQL [ ] gRPC | [ ] API Key [ ] OAuth [ ] JWT [ ] None | [ ] OpenAPI [ ] None |
 | _____________ | /api/v1/... | [ ] REST [ ] GraphQL [ ] gRPC | [ ] API Key [ ] OAuth [ ] JWT [ ] None | [ ] OpenAPI [ ] None |
 | _____________ | /api/v1/... | [ ] REST [ ] GraphQL [ ] gRPC | [ ] API Key [ ] OAuth [ ] JWT [ ] None | [ ] OpenAPI [ ] None |
@@ -47,12 +44,12 @@ For major API services, provide:
 
 ---
 
-## Section 2: API Traffic Volume
+## API Traffic Volume
 
-### 2.1 Request Volume
+### Request Volume
 
 | Metric | Average | Peak |
-|--------|---------|------|
+| --- | --- | --- |
 | API Requests per Second | _____ | _____ |
 | API Requests per Day | _____ | _____ |
 | API Requests per Month | _____ | _____ |
@@ -60,12 +57,12 @@ For major API services, provide:
 !!! note "Base Package"
     Standard includes up to 500,000 API requests per month for API protection.
 
-### 2.2 API Consumer Distribution
+### API Consumer Distribution
 
 Who consumes your APIs?
 
 | Consumer Type | Percentage | Estimated Daily Requests |
-|--------------|------------|-------------------------|
+| --- | --- | --- |
 | Web Applications (browsers) | _____% | _____ |
 | Mobile Applications | _____% | _____ |
 | Partner Integrations (B2B) | _____% | _____ |
@@ -75,40 +72,34 @@ Who consumes your APIs?
 
 ---
 
-## Section 3: API Security Features Required
+## API Security Features Required
 
-### 3.1 API Discovery
-
-Do you need automatic API discovery?
+### API Discovery
 
 - [ ] **Yes - Critical** - We need to discover all APIs in our traffic
 - [ ] **Yes - Nice to have** - We have docs but want validation
 - [ ] **No** - We have complete API documentation
 
 Discovery scope:
+
 - [ ] Production traffic only
 - [ ] All environments (Prod, Stage, Dev)
 
-### 3.2 API Schema Validation
-
-Do you need schema-based validation?
+### API Schema Validation
 
 - [ ] Yes - Enforce requests match OpenAPI specification
-- [ ] No - Skip schema validation
 
 If yes, what actions should be taken on violations?
 
 | Violation Type | Action |
-|---------------|--------|
+| --- | --- |
 | Unknown endpoints | [ ] Block [ ] Log Only [ ] Allow |
 | Invalid request parameters | [ ] Block [ ] Log Only [ ] Allow |
 | Invalid request body | [ ] Block [ ] Log Only [ ] Allow |
 | Missing required fields | [ ] Block [ ] Log Only [ ] Allow |
 | Wrong data types | [ ] Block [ ] Log Only [ ] Allow |
 
-### 3.3 API Rate Limiting
-
-Do you need API-specific rate limiting?
+### API Rate Limiting
 
 - [ ] Yes
 - [ ] No
@@ -116,16 +107,14 @@ Do you need API-specific rate limiting?
 If yes, provide requirements:
 
 | Rate Limit Type | Limit | Time Window | Action |
-|----------------|-------|-------------|--------|
+| --- | --- | --- | --- |
 | Per API Key | _____ requests | [ ] second [ ] minute [ ] hour | [ ] Block [ ] Throttle |
 | Per User/Token | _____ requests | [ ] second [ ] minute [ ] hour | [ ] Block [ ] Throttle |
 | Per Endpoint | _____ requests | [ ] second [ ] minute [ ] hour | [ ] Block [ ] Throttle |
 | Per IP Address | _____ requests | [ ] second [ ] minute [ ] hour | [ ] Block [ ] Throttle |
 | Global (all traffic) | _____ requests | [ ] second [ ] minute [ ] hour | [ ] Block [ ] Throttle |
 
-### 3.4 Sensitive Data Protection
-
-Do you need sensitive data detection and protection?
+### Sensitive Data Protection
 
 - [ ] Yes
 - [ ] No
@@ -148,9 +137,9 @@ What action should be taken when sensitive data is detected?
 
 ---
 
-## Section 4: API Authentication and Authorization
+## API Authentication and Authorization
 
-### 4.1 Authentication Methods
+### Authentication Methods
 
 What authentication methods do your APIs use?
 
@@ -162,7 +151,7 @@ What authentication methods do your APIs use?
 - [ ] Custom authentication
 - [ ] No authentication (public APIs)
 
-### 4.2 JWT Validation
+### JWT Validation
 
 If using JWT, do you need F5 XC to validate tokens?
 
@@ -172,18 +161,16 @@ If using JWT, do you need F5 XC to validate tokens?
 
 JWT issuer (if applicable): _________________
 
-### 4.3 Authorization Requirements
-
-Do you need authorization enforcement at the API gateway level?
+### Authorization Requirements
 
 - [ ] Yes - Enforce role-based access to API endpoints
 - [ ] No - Application handles authorization
 
 ---
 
-## Section 5: API Security Threats
+## API Security Threats
 
-### 5.1 OWASP API Security Top 10
+### OWASP API Security Top 10
 
 Which API-specific threats are you concerned about?
 
@@ -198,7 +185,7 @@ Which API-specific threats are you concerned about?
 - [ ] **API9** - Improper Inventory Management
 - [ ] **API10** - Unsafe Consumption of APIs
 
-### 5.2 Historical API Attacks
+### Historical API Attacks
 
 Have you experienced any API-specific attacks?
 
@@ -211,16 +198,16 @@ Have you experienced any API-specific attacks?
 
 Describe any specific concerns:
 
-```
+```text
 _____________________________________________________________
 _____________________________________________________________
 ```
 
 ---
 
-## Section 6: OpenAPI Specification Import
+## OpenAPI Specification Import
 
-### 6.1 Existing Specifications
+### Existing Specifications
 
 Do you have OpenAPI/Swagger specifications for your APIs?
 
@@ -229,7 +216,7 @@ Do you have OpenAPI/Swagger specifications for your APIs?
 - [ ] Partial - Some APIs only
 - [ ] No - We need to generate specs
 
-### 6.2 Specification Management
+### Specification Management
 
 How will you manage API specifications?
 
@@ -240,7 +227,7 @@ How will you manage API specifications?
 
 Number of specification files: _____
 
-### 6.3 Specification Source
+### Specification Source
 
 Where are your API specifications stored?
 
@@ -253,26 +240,23 @@ Where are your API specifications stored?
 
 ---
 
-## Section 7: Advanced API Security (Advanced Tier)
+## Advanced API Security (Advanced Tier)
 
-### 7.1 Behavioral API Security
-
-Do you need behavioral analysis for API traffic?
+### Behavioral API Security
 
 - [ ] Yes - Detect anomalies in API usage patterns
 - [ ] No - Schema validation is sufficient
 
 !!! warning "Advanced Tier Required"
-    Behavioral API security with ML-based anomaly detection requires the Advanced tier.
+    Behavioral API security with ML-based anomaly detection requires the
+Advanced tier.
 
-### 7.2 API Posture Management
-
-Do you need API risk scoring and posture assessment?
+### API Posture Management
 
 - [ ] Yes - Score APIs based on security risk
 - [ ] No
 
-### 7.3 Data Intelligence Tier
+### Data Intelligence Tier
 
 What level of data intelligence do you need?
 
@@ -282,14 +266,14 @@ What level of data intelligence do you need?
 
 ---
 
-## Section 8: Integration Requirements
+## Integration Requirements
 
-### 8.1 Existing API Infrastructure
+### Existing API Infrastructure
 
 Do you have existing API management infrastructure?
 
 | Platform | In Use | Integration Needed |
-|----------|--------|-------------------|
+| --- | --- | --- |
 | AWS API Gateway | [ ] | [ ] |
 | Azure API Management | [ ] | [ ] |
 | Google Apigee | [ ] | [ ] |
@@ -297,15 +281,14 @@ Do you have existing API management infrastructure?
 | MuleSoft | [ ] | [ ] |
 | Other: _________ | [ ] | [ ] |
 
-### 8.2 CI/CD Integration
-
-Do you need CI/CD pipeline integration for API security?
+### CI/CD Integration
 
 - [ ] Yes - Scan API specs before deployment
 - [ ] Yes - Security gates in deployment pipeline
 - [ ] No
 
 CI/CD platforms in use:
+
 - [ ] Jenkins
 - [ ] GitHub Actions
 - [ ] GitLab CI
@@ -317,7 +300,7 @@ CI/CD platforms in use:
 ## Summary: API Security Requirements
 
 | Requirement | Value |
-|-------------|-------|
+| --- | --- |
 | Number of API Endpoints | _____ |
 | API Discovery Required | [ ] Yes [ ] No |
 | Estimated Monthly API Requests | _____ |
@@ -327,7 +310,7 @@ CI/CD platforms in use:
 
 Additional notes or special requirements:
 
-```
+```text
 _____________________________________________________________
 _____________________________________________________________
 _____________________________________________________________

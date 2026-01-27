@@ -1,6 +1,6 @@
 site_name: F5 Distributed Cloud Sizing Guide
 site_description: Comprehensive sizing questionnaire for F5 XC deployments
-site_author: F5 Networks
+site_author: Robin Mordasiewicz
 site_url: https://robinmordasiewicz.github.io/f5xc-sizing/
 
 repo_name: robinmordasiewicz/f5xc-sizing
@@ -28,12 +28,8 @@ theme:
         icon: material/brightness-4
         name: Switch to light mode
   features:
-    - navigation.tabs
-    - navigation.sections
-    - navigation.expand
     - navigation.top
     - navigation.indexes
-    - toc.integrate
     - search.suggest
     - search.highlight
     - content.tabs.link
@@ -45,11 +41,11 @@ plugins:
   - with-pdf:
       author: F5 Networks
       cover_title: F5 Distributed Cloud
-      cover_subtitle: Customer Scoping and Requirements Guide
+      cover_subtitle: Scoping and Requirements Guide
       cover_logo: assets/f5-logo.svg
       toc_title: Table of Contents
       heading_shift: false
-      toc_level: 3
+      toc_level: 1
       ordered_chapter_level: 2
       exclude_pages:
         - 'tags/'
@@ -101,32 +97,21 @@ extra_css:
 
 nav:
   - Home: index.md
-  - Getting Started:
-    - Introduction: getting-started/introduction.md
-    - How to Use This Guide: getting-started/how-to-use.md
-    - Service Tier Comparison: getting-started/service-tiers.md
-  - Security Services:
-    - Overview: security/index.md
+  - Security:
     - Web Application Firewall (WAF): security/waf.md
     - API Security: security/api-security.md
     - Bot Defense: security/bot-defense.md
     - DDoS Protection: security/ddos.md
     - Client-Side Defense: security/client-side-defense.md
-  - Networking Services:
-    - Overview: networking/index.md
+  - Networking:
     - HTTP Load Balancing: networking/http-load-balancer.md
     - TCP Load Balancing: networking/tcp-load-balancer.md
     - DNS Services: networking/dns.md
     - Multi-Cloud Networking: networking/multi-cloud-networking.md
     - App Connect: networking/app-connect.md
-  - Performance Services:
-    - Overview: performance/index.md
+  - Performance:
     - CDN: performance/cdn.md
     - Edge Compute: performance/edge-compute.md
   - Infrastructure:
-    - Overview: infrastructure/index.md
     - Customer Edge Sites: infrastructure/customer-edge.md
     - Cloud Sites: infrastructure/cloud-sites.md
-  - Summary:
-    - Requirements Summary: summary/requirements-summary.md
-    - Next Steps: summary/next-steps.md
