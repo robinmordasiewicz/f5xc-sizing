@@ -7,3 +7,15 @@ services:
     volumes:
       - .:/docs
     entrypoint: ["/bin/sh", "/docs/scripts/start-mkdocs.sh"]
+
+  # Production-like build for testing PDF buttons and other build-time features
+  mkdocs-test:
+    image: ghcr.io/robinmordasiewicz/f5xc-mkdocs:latest
+    container_name: f5-mkdocs-test
+    profiles:
+      - test
+    ports:
+      - "8001:8000"
+    volumes:
+      - .:/docs
+    entrypoint: ["/bin/sh", "/docs/scripts/test-build.sh"]

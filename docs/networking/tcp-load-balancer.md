@@ -14,16 +14,16 @@ What TCP/UDP applications need load balancing?
 
 | Application | Protocol | Port(s) | Use Case |
 | --- | --- | --- | --- |
-| _____________ | [ ] TCP [ ] UDP | _____ | [ ] Database [ ] Gaming [ ] Mail [ ] SSH [ ] Custom |
-| _____________ | [ ] TCP [ ] UDP | _____ | [ ] Database [ ] Gaming [ ] Mail [ ] SSH [ ] Custom |
-| _____________ | [ ] TCP [ ] UDP | _____ | [ ] Database [ ] Gaming [ ] Mail [ ] SSH [ ] Custom |
-| _____________ | [ ] TCP [ ] UDP | _____ | [ ] Database [ ] Gaming [ ] Mail [ ] SSH [ ] Custom |
+|  | [ ] TCP [ ] UDP |  | [ ] Database [ ] Gaming [ ] Mail [ ] SSH [ ] Custom |
+|  | [ ] TCP [ ] UDP |  | [ ] Database [ ] Gaming [ ] Mail [ ] SSH [ ] Custom |
+|  | [ ] TCP [ ] UDP |  | [ ] Database [ ] Gaming [ ] Mail [ ] SSH [ ] Custom |
+|  | [ ] TCP [ ] UDP |  | [ ] Database [ ] Gaming [ ] Mail [ ] SSH [ ] Custom |
 
 ### Port Configuration
 
 - [ ] Single port per load balancer
-- [ ] Multiple specific ports: _____
-- [ ] Port range: _____ to _____
+- [ ] Multiple specific ports:
+- [ ] Port range: to
 
 ---
 
@@ -33,10 +33,10 @@ What TCP/UDP applications need load balancing?
 
 | Metric | Average | Peak |
 | --- | --- | --- |
-| Connections per second | _____ | _____ |
-| Concurrent connections | _____ | _____ |
-| Bandwidth (Mbps) | _____ | _____ |
-| Average connection duration | _____ seconds | _____ |
+| Connections per second |  |  |
+| Concurrent connections |  |  |
+| Bandwidth (Mbps) |  |  |
+| Average connection duration | seconds |  |
 
 ### Connection Patterns
 
@@ -54,9 +54,9 @@ What are your connection patterns?
 
 | Application | Origin Type | Count | Ports |
 | --- | --- | --- | --- |
-| _____________ | [ ] IP [ ] FQDN | _____ | _____ |
-| _____________ | [ ] IP [ ] FQDN | _____ | _____ |
-| _____________ | [ ] IP [ ] FQDN | _____ | _____ |
+|  | [ ] IP [ ] FQDN |  |  |
+|  | [ ] IP [ ] FQDN |  |  |
+|  | [ ] IP [ ] FQDN |  |  |
 
 ### Origin Connectivity
 
@@ -85,10 +85,10 @@ Health check configuration:
 | Parameter | Value |
 | --- | --- |
 | Health check type | [ ] TCP Connect [ ] Custom |
-| Check interval | _____ seconds |
-| Healthy threshold | _____ checks |
-| Unhealthy threshold | _____ checks |
-| Timeout | _____ seconds |
+| Check interval | seconds |
+| Healthy threshold | checks |
+| Unhealthy threshold | checks |
+| Timeout | seconds |
 
 ### Session Persistence
 
@@ -123,15 +123,15 @@ If TLS termination:
 
 | Parameter | Value |
 | --- | --- |
-| Connection timeout | _____ seconds |
-| Idle timeout | _____ seconds |
+| Connection timeout | seconds |
+| Idle timeout | seconds |
 
 ### Connection Limits
 
 | Parameter | Value |
 | --- | --- |
-| Max connections per client IP | _____ |
-| Max total connections | _____ |
+| Max connections per client IP |  |
+| Max total connections |  |
 
 ---
 
@@ -143,7 +143,7 @@ If load balancing databases:
 
 | Parameter | Value |
 | --- | --- |
-| Database type | [ ] MySQL [ ] PostgreSQL [ ] MongoDB [ ] Redis [ ] Other: ___ |
+| Database type | [ ] MySQL [ ] PostgreSQL [ ] MongoDB [ ] Redis [ ] Other: |
 | Read/Write splitting needed | [ ] Yes [ ] No |
 | Connection pooling | [ ] Yes [ ] No |
 
@@ -163,16 +163,16 @@ If gaming or real-time applications:
 
 | Requirement | Value |
 | --- | --- |
-| Number of TCP Load Balancers | _____ |
+| Number of TCP Load Balancers |  |
 | Protocols | [ ] TCP [ ] UDP [ ] Both |
-| Port(s) | _____ |
-| Peak Connections per Second | _____ |
+| Port(s) |  |
+| Peak Connections per Second |  |
 | TLS Required | [ ] Yes [ ] No |
 | Session Persistence | [ ] Yes [ ] No |
 
 Additional notes:
 
 ```text
-_____________________________________________________________
-_____________________________________________________________
+
+
 ```

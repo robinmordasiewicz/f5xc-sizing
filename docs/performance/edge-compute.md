@@ -18,7 +18,7 @@ What are your edge compute requirements?
 - [ ] **IoT processing** - Process IoT data locally
 - [ ] **Machine learning inference** - Run ML models at the edge
 - [ ] **Real-time analytics** - Process analytics locally
-- [ ] Other: _________________
+- [ ] Other:
 
 ---
 
@@ -37,9 +37,9 @@ What types of workloads will run at the edge?
 
 | Workload Name | Type | CPU | Memory | Storage |
 | --- | --- | --- | --- | --- |
-| _____________ | [ ] Container [ ] VM | _____ cores | _____ GB | _____ GB |
-| _____________ | [ ] Container [ ] VM | _____ cores | _____ GB | _____ GB |
-| _____________ | [ ] Container [ ] VM | _____ cores | _____ GB | _____ GB |
+|  | [ ] Container [ ] VM | cores | GB | GB |
+|  | [ ] Container [ ] VM | cores | GB | GB |
+|  | [ ] Container [ ] VM | cores | GB | GB |
 
 ### Workload Scaling
 
@@ -59,11 +59,11 @@ Where do you need edge compute?
 
 | Location | Site Type | Workloads |
 | --- | --- | --- |
-| _____________ | [ ] Data Center [ ] Branch [ ] Retail [ ] Other | _____________ |
-| _____________ | [ ] Data Center [ ] Branch [ ] Retail [ ] Other | _____________ |
-| _____________ | [ ] Data Center [ ] Branch [ ] Retail [ ] Other | _____________ |
+|  | [ ] Data Center [ ] Branch [ ] Retail [ ] Other |  |
+|  | [ ] Data Center [ ] Branch [ ] Retail [ ] Other |  |
+|  | [ ] Data Center [ ] Branch [ ] Retail [ ] Other |  |
 
-Total edge compute locations: _____
+Total edge compute locations:
 
 ### Edge Infrastructure
 
@@ -71,8 +71,8 @@ What infrastructure is available at edge locations?
 
 | Location | Compute Available | Network | Power/Cooling |
 | --- | --- | --- | --- |
-| _____________ | [ ] Servers [ ] VMs [ ] None | _____ Mbps | [ ] Yes [ ] Limited |
-| _____________ | [ ] Servers [ ] VMs [ ] None | _____ Mbps | [ ] Yes [ ] Limited |
+|  | [ ] Servers [ ] VMs [ ] None | Mbps | [ ] Yes [ ] Limited |
+|  | [ ] Servers [ ] VMs [ ] None | Mbps | [ ] Yes [ ] Limited |
 
 ---
 
@@ -89,7 +89,7 @@ If using containers:
 
 | Parameter | Value |
 | --- | --- |
-| Total containers | _____ |
+| Total containers |  |
 | Container registry | [ ] Docker Hub [ ] Private [ ] AWS ECR [ ] Azure ACR [ ] GCR |
 | Container sizes needed | [ ] Tiny [ ] Medium [ ] Large |
 
@@ -115,9 +115,9 @@ How do edge workloads need to communicate?
 
 | Requirement | Value |
 | --- | --- |
-| Latency to local users | < _____ ms |
-| Bandwidth to cloud | _____ Mbps |
-| Local network bandwidth | _____ Mbps |
+| Latency to local users | < ms |
+| Bandwidth to cloud | Mbps |
+| Local network bandwidth | Mbps |
 
 ---
 
@@ -140,11 +140,11 @@ Are there data residency requirements?
 - [ ] Yes - Data must stay in specific regions
 - [ ] No
 
-Regions with data residency requirements: _________________
+Regions with data residency requirements:
 
 ### Edge Storage
 
-- [ ] Yes - _____ GB per site
+- [ ] Yes - GB per site
 - [ ] No - Stateless workloads only
 
 ---
@@ -153,15 +153,15 @@ Regions with data residency requirements: _________________
 
 | Requirement | Value |
 | --- | --- |
-| Edge Compute Locations | _____ |
-| Total Workloads | _____ |
+| Edge Compute Locations |  |
+| Total Workloads |  |
 | App Stack (Managed K8s) | [ ] Yes [ ] No |
-| Container Count | _____ |
+| Container Count |  |
 | Persistent Storage | [ ] Yes [ ] No |
 
 Primary edge compute use case:
 
 ```text
-_____________________________________________________________
-_____________________________________________________________
+
+
 ```

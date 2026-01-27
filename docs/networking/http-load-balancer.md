@@ -14,10 +14,10 @@ How many HTTP/HTTPS applications need load balancing?
 
 | Environment | Application Count |
 | --- | --- |
-| Production | _____ |
-| Staging/QA | _____ |
-| Development | _____ |
-| **Total** | _____ |
+| Production |  |
+| Staging/QA |  |
+| Development |  |
+| **Total** |  |
 
 ### Virtual Host Details
 
@@ -25,11 +25,11 @@ For each application, provide virtual host information:
 
 | Application Name | Domain(s) | Port(s) | Protocol |
 | --- | --- | --- | --- |
-| _____________ | _____________ | [ ] 80 [ ] 443 [ ] Other: ___ | [ ] HTTP [ ] HTTPS [ ] Both |
-| _____________ | _____________ | [ ] 80 [ ] 443 [ ] Other: ___ | [ ] HTTP [ ] HTTPS [ ] Both |
-| _____________ | _____________ | [ ] 80 [ ] 443 [ ] Other: ___ | [ ] HTTP [ ] HTTPS [ ] Both |
-| _____________ | _____________ | [ ] 80 [ ] 443 [ ] Other: ___ | [ ] HTTP [ ] HTTPS [ ] Both |
-| _____________ | _____________ | [ ] 80 [ ] 443 [ ] Other: ___ | [ ] HTTP [ ] HTTPS [ ] Both |
+|  |  | [ ] 80 [ ] 443 [ ] Other: | [ ] HTTP [ ] HTTPS [ ] Both |
+|  |  | [ ] 80 [ ] 443 [ ] Other: | [ ] HTTP [ ] HTTPS [ ] Both |
+|  |  | [ ] 80 [ ] 443 [ ] Other: | [ ] HTTP [ ] HTTPS [ ] Both |
+|  |  | [ ] 80 [ ] 443 [ ] Other: | [ ] HTTP [ ] HTTPS [ ] Both |
+|  |  | [ ] 80 [ ] 443 [ ] Other: | [ ] HTTP [ ] HTTPS [ ] Both |
 
 !!! note "Base Package"
     The base package includes 1 load balancer. Additional load balancers are
@@ -43,9 +43,9 @@ available as add-ons.
 
 | Metric | Average | Peak |
 | --- | --- | --- |
-| Requests per second | _____ | _____ |
-| Concurrent connections | _____ | _____ |
-| Bandwidth (Mbps) | _____ | _____ |
+| Requests per second |  |  |
+| Concurrent connections |  |  |
+| Bandwidth (Mbps) |  |  |
 
 ### Traffic Patterns
 
@@ -53,7 +53,7 @@ What are your traffic patterns?
 
 - [ ] Steady throughout the day
 - [ ] Business hours peaks
-- [ ] Seasonal peaks (specify): _________________
+- [ ] Seasonal peaks (specify):
 - [ ] Event-driven spikes
 - [ ] Unpredictable
 
@@ -61,11 +61,11 @@ Geographic distribution of users:
 
 | Region | Traffic Percentage |
 | --- | --- |
-| North America | _____% |
-| Europe | _____% |
-| Asia-Pacific | _____% |
-| South America | _____% |
-| Other | _____% |
+| North America | % |
+| Europe | % |
+| Asia-Pacific | % |
+| South America | % |
+| Other | % |
 
 ---
 
@@ -77,9 +77,9 @@ For each application, describe origin servers:
 
 | Application | Origin Type | Count | Location |
 | --- | --- | --- | --- |
-| _____________ | [ ] IP [ ] FQDN [ ] K8s Service | _____ | _____________ |
-| _____________ | [ ] IP [ ] FQDN [ ] K8s Service | _____ | _____________ |
-| _____________ | [ ] IP [ ] FQDN [ ] K8s Service | _____ | _____________ |
+|  | [ ] IP [ ] FQDN [ ] K8s Service |  |  |
+|  | [ ] IP [ ] FQDN [ ] K8s Service |  |  |
+|  | [ ] IP [ ] FQDN [ ] K8s Service |  |  |
 
 ### Origin Connectivity
 
@@ -96,9 +96,9 @@ What protocol to use when connecting to origins?
 
 | Application | Origin Protocol | Origin Port |
 | --- | --- | --- |
-| _____________ | [ ] HTTP [ ] HTTPS | _____ |
-| _____________ | [ ] HTTP [ ] HTTPS | _____ |
-| _____________ | [ ] HTTP [ ] HTTPS | _____ |
+|  | [ ] HTTP [ ] HTTPS |  |
+|  | [ ] HTTP [ ] HTTPS |  |
+|  | [ ] HTTP [ ] HTTPS |  |
 
 ---
 
@@ -121,7 +121,7 @@ Preferred load balancing algorithm:
 - [ ] Yes - Header based
 - [ ] No - Stateless application
 
-Persistence timeout: _____ seconds
+Persistence timeout: seconds
 
 ### Health Checks
 
@@ -130,11 +130,11 @@ Health check requirements:
 | Parameter | Value |
 | --- | --- |
 | Health check type | [ ] HTTP [ ] HTTPS [ ] TCP |
-| Check interval | _____ seconds |
-| Check path (HTTP) | _____________ |
-| Expected response code | [ ] 200 [ ] 2xx [ ] Custom: ___ |
-| Healthy threshold | _____ consecutive checks |
-| Unhealthy threshold | _____ consecutive checks |
+| Check interval | seconds |
+| Check path (HTTP) |  |
+| Expected response code | [ ] 200 [ ] 2xx [ ] Custom: |
+| Healthy threshold | consecutive checks |
+| Unhealthy threshold | consecutive checks |
 
 ---
 
@@ -160,8 +160,8 @@ Custom certificate details:
 
 | Domain | Certificate Type | Key Type |
 | --- | --- | --- |
-| _____________ | [ ] Single [ ] Wildcard [ ] SAN | [ ] RSA 2048 [ ] RSA 4096 [ ] ECC |
-| _____________ | [ ] Single [ ] Wildcard [ ] SAN | [ ] RSA 2048 [ ] RSA 4096 [ ] ECC |
+|  | [ ] Single [ ] Wildcard [ ] SAN | [ ] RSA 2048 [ ] RSA 4096 [ ] ECC |
+|  | [ ] Single [ ] Wildcard [ ] SAN | [ ] RSA 2048 [ ] RSA 4096 [ ] ECC |
 
 ### TLS Requirements
 
@@ -181,7 +181,7 @@ Do you require mTLS client authentication?
 
 If yes:
 
-- Client CA certificate source: _________________
+- Client CA certificate source:
 - XFCC header forwarding needed: [ ] Yes [ ] No
 
 ---
@@ -201,7 +201,7 @@ Example routing requirements:
 | --- | --- |
 | Path: /api/* | API origin pool |
 | Header: X-Version: v2 | V2 origin pool |
-| _____________ | _____________ |
+|  |  |
 
 ### Traffic Policies
 
@@ -215,9 +215,9 @@ Example routing requirements:
 
 | Parameter | Value |
 | --- | --- |
-| Request timeout | _____ seconds |
-| Idle timeout | _____ seconds |
-| Maximum request body size | _____ MB |
+| Request timeout | seconds |
+| Idle timeout | seconds |
+| Maximum request body size | MB |
 
 ---
 
@@ -247,7 +247,7 @@ Failover configuration:
 
 | Primary Pool | Secondary Pool | Failover Condition |
 | --- | --- | --- |
-| _____________ | _____________ | [ ] Health check [ ] Manual |
+|  |  | [ ] Health check [ ] Manual |
 
 ---
 
@@ -274,7 +274,7 @@ Should Bot Defense be enabled?
 - [ ] Rate limiting
 - [ ] Custom rules
 
-Number of service policy rules: _____
+Number of service policy rules:
 
 ---
 
@@ -294,8 +294,8 @@ What logging do you need?
 Where should logs be sent?
 
 - [ ] F5 XC Console (default)
-- [ ] External SIEM: _________________
-- [ ] Cloud storage (S3, etc.): _________________
+- [ ] External SIEM:
+- [ ] Cloud storage (S3, etc.):
 
 ### Metrics and Monitoring
 
@@ -313,9 +313,9 @@ What metrics do you need?
 
 | Requirement | Value |
 | --- | --- |
-| Number of Load Balancers | _____ |
-| Total Applications | _____ |
-| Estimated Peak RPS | _____ |
+| Number of Load Balancers |  |
+| Total Applications |  |
+| Estimated Peak RPS |  |
 | TLS Certificate Management | [ ] Automatic [ ] Custom [ ] Mixed |
 | WAF Integration | [ ] Yes [ ] No |
 | Multi-Region | [ ] Yes [ ] No |
@@ -324,7 +324,7 @@ What metrics do you need?
 Additional notes or special requirements:
 
 ```text
-_____________________________________________________________
-_____________________________________________________________
-_____________________________________________________________
+
+
+
 ```

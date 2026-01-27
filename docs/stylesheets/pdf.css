@@ -65,3 +65,56 @@ h1, h2 {
 .admonition, table, pre {
     page-break-inside: avoid;
 }
+
+/* --------------------------------------------------------------------------
+   Radio Button and Checkbox Option Styling for PDF
+   -------------------------------------------------------------------------- */
+
+/* Base option styling for print */
+.radio-option,
+.checkbox-option {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 6px;
+    margin: 2px 4px;
+    white-space: nowrap;
+}
+
+/* Radio button - circle indicator (single-select) */
+.radio-option::before {
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border: 2px solid #4F73FF;
+    border-radius: 50%;
+    margin-right: 6px;
+    flex-shrink: 0;
+    background-color: transparent;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+
+/* Checkbox - square indicator (multi-select) */
+.checkbox-option::before {
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border: 2px solid #4F73FF;
+    border-radius: 2px;
+    margin-right: 6px;
+    flex-shrink: 0;
+    background-color: transparent;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+
+/* Table cells with options */
+td:has(.radio-option),
+td:has(.checkbox-option) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px;
+}

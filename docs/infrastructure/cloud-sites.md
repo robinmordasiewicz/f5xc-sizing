@@ -16,7 +16,7 @@ Why do you need Cloud Sites?
 - [ ] **Multi-cloud networking** - Bridge multiple clouds
 - [ ] **Cloud egress** - Secure internet access from cloud
 - [ ] **Service mesh** - Connect cloud-based services
-- [ ] Other: _________________
+- [ ] Other:
 
 ---
 
@@ -31,9 +31,9 @@ If yes:
 
 | AWS Region | VPCs to Connect | Workloads | Node Size |
 | --- | --- | --- | --- |
-| _____________ | _____ | _____________ | [ ] Standard [ ] Large |
-| _____________ | _____ | _____________ | [ ] Standard [ ] Large |
-| _____________ | _____ | _____________ | [ ] Standard [ ] Large |
+|  |  |  | [ ] Standard [ ] Large |
+|  |  |  | [ ] Standard [ ] Large |
+|  |  |  | [ ] Standard [ ] Large |
 
 AWS integration requirements:
 
@@ -51,9 +51,9 @@ If yes:
 
 | Azure Region | VNets to Connect | Workloads | Node Size |
 | --- | --- | --- | --- |
-| _____________ | _____ | _____________ | [ ] Standard [ ] Large |
-| _____________ | _____ | _____________ | [ ] Standard [ ] Large |
-| _____________ | _____ | _____________ | [ ] Standard [ ] Large |
+|  |  |  | [ ] Standard [ ] Large |
+|  |  |  | [ ] Standard [ ] Large |
+|  |  |  | [ ] Standard [ ] Large |
 
 Azure integration requirements:
 
@@ -71,9 +71,9 @@ If yes:
 
 | GCP Region | VPCs to Connect | Workloads | Node Size |
 | --- | --- | --- | --- |
-| _____________ | _____ | _____________ | [ ] Standard [ ] Large |
-| _____________ | _____ | _____________ | [ ] Standard [ ] Large |
-| _____________ | _____ | _____________ | [ ] Standard [ ] Large |
+|  |  |  | [ ] Standard [ ] Large |
+|  |  |  | [ ] Standard [ ] Large |
+|  |  |  | [ ] Standard [ ] Large |
 
 GCP integration requirements:
 
@@ -97,9 +97,9 @@ How should Cloud Sites be deployed?
 
 | Cloud Site | Site Network CIDR | Inside Subnets | Outside Subnets |
 | --- | --- | --- | --- |
-| _____________ | ___**/**_ | _____ | _____ |
-| _____________ | ___**/**_ | _____ | _____ |
-| _____________ | ___**/**_ | _____ | _____ |
+|  |  |  |  |
+|  |  |  |  |
+|  |  |  |  |
 
 ### VPC/VNet Connectivity
 
@@ -107,9 +107,9 @@ What cloud networks need connectivity?
 
 | Cloud Network | Cloud Provider | CIDR | Connect To |
 | --- | --- | --- | --- |
-| _____________ | [ ] AWS [ ] Azure [ ] GCP | ___**/**_ | _____________ |
-| _____________ | [ ] AWS [ ] Azure [ ] GCP | ___**/**_ | _____________ |
-| _____________ | [ ] AWS [ ] Azure [ ] GCP | ___**/**_ | _____________ |
+|  | [ ] AWS [ ] Azure [ ] GCP |  |  |
+|  | [ ] AWS [ ] Azure [ ] GCP |  |  |
+|  | [ ] AWS [ ] Azure [ ] GCP |  |  |
 
 ---
 
@@ -121,17 +121,17 @@ What availability is required?
 
 | Cloud Site | HA Mode | Availability Zones |
 | --- | --- | --- |
-| _____________ | [ ] Single AZ [ ] Multi-AZ | _____ AZs |
-| _____________ | [ ] Single AZ [ ] Multi-AZ | _____ AZs |
-| _____________ | [ ] Single AZ [ ] Multi-AZ | _____ AZs |
+|  | [ ] Single AZ [ ] Multi-AZ | AZs |
+|  | [ ] Single AZ [ ] Multi-AZ | AZs |
+|  | [ ] Single AZ [ ] Multi-AZ | AZs |
 
 ### Node Count
 
 | Cloud Site | Master Nodes | Worker Nodes (if App Stack) |
 | --- | --- | --- |
-| _____________ | [ ] 1 [ ] 3 | _____ |
-| _____________ | [ ] 1 [ ] 3 | _____ |
-| _____________ | [ ] 1 [ ] 3 | _____ |
+|  | [ ] 1 [ ] 3 |  |
+|  | [ ] 1 [ ] 3 |  |
+|  | [ ] 1 [ ] 3 |  |
 
 ---
 
@@ -143,17 +143,17 @@ What services will run at Cloud Sites?
 
 | Cloud Site | Services |
 | --- | --- |
-| _____________ | [ ] HTTP LB [ ] TCP LB [ ] WAF [ ] Network Connect [ ] App Stack |
-| _____________ | [ ] HTTP LB [ ] TCP LB [ ] WAF [ ] Network Connect [ ] App Stack |
-| _____________ | [ ] HTTP LB [ ] TCP LB [ ] WAF [ ] Network Connect [ ] App Stack |
+|  | [ ] HTTP LB [ ] TCP LB [ ] WAF [ ] Network Connect [ ] App Stack |
+|  | [ ] HTTP LB [ ] TCP LB [ ] WAF [ ] Network Connect [ ] App Stack |
+|  | [ ] HTTP LB [ ] TCP LB [ ] WAF [ ] Network Connect [ ] App Stack |
 
 ### Traffic Volume
 
 | Cloud Site | Expected Throughput | Connections |
 | --- | --- | --- |
-| _____________ | _____ Mbps | _____ |
-| _____________ | _____ Mbps | _____ |
-| _____________ | _____ Mbps | _____ |
+|  | Mbps |  |
+|  | Mbps |  |
+|  | Mbps |  |
 
 ---
 
@@ -165,9 +165,9 @@ How will F5 XC access your cloud accounts?
 
 | Cloud Provider | Access Method | Account/Subscription ID |
 | --- | --- | --- |
-| AWS | [ ] IAM Role [ ] Access Key | _____________ |
-| Azure | [ ] Service Principal | _____________ |
-| GCP | [ ] Service Account | _____________ |
+| AWS | [ ] IAM Role [ ] Access Key |  |
+| Azure | [ ] Service Principal |  |
+| GCP | [ ] Service Account |  |
 
 ### Permissions Required
 
@@ -188,9 +188,9 @@ Preferred cloud instance types:
 
 | Cloud Provider | Instance Type | vCPU | Memory |
 | --- | --- | --- | --- |
-| AWS | [ ] t3.xlarge [ ] m5.xlarge [ ] m5.2xlarge [ ] Custom | _____ | _____ GB |
-| Azure | [ ] Standard_D4s_v4 [ ] Standard_D8s_v4 [ ] Custom | _____ | _____ GB |
-| GCP | [ ] n1-standard-4 [ ] n1-standard-8 [ ] Custom | _____ | _____ GB |
+| AWS | [ ] t3.xlarge [ ] m5.xlarge [ ] m5.2xlarge [ ] Custom |  | GB |
+| Azure | [ ] Standard_D4s_v4 [ ] Standard_D8s_v4 [ ] Custom |  | GB |
+| GCP | [ ] n1-standard-4 [ ] n1-standard-8 [ ] Custom |  | GB |
 
 ### Cost Considerations
 
@@ -204,24 +204,24 @@ Preferred cloud instance types:
 
 | Requirement | Value |
 | --- | --- |
-| AWS Cloud Sites | _____ |
-| Azure Cloud Sites | _____ |
-| GCP Cloud Sites | _____ |
-| Total Cloud Sites | _____ |
-| Multi-AZ Deployments | _____ |
-| App Stack Sites | _____ |
+| AWS Cloud Sites |  |
+| Azure Cloud Sites |  |
+| GCP Cloud Sites |  |
+| Total Cloud Sites |  |
+| Multi-AZ Deployments |  |
+| App Stack Sites |  |
 
 Cloud regions to deploy:
 
 ```text
-AWS: _____________________________________________________________
-Azure: _____________________________________________________________
-GCP: _____________________________________________________________
+AWS:
+Azure:
+GCP:
 ```
 
 Additional notes:
 
 ```text
-_____________________________________________________________
-_____________________________________________________________
+
+
 ```

@@ -21,7 +21,7 @@ What client-side threats are you concerned about?
 
 Have you experienced client-side attacks?
 
-- [ ] Yes - Describe: _________________
+- [ ] Yes - Describe:
 - [ ] No
 - [ ] Unknown
 
@@ -35,12 +35,12 @@ Which pages handle sensitive data and require protection?
 
 | Page Type | URL Pattern | Sensitive Data Type |
 | --- | --- | --- |
-| Login pages | _____________ | [ ] Credentials |
-| Registration forms | _____________ | [ ] PII |
-| Checkout/Payment | _____________ | [ ] Payment card data |
-| Account settings | _____________ | [ ] PII [ ] Financial |
-| Contact forms | _____________ | [ ] PII |
-| Other: _______ | _____________ | _____________ |
+| Login pages |  | [ ] Credentials |
+| Registration forms |  | [ ] PII |
+| Checkout/Payment |  | [ ] Payment card data |
+| Account settings |  | [ ] PII [ ] Financial |
+| Contact forms |  | [ ] PII |
+| Other: |  |  |
 
 ### Transaction Volume
 
@@ -48,9 +48,9 @@ Estimated monthly transactions on protected pages:
 
 | Metric | Monthly Volume |
 | --- | --- |
-| Total page views (protected pages) | _____ |
-| Form submissions | _____ |
-| Payment transactions | _____ |
+| Total page views (protected pages) |  |
+| Form submissions |  |
+| Payment transactions |  |
 
 !!! note "Base Package"
     Client-Side Defense includes 1 million transactions in the base package.
@@ -65,14 +65,14 @@ How many third-party JavaScript resources are loaded on your pages?
 
 | Category | Estimated Count |
 | --- | --- |
-| Analytics (Google Analytics, etc.) | _____ |
-| Marketing/Advertising | _____ |
-| Social media widgets | _____ |
-| Chat/Support widgets | _____ |
-| Payment processors | _____ |
-| A/B testing tools | _____ |
-| Other third-party scripts | _____ |
-| **Total third-party scripts** | _____ |
+| Analytics (Google Analytics, etc.) |  |
+| Marketing/Advertising |  |
+| Social media widgets |  |
+| Chat/Support widgets |  |
+| Payment processors |  |
+| A/B testing tools |  |
+| Other third-party scripts |  |
+| **Total third-party scripts** |  |
 
 ### Script Sources
 
@@ -87,10 +87,10 @@ List critical third-party script sources:
 
 | Script Purpose | Source Domain | Critical? |
 | --- | --- | --- |
-| _____________ | _____________ | [ ] Yes [ ] No |
-| _____________ | _____________ | [ ] Yes [ ] No |
-| _____________ | _____________ | [ ] Yes [ ] No |
-| _____________ | _____________ | [ ] Yes [ ] No |
+|  |  | [ ] Yes [ ] No |
+|  |  | [ ] Yes [ ] No |
+|  |  | [ ] Yes [ ] No |
+|  |  | [ ] Yes [ ] No |
 
 ### Content Security Policy (CSP)
 
@@ -126,7 +126,7 @@ Which other compliance frameworks apply?
 - [ ] CCPA
 - [ ] HIPAA
 - [ ] SOC 2
-- [ ] Other: _________________
+- [ ] Other:
 
 ---
 
@@ -200,7 +200,7 @@ How will Client-Side Defense be deployed?
 
 Do you have F5 BIG-IP that could integrate with Client-Side Defense?
 
-- [ ] Yes - BIG-IP version: _____
+- [ ] Yes - BIG-IP version:
 - [ ] No
 
 ---
@@ -213,8 +213,8 @@ If yes, provide payment page URLs:
 
 | Payment Page URL | Expected Update Frequency |
 | --- | --- |
-| _____________ | [ ] Rarely [ ] Monthly [ ] Weekly [ ] Daily |
-| _____________ | [ ] Rarely [ ] Monthly [ ] Weekly [ ] Daily |
+|  | [ ] Rarely [ ] Monthly [ ] Weekly [ ] Daily |
+|  | [ ] Rarely [ ] Monthly [ ] Weekly [ ] Daily |
 
 ### Baseline Management
 
@@ -231,9 +231,9 @@ How often do your payment pages legitimately change?
 
 | Requirement | Value |
 | --- | --- |
-| Number of Protected Pages | _____ |
-| Estimated Monthly Transactions | _____ |
-| Third-Party Scripts to Monitor | _____ |
+| Number of Protected Pages |  |
+| Estimated Monthly Transactions |  |
+| Third-Party Scripts to Monitor |  |
 | PCI-DSS Compliance Required | [ ] Yes [ ] No |
 | Page Tamper Protection Required | [ ] Yes [ ] No |
 | Detection Mode | [ ] Monitor [ ] Block |
@@ -241,15 +241,15 @@ How often do your payment pages legitimately change?
 Critical pages requiring protection:
 
 ```text
-1. _____________________________________________________________
-2. _____________________________________________________________
-3. _____________________________________________________________
+1.
+2.
+3.
 ```
 
 Additional notes or special requirements:
 
 ```text
-_____________________________________________________________
-_____________________________________________________________
-_____________________________________________________________
+
+
+
 ```
