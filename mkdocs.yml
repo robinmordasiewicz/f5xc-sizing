@@ -107,6 +107,9 @@ extra:
 extra_css:
   - stylesheets/extra.css
 
+extra_javascript:
+  - javascripts/form-styling.js
+
 nav:
   - Home: index.md
   - Security:

@@ -21,7 +21,7 @@ What client-side threats are you concerned about?
 
 Have you experienced client-side attacks?
 
-- [ ] Yes - Describe:
+- [ ] Yes - Describe: ___
 - [ ] No
 - [ ] Unknown
 
@@ -35,12 +35,12 @@ Which pages handle sensitive data and require protection?
 
 | Page Type | URL Pattern | Sensitive Data Type |
 | --- | --- | --- |
-| Login pages |  | [ ] Credentials |
-| Registration forms |  | [ ] PII |
-| Checkout/Payment |  | [ ] Payment card data |
-| Account settings |  | [ ] PII [ ] Financial |
-| Contact forms |  | [ ] PII |
-| Other: |  |  |
+| Login pages | ___ | [ ] Credentials |
+| Registration forms | ___ | [ ] PII |
+| Checkout/Payment | ___ | [ ] Payment card data |
+| Account settings | ___ | [ ] PII [ ] Financial |
+| Contact forms | ___ | [ ] PII |
+| Other: ___ | ___ | ___ |
 
 ### Transaction Volume
 
@@ -48,9 +48,9 @@ Estimated monthly transactions on protected pages:
 
 | Metric | Monthly Volume |
 | --- | --- |
-| Total page views (protected pages) |  |
-| Form submissions |  |
-| Payment transactions |  |
+| Total page views (protected pages) | ___ |
+| Form submissions | ___ |
+| Payment transactions | ___ |
 
 !!! note "Base Package"
     Client-Side Defense includes 1 million transactions in the base package.
@@ -65,14 +65,14 @@ How many third-party JavaScript resources are loaded on your pages?
 
 | Category | Estimated Count |
 | --- | --- |
-| Analytics (Google Analytics, etc.) |  |
-| Marketing/Advertising |  |
-| Social media widgets |  |
-| Chat/Support widgets |  |
-| Payment processors |  |
-| A/B testing tools |  |
-| Other third-party scripts |  |
-| **Total third-party scripts** |  |
+| Analytics (Google Analytics, etc.) | ___ |
+| Marketing/Advertising | ___ |
+| Social media widgets | ___ |
+| Chat/Support widgets | ___ |
+| Payment processors | ___ |
+| A/B testing tools | ___ |
+| Other third-party scripts | ___ |
+| **Total third-party scripts** | ___ |
 
 ### Script Sources
 
@@ -87,10 +87,10 @@ List critical third-party script sources:
 
 | Script Purpose | Source Domain | Critical? |
 | --- | --- | --- |
-|  |  | [ ] Yes [ ] No |
-|  |  | [ ] Yes [ ] No |
-|  |  | [ ] Yes [ ] No |
-|  |  | [ ] Yes [ ] No |
+| ___ | ___ | [ ] Yes [ ] No |
+| ___ | ___ | [ ] Yes [ ] No |
+| ___ | ___ | [ ] Yes [ ] No |
+| ___ | ___ | [ ] Yes [ ] No |
 
 ### Content Security Policy (CSP)
 
@@ -126,7 +126,7 @@ Which other compliance frameworks apply?
 - [ ] CCPA
 - [ ] HIPAA
 - [ ] SOC 2
-- [ ] Other:
+- [ ] Other: ___
 
 ---
 
@@ -200,7 +200,7 @@ How will Client-Side Defense be deployed?
 
 Do you have F5 BIG-IP that could integrate with Client-Side Defense?
 
-- [ ] Yes - BIG-IP version:
+- [ ] Yes - BIG-IP version: ___
 - [ ] No
 
 ---
@@ -213,8 +213,8 @@ If yes, provide payment page URLs:
 
 | Payment Page URL | Expected Update Frequency |
 | --- | --- |
-|  | [ ] Rarely [ ] Monthly [ ] Weekly [ ] Daily |
-|  | [ ] Rarely [ ] Monthly [ ] Weekly [ ] Daily |
+| ___ | [ ] Rarely [ ] Monthly [ ] Weekly [ ] Daily |
+| ___ | [ ] Rarely [ ] Monthly [ ] Weekly [ ] Daily |
 
 ### Baseline Management
 
@@ -231,9 +231,9 @@ How often do your payment pages legitimately change?
 
 | Requirement | Value |
 | --- | --- |
-| Number of Protected Pages |  |
-| Estimated Monthly Transactions |  |
-| Third-Party Scripts to Monitor |  |
+| Number of Protected Pages | ___ |
+| Estimated Monthly Transactions | ___ |
+| Third-Party Scripts to Monitor | ___ |
 | PCI-DSS Compliance Required | [ ] Yes [ ] No |
 | Page Tamper Protection Required | [ ] Yes [ ] No |
 | Detection Mode | [ ] Monitor [ ] Block |
@@ -241,15 +241,13 @@ How often do your payment pages legitimately change?
 Critical pages requiring protection:
 
 ```text
-1.
-2.
-3.
+1. ___
+2. ___
+3. ___
 ```
 
 Additional notes or special requirements:
 
 ```text
-
-
-
+___
 ```

@@ -14,10 +14,10 @@ How many HTTP/HTTPS applications need load balancing?
 
 | Environment | Application Count |
 | --- | --- |
-| Production |  |
-| Staging/QA |  |
-| Development |  |
-| **Total** |  |
+| Production | ___ |
+| Staging/QA | ___ |
+| Development | ___ |
+| **Total** | ___ |
 
 ### Virtual Host Details
 
@@ -25,15 +25,15 @@ For each application, provide virtual host information:
 
 | Application Name | Domain(s) | Port(s) | Protocol |
 | --- | --- | --- | --- |
-|  |  | [ ] 80 [ ] 443 [ ] Other: | [ ] HTTP [ ] HTTPS [ ] Both |
-|  |  | [ ] 80 [ ] 443 [ ] Other: | [ ] HTTP [ ] HTTPS [ ] Both |
-|  |  | [ ] 80 [ ] 443 [ ] Other: | [ ] HTTP [ ] HTTPS [ ] Both |
-|  |  | [ ] 80 [ ] 443 [ ] Other: | [ ] HTTP [ ] HTTPS [ ] Both |
-|  |  | [ ] 80 [ ] 443 [ ] Other: | [ ] HTTP [ ] HTTPS [ ] Both |
+| ___ | ___ | [ ] 80 [ ] 443 [ ] Other: ___ | [ ] HTTP [ ] HTTPS [ ] Both |
+| ___ | ___ | [ ] 80 [ ] 443 [ ] Other: ___ | [ ] HTTP [ ] HTTPS [ ] Both |
+| ___ | ___ | [ ] 80 [ ] 443 [ ] Other: ___ | [ ] HTTP [ ] HTTPS [ ] Both |
+| ___ | ___ | [ ] 80 [ ] 443 [ ] Other: ___ | [ ] HTTP [ ] HTTPS [ ] Both |
+| ___ | ___ | [ ] 80 [ ] 443 [ ] Other: ___ | [ ] HTTP [ ] HTTPS [ ] Both |
 
 !!! note "Base Package"
     The base package includes 1 load balancer. Additional load balancers are
-available as add-ons.
+    available as add-ons.
 
 ---
 
@@ -43,9 +43,9 @@ available as add-ons.
 
 | Metric | Average | Peak |
 | --- | --- | --- |
-| Requests per second |  |  |
-| Concurrent connections |  |  |
-| Bandwidth (Mbps) |  |  |
+| Requests per second | ___ | ___ |
+| Concurrent connections | ___ | ___ |
+| Bandwidth (Mbps) | ___ | ___ |
 
 ### Traffic Patterns
 
@@ -53,7 +53,7 @@ What are your traffic patterns?
 
 - [ ] Steady throughout the day
 - [ ] Business hours peaks
-- [ ] Seasonal peaks (specify):
+- [ ] Seasonal peaks (specify): ___
 - [ ] Event-driven spikes
 - [ ] Unpredictable
 
@@ -61,11 +61,11 @@ Geographic distribution of users:
 
 | Region | Traffic Percentage |
 | --- | --- |
-| North America | % |
-| Europe | % |
-| Asia-Pacific | % |
-| South America | % |
-| Other | % |
+| North America | ___ % |
+| Europe | ___ % |
+| Asia-Pacific | ___ % |
+| South America | ___ % |
+| Other | ___ % |
 
 ---
 
@@ -77,9 +77,9 @@ For each application, describe origin servers:
 
 | Application | Origin Type | Count | Location |
 | --- | --- | --- | --- |
-|  | [ ] IP [ ] FQDN [ ] K8s Service |  |  |
-|  | [ ] IP [ ] FQDN [ ] K8s Service |  |  |
-|  | [ ] IP [ ] FQDN [ ] K8s Service |  |  |
+| ___ | [ ] IP [ ] FQDN [ ] K8s Service | ___ | ___ |
+| ___ | [ ] IP [ ] FQDN [ ] K8s Service | ___ | ___ |
+| ___ | [ ] IP [ ] FQDN [ ] K8s Service | ___ | ___ |
 
 ### Origin Connectivity
 
@@ -96,9 +96,9 @@ What protocol to use when connecting to origins?
 
 | Application | Origin Protocol | Origin Port |
 | --- | --- | --- |
-|  | [ ] HTTP [ ] HTTPS |  |
-|  | [ ] HTTP [ ] HTTPS |  |
-|  | [ ] HTTP [ ] HTTPS |  |
+| ___ | [ ] HTTP [ ] HTTPS | ___ |
+| ___ | [ ] HTTP [ ] HTTPS | ___ |
+| ___ | [ ] HTTP [ ] HTTPS | ___ |
 
 ---
 
@@ -121,7 +121,7 @@ Preferred load balancing algorithm:
 - [ ] Yes - Header based
 - [ ] No - Stateless application
 
-Persistence timeout: seconds
+Persistence timeout: ___ seconds
 
 ### Health Checks
 
@@ -130,11 +130,11 @@ Health check requirements:
 | Parameter | Value |
 | --- | --- |
 | Health check type | [ ] HTTP [ ] HTTPS [ ] TCP |
-| Check interval | seconds |
-| Check path (HTTP) |  |
-| Expected response code | [ ] 200 [ ] 2xx [ ] Custom: |
-| Healthy threshold | consecutive checks |
-| Unhealthy threshold | consecutive checks |
+| Check interval | ___ seconds |
+| Check path (HTTP) | ___ |
+| Expected response code | [ ] 200 [ ] 2xx [ ] Custom: ___ |
+| Healthy threshold | ___ consecutive checks |
+| Unhealthy threshold | ___ consecutive checks |
 
 ---
 
@@ -160,8 +160,8 @@ Custom certificate details:
 
 | Domain | Certificate Type | Key Type |
 | --- | --- | --- |
-|  | [ ] Single [ ] Wildcard [ ] SAN | [ ] RSA 2048 [ ] RSA 4096 [ ] ECC |
-|  | [ ] Single [ ] Wildcard [ ] SAN | [ ] RSA 2048 [ ] RSA 4096 [ ] ECC |
+| ___ | [ ] Single [ ] Wildcard [ ] SAN | [ ] RSA 2048 [ ] RSA 4096 [ ] ECC |
+| ___ | [ ] Single [ ] Wildcard [ ] SAN | [ ] RSA 2048 [ ] RSA 4096 [ ] ECC |
 
 ### TLS Requirements
 
@@ -181,7 +181,7 @@ Do you require mTLS client authentication?
 
 If yes:
 
-- Client CA certificate source:
+- Client CA certificate source: ___
 - XFCC header forwarding needed: [ ] Yes [ ] No
 
 ---
@@ -201,7 +201,7 @@ Example routing requirements:
 | --- | --- |
 | Path: /api/* | API origin pool |
 | Header: X-Version: v2 | V2 origin pool |
-|  |  |
+| ___ | ___ |
 
 ### Traffic Policies
 
@@ -215,9 +215,9 @@ Example routing requirements:
 
 | Parameter | Value |
 | --- | --- |
-| Request timeout | seconds |
-| Idle timeout | seconds |
-| Maximum request body size | MB |
+| Request timeout | ___ seconds |
+| Idle timeout | ___ seconds |
+| Maximum request body size | ___ MB |
 
 ---
 
@@ -247,7 +247,7 @@ Failover configuration:
 
 | Primary Pool | Secondary Pool | Failover Condition |
 | --- | --- | --- |
-|  |  | [ ] Health check [ ] Manual |
+| ___ | ___ | [ ] Health check [ ] Manual |
 
 ---
 
@@ -274,7 +274,7 @@ Should Bot Defense be enabled?
 - [ ] Rate limiting
 - [ ] Custom rules
 
-Number of service policy rules:
+Number of service policy rules: ___
 
 ---
 
@@ -294,8 +294,8 @@ What logging do you need?
 Where should logs be sent?
 
 - [ ] F5 XC Console (default)
-- [ ] External SIEM:
-- [ ] Cloud storage (S3, etc.):
+- [ ] External SIEM: ___
+- [ ] Cloud storage (S3, etc.): ___
 
 ### Metrics and Monitoring
 
@@ -313,9 +313,9 @@ What metrics do you need?
 
 | Requirement | Value |
 | --- | --- |
-| Number of Load Balancers |  |
-| Total Applications |  |
-| Estimated Peak RPS |  |
+| Number of Load Balancers | ___ |
+| Total Applications | ___ |
+| Estimated Peak RPS | ___ |
 | TLS Certificate Management | [ ] Automatic [ ] Custom [ ] Mixed |
 | WAF Integration | [ ] Yes [ ] No |
 | Multi-Region | [ ] Yes [ ] No |
@@ -324,7 +324,5 @@ What metrics do you need?
 Additional notes or special requirements:
 
 ```text
-
-
-
+___
 ```

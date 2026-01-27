@@ -18,7 +18,7 @@ Who is your current DNS provider?
 
 | Current Provider | Keep or Migrate |
 | --- | --- |
-|  | [ ] Migrate to F5 [ ] Keep as primary [ ] Keep as secondary |
+| ___ | [ ] Migrate to F5 [ ] Keep as primary [ ] Keep as secondary |
 
 ---
 
@@ -30,9 +30,9 @@ How many DNS zones do you need?
 
 | Zone Type | Count |
 | --- | --- |
-| Primary zones |  |
-| Secondary zones |  |
-| **Total zones** |  |
+| Primary zones | ___ |
+| Secondary zones | ___ |
+| **Total zones** | ___ |
 
 !!! note "Base Package"
     Standard includes 250 primary or secondary zones.
@@ -43,11 +43,11 @@ List your primary domains/zones:
 
 | Domain | Zone Type | Records (est.) | Query Volume |
 | --- | --- | --- | --- |
-|  | [ ] Primary [ ] Secondary |  | qps |
-|  | [ ] Primary [ ] Secondary |  | qps |
-|  | [ ] Primary [ ] Secondary |  | qps |
-|  | [ ] Primary [ ] Secondary |  | qps |
-|  | [ ] Primary [ ] Secondary |  | qps |
+| ___ | [ ] Primary [ ] Secondary | ___ | ___ qps |
+| ___ | [ ] Primary [ ] Secondary | ___ | ___ qps |
+| ___ | [ ] Primary [ ] Secondary | ___ | ___ qps |
+| ___ | [ ] Primary [ ] Secondary | ___ | ___ qps |
+| ___ | [ ] Primary [ ] Secondary | ___ | ___ qps |
 
 ### Record Types
 
@@ -62,9 +62,9 @@ What DNS record types do you use?
 - [ ] NS (Nameserver)
 - [ ] CAA (Certificate Authority Authorization)
 - [ ] PTR (Reverse DNS)
-- [ ] Other:
+- [ ] Other: ___
 
-Total estimated DNS records:
+Total estimated DNS records: ___
 
 ---
 
@@ -92,12 +92,12 @@ How many DNS load balancer records do you need?
 
 | Record/Domain | Type | Locations |
 | --- | --- | --- |
-|  | [ ] Geo [ ] Failover [ ] Weighted |  |
-|  | [ ] Geo [ ] Failover [ ] Weighted |  |
-|  | [ ] Geo [ ] Failover [ ] Weighted |  |
-|  | [ ] Geo [ ] Failover [ ] Weighted |  |
+| ___ | [ ] Geo [ ] Failover [ ] Weighted | ___ |
+| ___ | [ ] Geo [ ] Failover [ ] Weighted | ___ |
+| ___ | [ ] Geo [ ] Failover [ ] Weighted | ___ |
+| ___ | [ ] Geo [ ] Failover [ ] Weighted | ___ |
 
-Total DNS LB records needed:
+Total DNS LB records needed: ___
 
 ---
 
@@ -112,21 +112,21 @@ Health check details:
 
 | Target | Check Type | Interval |
 | --- | --- | --- |
-|  | [ ] HTTP [ ] HTTPS [ ] TCP [ ] ICMP | sec |
-|  | [ ] HTTP [ ] HTTPS [ ] TCP [ ] ICMP | sec |
-|  | [ ] HTTP [ ] HTTPS [ ] TCP [ ] ICMP | sec |
-|  | [ ] HTTP [ ] HTTPS [ ] TCP [ ] ICMP | sec |
+| ___ | [ ] HTTP [ ] HTTPS [ ] TCP [ ] ICMP | ___ sec |
+| ___ | [ ] HTTP [ ] HTTPS [ ] TCP [ ] ICMP | ___ sec |
+| ___ | [ ] HTTP [ ] HTTPS [ ] TCP [ ] ICMP | ___ sec |
+| ___ | [ ] HTTP [ ] HTTPS [ ] TCP [ ] ICMP | ___ sec |
 
-Total health checks needed:
+Total health checks needed: ___
 
 ### Failover Configuration
 
 | Parameter | Value |
 | --- | --- |
-| Health check interval | seconds |
-| Failure threshold | consecutive failures |
-| Recovery threshold | consecutive successes |
-| TTL during failover | seconds |
+| Health check interval | ___ seconds |
+| Failure threshold | ___ consecutive failures |
+| Recovery threshold | ___ consecutive successes |
+| TTL during failover | ___ seconds |
 
 ---
 
@@ -174,8 +174,8 @@ External DNS servers for zone transfer:
 
 | Server | IP Address | Direction |
 | --- | --- | --- |
-|  |  | [ ] To F5 [ ] From F5 |
-|  |  | [ ] To F5 [ ] From F5 |
+| ___ | ___ | [ ] To F5 [ ] From F5 |
+| ___ | ___ | [ ] To F5 [ ] From F5 |
 
 ### Zone Import
 
@@ -185,7 +185,7 @@ Do you have existing zone files to import?
 - [ ] Yes - BIND format
 - [ ] No - Creating zones from scratch
 
-Number of zone files to import:
+Number of zone files to import: ___
 
 ### DNS Management Integration
 
@@ -204,10 +204,10 @@ How will DNS be managed?
 
 | Metric | Value |
 | --- | --- |
-| Average queries per second |  |
-| Peak queries per second |  |
-| Daily query volume |  |
-| Monthly query volume |  |
+| Average queries per second | ___ |
+| Peak queries per second | ___ |
+| Daily query volume | ___ |
+| Monthly query volume | ___ |
 
 ### Query Sources
 
@@ -215,11 +215,11 @@ Where do DNS queries originate?
 
 | Region | Percentage |
 | --- | --- |
-| North America | % |
-| Europe | % |
-| Asia-Pacific | % |
-| South America | % |
-| Other | % |
+| North America | ___ % |
+| Europe | ___ % |
+| Asia-Pacific | ___ % |
+| South America | ___ % |
+| Other | ___ % |
 
 ---
 
@@ -254,14 +254,14 @@ Will you delegate domains to F5 nameservers?
 - [ ] Yes - Update NS records at registrar
 - [ ] No - Using F5 as secondary only
 
-Current registrar:
+Current registrar: ___
 
 ### Nameserver Configuration
 
 Nameserver preference:
 
 - [ ] F5 provided nameservers
-- [ ] Custom/vanity nameservers:
+- [ ] Custom/vanity nameservers: ___
 
 ---
 
@@ -269,26 +269,25 @@ Nameserver preference:
 
 | Requirement | Value |
 | --- | --- |
-| Total DNS Zones |  |
-| Primary Zones |  |
-| Secondary Zones |  |
-| DNS LB Records |  |
-| Health Checks |  |
-| Estimated QPS |  |
+| Total DNS Zones | ___ |
+| Primary Zones | ___ |
+| Secondary Zones | ___ |
+| DNS LB Records | ___ |
+| Health Checks | ___ |
+| Estimated QPS | ___ |
 | DNSSEC Required | [ ] Yes [ ] No |
 | Tier Required | [ ] Standard [ ] Advanced |
 
 Domains to migrate:
 
 ```text
-1.
-2.
-3.
+1. ___
+2. ___
+3. ___
 ```
 
 Additional notes:
 
 ```text
-
-
+___
 ```

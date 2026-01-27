@@ -18,7 +18,7 @@ Why do you need Customer Edge sites?
 - [ ] **Edge compute** - Run workloads locally
 - [ ] **Low latency** - Local processing requirements
 - [ ] **Data residency** - Keep data local
-- [ ] Other:
+- [ ] Other: ___
 
 ---
 
@@ -30,21 +30,21 @@ Where will CE sites be deployed?
 
 | Site Name | Location | Environment | Purpose |
 | --- | --- | --- | --- |
-|  |  | ( ) DC ( ) Branch ( ) Edge ( ) Cloud |  |
-|  |  | ( ) DC ( ) Branch ( ) Edge ( ) Cloud |  |
-|  |  | ( ) DC ( ) Branch ( ) Edge ( ) Cloud |  |
-|  |  | ( ) DC ( ) Branch ( ) Edge ( ) Cloud |  |
-|  |  | ( ) DC ( ) Branch ( ) Edge ( ) Cloud |  |
+| ___ | ___ | ( ) DC ( ) Branch ( ) Edge ( ) Cloud | ___ |
+| ___ | ___ | ( ) DC ( ) Branch ( ) Edge ( ) Cloud | ___ |
+| ___ | ___ | ( ) DC ( ) Branch ( ) Edge ( ) Cloud | ___ |
+| ___ | ___ | ( ) DC ( ) Branch ( ) Edge ( ) Cloud | ___ |
+| ___ | ___ | ( ) DC ( ) Branch ( ) Edge ( ) Cloud | ___ |
 
-Total CE sites:
+Total CE sites: ___
 
 ### Site Criticality
 
 | Site | Criticality | High Availability Required |
 | --- | --- | --- |
-|  | ( ) Critical ( ) High ( ) Medium ( ) Low | ( ) Yes (3-node) ( ) No (1-node) |
-|  | ( ) Critical ( ) High ( ) Medium ( ) Low | ( ) Yes (3-node) ( ) No (1-node) |
-|  | ( ) Critical ( ) High ( ) Medium ( ) Low | ( ) Yes (3-node) ( ) No (1-node) |
+| ___ | ( ) Critical ( ) High ( ) Medium ( ) Low | ( ) Yes (3-node) ( ) No (1-node) |
+| ___ | ( ) Critical ( ) High ( ) Medium ( ) Low | ( ) Yes (3-node) ( ) No (1-node) |
+| ___ | ( ) Critical ( ) High ( ) Medium ( ) Low | ( ) Yes (3-node) ( ) No (1-node) |
 
 ---
 
@@ -56,9 +56,9 @@ How will CE sites be deployed?
 
 | Site | Platform | Hypervisor/OS |
 | --- | --- | --- |
-|  | ( ) VM ( ) Bare Metal ( ) Cloud VM |  |
-|  | ( ) VM ( ) Bare Metal ( ) Cloud VM |  |
-|  | ( ) VM ( ) Bare Metal ( ) Cloud VM |  |
+| ___ | ( ) VM ( ) Bare Metal ( ) Cloud VM | ___ |
+| ___ | ( ) VM ( ) Bare Metal ( ) Cloud VM | ___ |
+| ___ | ( ) VM ( ) Bare Metal ( ) Cloud VM | ___ |
 
 ### Node Sizing
 
@@ -66,17 +66,17 @@ What size CE nodes do you need?
 
 !!! info "CE Node Size Reference"
 
-| Size | vCPU | RAM | Disk | Use Case |
-| --- | --- | --- | --- | --- |
-| **Standard** | 8 | 32GB | 80GB | Basic networking/security |
-| **App Stack** | 8 | 32GB | 100GB | + Container workloads |
-| **Large** | 16 | 64GB | 100GB | High throughput/complex policies |
+    | Size | vCPU | RAM | Disk | Use Case |
+    | --- | --- | --- | --- | --- |
+    | **Standard** | 8 | 32GB | 80GB | Basic networking/security |
+    | **App Stack** | 8 | 32GB | 100GB | + Container workloads |
+    | **Large** | 16 | 64GB | 100GB | High throughput/complex policies |
 
 | Site | Size | Nodes | Total vCPU | Total RAM |
 | --- | --- | --- | --- | --- |
-|  | ( ) Standard ( ) App Stack ( ) Large | ( ) 1 ( ) 3 |  | GB |
-|  | ( ) Standard ( ) App Stack ( ) Large | ( ) 1 ( ) 3 |  | GB |
-|  | ( ) Standard ( ) App Stack ( ) Large | ( ) 1 ( ) 3 |  | GB |
+| ___ | ( ) Standard ( ) App Stack ( ) Large | ( ) 1 ( ) 3 | ___ | ___ GB |
+| ___ | ( ) Standard ( ) App Stack ( ) Large | ( ) 1 ( ) 3 | ___ | ___ GB |
+| ___ | ( ) Standard ( ) App Stack ( ) Large | ( ) 1 ( ) 3 | ___ | ___ GB |
 
 ### High Availability Configuration
 
@@ -84,8 +84,8 @@ For production sites, 3-node clusters are recommended:
 
 | Site | HA Mode | Nodes | Notes |
 | --- | --- | --- | --- |
-|  | ( ) Single ( ) 3-node HA |  |  |
-|  | ( ) Single ( ) 3-node HA |  |  |
+| ___ | ( ) Single ( ) 3-node HA | ___ | ___ |
+| ___ | ( ) Single ( ) 3-node HA | ___ | ___ |
 
 ---
 
@@ -103,17 +103,17 @@ How many network interfaces per CE node?
 
 | Site | Interface | Subnet | Gateway | DHCP or Static |
 | --- | --- | --- | --- | --- |
-|  | Outside |  |  | ( ) DHCP ( ) Static |
-|  | Inside |  |  | ( ) DHCP ( ) Static |
-|  | Outside |  |  | ( ) DHCP ( ) Static |
-|  | Inside |  |  | ( ) DHCP ( ) Static |
+| ___ | Outside | ___ | ___ | ( ) DHCP ( ) Static |
+| ___ | Inside | ___ | ___ | ( ) DHCP ( ) Static |
+| ___ | Outside | ___ | ___ | ( ) DHCP ( ) Static |
+| ___ | Inside | ___ | ___ | ( ) DHCP ( ) Static |
 
 ### DNS Configuration
 
 | Site | DNS Servers |
 | --- | --- |
-|  |  |
-|  |  |
+| ___ | ___ |
+| ___ | ___ |
 
 ### Internet Connectivity
 
@@ -121,8 +121,8 @@ How do CE sites connect to F5 Regional Edges?
 
 | Site | Internet Access | Proxy Required |
 | --- | --- | --- |
-|  | ( ) Direct ( ) NAT ( ) Proxy | ( ) Yes ( ) No |
-|  | ( ) Direct ( ) NAT ( ) Proxy | ( ) Yes ( ) No |
+| ___ | ( ) Direct ( ) NAT ( ) Proxy | ( ) Yes ( ) No |
+| ___ | ( ) Direct ( ) NAT ( ) Proxy | ( ) Yes ( ) No |
 
 ---
 
@@ -134,9 +134,9 @@ What services will run at CE sites?
 
 | Site | Services |
 | --- | --- |
-|  | [ ] HTTP LB [ ] TCP LB [ ] WAF [ ] Network Firewall [ ] App Stack |
-|  | [ ] HTTP LB [ ] TCP LB [ ] WAF [ ] Network Firewall [ ] App Stack |
-|  | [ ] HTTP LB [ ] TCP LB [ ] WAF [ ] Network Firewall [ ] App Stack |
+| ___ | [ ] HTTP LB [ ] TCP LB [ ] WAF [ ] Network Firewall [ ] App Stack |
+| ___ | [ ] HTTP LB [ ] TCP LB [ ] WAF [ ] Network Firewall [ ] App Stack |
+| ___ | [ ] HTTP LB [ ] TCP LB [ ] WAF [ ] Network Firewall [ ] App Stack |
 
 ### Origin Servers Behind CE
 
@@ -144,17 +144,17 @@ What applications/services are behind each CE?
 
 | Site | Applications | Servers/IPs |
 | --- | --- | --- |
-|  |  | servers |
-|  |  | servers |
-|  |  | servers |
+| ___ | ___ | ___ |
+| ___ | ___ | ___ |
+| ___ | ___ | ___ |
 
 ### Traffic Volume Through CE
 
 | Site | Requests/sec | Bandwidth | Connections |
 | --- | --- | --- | --- |
-|  |  | Mbps |  |
-|  |  | Mbps |  |
-|  |  | Mbps |  |
+| ___ | ___ | ___ Mbps | ___ |
+| ___ | ___ | ___ Mbps | ___ |
+| ___ | ___ | ___ Mbps | ___ |
 
 ---
 
@@ -167,7 +167,7 @@ What applications/services are behind each CE?
 - [ ] Yes - East-West filtering
 - [ ] No
 
-Estimated firewall rules per site:
+Estimated firewall rules per site: ___
 
 ### Forward Proxy at CE
 
@@ -199,8 +199,8 @@ Will CE sites participate in site mesh?
 
 | Site | Connects To | Tunnel Type |
 | --- | --- | --- |
-|  |  | ( ) IPsec ( ) SSL VPN |
-|  |  | ( ) IPsec ( ) SSL VPN |
+| ___ | ___ | ( ) IPsec ( ) SSL VPN |
+| ___ | ___ | ( ) IPsec ( ) SSL VPN |
 
 ---
 
@@ -215,8 +215,8 @@ If yes:
 
 | Site | Containers | Storage | Registry |
 | --- | --- | --- | --- |
-|  |  | GB |  |
-|  |  | GB |  |
+| ___ | ___ | ___ GB | ___ |
+| ___ | ___ | ___ GB | ___ |
 
 ---
 
@@ -243,8 +243,8 @@ What monitoring is required?
 
 | Site | Maintenance Window | Change Control |
 | --- | --- | --- |
-|  |  | ( ) Standard ( ) Expedited ( ) Emergency only |
-|  |  | ( ) Standard ( ) Expedited ( ) Emergency only |
+| ___ | ___ | ( ) Standard ( ) Expedited ( ) Emergency only |
+| ___ | ___ | ( ) Standard ( ) Expedited ( ) Emergency only |
 
 ---
 
@@ -252,25 +252,24 @@ What monitoring is required?
 
 | Requirement | Value |
 | --- | --- |
-| Total CE Sites |  |
-| HA Sites (3-node) |  |
-| Single Node Sites |  |
-| Total CE Nodes |  |
-| Total vCPU Required |  |
-| Total RAM Required | GB |
-| App Stack Sites |  |
+| Total CE Sites | ___ |
+| HA Sites (3-node) | ___ |
+| Single Node Sites | ___ |
+| Total CE Nodes | ___ |
+| Total vCPU Required | ___ |
+| Total RAM Required | ___ GB |
+| App Stack Sites | ___ |
 
 Site deployment timeline:
 
 | Site | Target Deployment Date |
 | --- | --- |
-|  |  |
-|  |  |
-|  |  |
+| ___ | ___ |
+| ___ | ___ |
+| ___ | ___ |
 
 Additional notes:
 
 ```text
-
-
+___
 ```
