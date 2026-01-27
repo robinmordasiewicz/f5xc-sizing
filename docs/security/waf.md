@@ -14,10 +14,10 @@ How many web applications require WAF protection?
 
 | Category | Count |
 | --- | --- |
-| Production Applications |  |
-| Staging/QA Applications |  |
-| Development Applications |  |
-| **Total Applications** |  |
+| Production Applications | ___ |
+| Staging/QA Applications | ___ |
+| Development Applications | ___ |
+| **Total Applications** | ___ |
 
 ### Application Details
 
@@ -25,11 +25,11 @@ For each major application, provide the following:
 
 | Application Name | Domain/FQDN | Environment | Protocol | Criticality |
 | --- | --- | --- | --- | --- |
-|  |  | [ ] Prod [ ] Stage [ ] Dev | [ ] HTTP [ ] HTTPS | [ ] Critical [ ] High [ ] Medium [ ] Low |
-|  |  | [ ] Prod [ ] Stage [ ] Dev | [ ] HTTP [ ] HTTPS | [ ] Critical [ ] High [ ] Medium [ ] Low |
-|  |  | [ ] Prod [ ] Stage [ ] Dev | [ ] HTTP [ ] HTTPS | [ ] Critical [ ] High [ ] Medium [ ] Low |
-|  |  | [ ] Prod [ ] Stage [ ] Dev | [ ] HTTP [ ] HTTPS | [ ] Critical [ ] High [ ] Medium [ ] Low |
-|  |  | [ ] Prod [ ] Stage [ ] Dev | [ ] HTTP [ ] HTTPS | [ ] Critical [ ] High [ ] Medium [ ] Low |
+| ___ | ___ | [ ] Prod [ ] Stage [ ] Dev | [ ] HTTP [ ] HTTPS | [ ] Critical [ ] High [ ] Medium [ ] Low |
+| ___ | ___ | [ ] Prod [ ] Stage [ ] Dev | [ ] HTTP [ ] HTTPS | [ ] Critical [ ] High [ ] Medium [ ] Low |
+| ___ | ___ | [ ] Prod [ ] Stage [ ] Dev | [ ] HTTP [ ] HTTPS | [ ] Critical [ ] High [ ] Medium [ ] Low |
+| ___ | ___ | [ ] Prod [ ] Stage [ ] Dev | [ ] HTTP [ ] HTTPS | [ ] Critical [ ] High [ ] Medium [ ] Low |
+| ___ | ___ | [ ] Prod [ ] Stage [ ] Dev | [ ] HTTP [ ] HTTPS | [ ] Critical [ ] High [ ] Medium [ ] Low |
 
 !!! info "Additional Applications"
     If you have more than 5 applications, please attach a separate spreadsheet
@@ -45,7 +45,7 @@ What types of applications are you protecting?
 - [ ] API-only services (covered in API Security section)
 - [ ] Legacy applications
 - [ ] Microservices
-- [ ] Other:
+- [ ] Other: ___
 
 ---
 
@@ -57,9 +57,9 @@ Provide estimated request volumes:
 
 | Metric | Average | Peak |
 | --- | --- | --- |
-| Requests per Second (RPS) |  |  |
-| Requests per Day |  |  |
-| Requests per Month |  |  |
+| Requests per Second (RPS) | ___ | ___ |
+| Requests per Day | ___ | ___ |
+| Requests per Month | ___ | ___ |
 
 !!! note "Base Package Includes"
     Standard tier includes 30 million requests per month from Regional Edges.
@@ -68,9 +68,9 @@ Provide estimated request volumes:
 
 | Metric | Value | Unit |
 | --- | --- | --- |
-| Average Inbound Bandwidth |  | Mbps |
-| Peak Inbound Bandwidth |  | Mbps |
-| Average Response Size |  | KB |
+| Average Inbound Bandwidth | ___ | Mbps |
+| Peak Inbound Bandwidth | ___ | Mbps |
+| Average Response Size | ___ | KB |
 
 ### Geographic Distribution
 
@@ -78,11 +78,11 @@ Where are your users located?
 
 | Region | Percentage of Traffic |
 | --- | --- |
-| North America | % |
-| Europe | % |
-| Asia-Pacific | % |
-| South America | % |
-| Middle East / Africa | % |
+| North America | ___ % |
+| Europe | ___ % |
+| Asia-Pacific | ___ % |
+| South America | ___ % |
+| Middle East / Africa | ___ % |
 | **Total** | 100% |
 
 ---
@@ -125,7 +125,7 @@ What WAF operating mode do you prefer?
 - [ ] **Monitoring Mode** - Log but don't block (for initial deployment)
 - [ ] **Start in Monitoring, transition to Blocking** after tuning period
 
-Tuning period preference: days/weeks
+Tuning period preference: ___ days/weeks
 
 ---
 
@@ -137,11 +137,11 @@ Where are your application origin servers hosted?
 
 | Location | Count | Provider |
 | --- | --- | --- |
-| AWS |  | Region(s): |
-| Azure |  | Region(s): |
-| Google Cloud |  | Region(s): |
-| On-Premises Data Center |  | Location(s): |
-| Other Cloud |  | Provider: |
+| AWS | ___ | Region(s): ___ |
+| Azure | ___ | Region(s): ___ |
+| Google Cloud | ___ | Region(s): ___ |
+| On-Premises Data Center | ___ | Location(s): ___ |
+| Other Cloud | ___ | Provider: ___ |
 
 ### Origin Connectivity
 
@@ -160,7 +160,7 @@ Do you have multiple origin servers per application?
 - [ ] Yes - Active/Standby failover
 - [ ] No - Single origin server
 
-Number of origin servers per application:
+Number of origin servers per application: ___
 
 ---
 
@@ -178,15 +178,15 @@ How do you want to manage TLS certificates?
 
 | Domain | Certificate Type | Expiration | Notes |
 | --- | --- | --- | --- |
-|  | [ ] Single [ ] Wildcard [ ] SAN |  |  |
-|  | [ ] Single [ ] Wildcard [ ] SAN |  |  |
-|  | [ ] Single [ ] Wildcard [ ] SAN |  |  |
+| ___ | [ ] Single [ ] Wildcard [ ] SAN | ___ | ___ |
+| ___ | [ ] Single [ ] Wildcard [ ] SAN | ___ | ___ |
+| ___ | [ ] Single [ ] Wildcard [ ] SAN | ___ | ___ |
 
 ### TLS Requirements
 
 - Minimum TLS version required: [ ] TLS 1.2 [ ] TLS 1.3
 - Do you require mTLS (Mutual TLS)? [ ] Yes [ ] No
-- Cipher suite requirements:
+- Cipher suite requirements: ___
 
 ---
 
@@ -198,7 +198,7 @@ How do you want to manage TLS certificates?
 - [ ] IP Denylisting (block specific IPs)
 - [ ] Geographic restrictions (block certain countries)
 
-Number of IP prefixes to manage:
+Number of IP prefixes to manage: ___
 
 ### Rate Limiting
 
@@ -209,9 +209,9 @@ If yes, provide requirements:
 
 | Scope | Limit | Time Window |
 | --- | --- | --- |
-| Per IP Address | requests | seconds |
-| Per User | requests | seconds |
-| Per API Endpoint | requests | seconds |
+| Per IP Address | ___ requests | ___ seconds |
+| Per User | ___ requests | ___ seconds |
+| Per API Endpoint | ___ requests | ___ seconds |
 
 ### Geographic Blocking (OFAC Compliance)
 
@@ -219,7 +219,7 @@ If yes, provide requirements:
 - [ ] Yes - Custom country list
 - [ ] No
 
-Countries to block:
+Countries to block: ___
 
 ---
 
@@ -244,11 +244,11 @@ Where should logs be sent?
 - [ ] AWS S3
 - [ ] Azure Blob Storage
 - [ ] Sumo Logic
-- [ ] Other SIEM:
+- [ ] Other SIEM: ___
 
 ### Retention Requirements
 
-Log retention period required: days
+Log retention period required: ___ days
 
 ---
 
@@ -276,16 +276,14 @@ Do you want F5 to manage WAF policies?
 
 | Requirement | Value |
 | --- | --- |
-| Number of Applications |  |
-| Estimated Monthly Requests |  |
+| Number of Applications | ___ |
+| Estimated Monthly Requests | ___ |
 | Tier Required | [ ] Standard [ ] Advanced |
 | Support Level | [ ] Standard [ ] Enhanced [ ] Enhanced Plus |
-| Primary Deployment Region |  |
+| Primary Deployment Region | ___ |
 
 Additional notes or special requirements:
 
 ```text
-
-
-
+___
 ```

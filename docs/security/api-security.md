@@ -26,10 +26,10 @@ If you know your API landscape, provide details:
 
 | Category | Count |
 | --- | --- |
-| Public APIs (internet-facing) |  |
-| Partner APIs (B2B) |  |
-| Internal APIs |  |
-| **Total API Endpoints** |  |
+| Public APIs (internet-facing) | ___ |
+| Partner APIs (B2B) | ___ |
+| Internal APIs | ___ |
+| **Total API Endpoints** | ___ |
 
 ### API Details
 
@@ -37,10 +37,10 @@ For major API services, provide:
 
 | API Name/Service | Base Path | Protocol | Auth Method | Documentation |
 | --- | --- | --- | --- | --- |
-|  | /api/v1/... | [ ] REST [ ] GraphQL [ ] gRPC | [ ] API Key [ ] OAuth [ ] JWT [ ] None | [ ] OpenAPI [ ] None |
-|  | /api/v1/... | [ ] REST [ ] GraphQL [ ] gRPC | [ ] API Key [ ] OAuth [ ] JWT [ ] None | [ ] OpenAPI [ ] None |
-|  | /api/v1/... | [ ] REST [ ] GraphQL [ ] gRPC | [ ] API Key [ ] OAuth [ ] JWT [ ] None | [ ] OpenAPI [ ] None |
-|  | /api/v1/... | [ ] REST [ ] GraphQL [ ] gRPC | [ ] API Key [ ] OAuth [ ] JWT [ ] None | [ ] OpenAPI [ ] None |
+| ___ | ___ | [ ] REST [ ] GraphQL [ ] gRPC | [ ] API Key [ ] OAuth [ ] JWT [ ] None | [ ] OpenAPI [ ] None |
+| ___ | ___ | [ ] REST [ ] GraphQL [ ] gRPC | [ ] API Key [ ] OAuth [ ] JWT [ ] None | [ ] OpenAPI [ ] None |
+| ___ | ___ | [ ] REST [ ] GraphQL [ ] gRPC | [ ] API Key [ ] OAuth [ ] JWT [ ] None | [ ] OpenAPI [ ] None |
+| ___ | ___ | [ ] REST [ ] GraphQL [ ] gRPC | [ ] API Key [ ] OAuth [ ] JWT [ ] None | [ ] OpenAPI [ ] None |
 
 ---
 
@@ -50,9 +50,9 @@ For major API services, provide:
 
 | Metric | Average | Peak |
 | --- | --- | --- |
-| API Requests per Second |  |  |
-| API Requests per Day |  |  |
-| API Requests per Month |  |  |
+| API Requests per Second | ___ | ___ |
+| API Requests per Day | ___ | ___ |
+| API Requests per Month | ___ | ___ |
 
 !!! note "Base Package"
     Standard includes up to 500,000 API requests per month for API protection.
@@ -63,12 +63,12 @@ Who consumes your APIs?
 
 | Consumer Type | Percentage | Estimated Daily Requests |
 | --- | --- | --- |
-| Web Applications (browsers) | % |  |
-| Mobile Applications | % |  |
-| Partner Integrations (B2B) | % |  |
-| Internal Services (M2M) | % |  |
-| Third-Party Developers | % |  |
-| **Total** | 100% |  |
+| Web Applications (browsers) | ___ % | ___ |
+| Mobile Applications | ___ % | ___ |
+| Partner Integrations (B2B) | ___ % | ___ |
+| Internal Services (M2M) | ___ % | ___ |
+| Third-Party Developers | ___ % | ___ |
+| **Total** | 100% | ___ |
 
 ---
 
@@ -108,11 +108,11 @@ If yes, provide requirements:
 
 | Rate Limit Type | Limit | Time Window | Action |
 | --- | --- | --- | --- |
-| Per API Key | requests | [ ] second [ ] minute [ ] hour | [ ] Block [ ] Throttle |
-| Per User/Token | requests | [ ] second [ ] minute [ ] hour | [ ] Block [ ] Throttle |
-| Per Endpoint | requests | [ ] second [ ] minute [ ] hour | [ ] Block [ ] Throttle |
-| Per IP Address | requests | [ ] second [ ] minute [ ] hour | [ ] Block [ ] Throttle |
-| Global (all traffic) | requests | [ ] second [ ] minute [ ] hour | [ ] Block [ ] Throttle |
+| Per API Key | ___ requests | [ ] second [ ] minute [ ] hour | [ ] Block [ ] Throttle |
+| Per User/Token | ___ requests | [ ] second [ ] minute [ ] hour | [ ] Block [ ] Throttle |
+| Per Endpoint | ___ requests | [ ] second [ ] minute [ ] hour | [ ] Block [ ] Throttle |
+| Per IP Address | ___ requests | [ ] second [ ] minute [ ] hour | [ ] Block [ ] Throttle |
+| Global (all traffic) | ___ requests | [ ] second [ ] minute [ ] hour | [ ] Block [ ] Throttle |
 
 ### Sensitive Data Protection
 
@@ -126,7 +126,7 @@ If yes, what data types need detection?
 - [ ] Email Addresses
 - [ ] Phone Numbers
 - [ ] Healthcare Data (HIPAA)
-- [ ] Custom Patterns:
+- [ ] Custom Patterns: ___
 
 What action should be taken when sensitive data is detected?
 
@@ -159,7 +159,7 @@ If using JWT, do you need F5 XC to validate tokens?
 - [ ] Yes - Validate JWT claims (expiration, audience, etc.)
 - [ ] No - Application handles JWT validation
 
-JWT issuer (if applicable):
+JWT issuer (if applicable): ___
 
 ### Authorization Requirements
 
@@ -199,8 +199,7 @@ Have you experienced any API-specific attacks?
 Describe any specific concerns:
 
 ```text
-
-
+___
 ```
 
 ---
@@ -225,7 +224,7 @@ How will you manage API specifications?
 - [ ] Generate from live traffic discovery
 - [ ] CI/CD pipeline integration
 
-Number of specification files:
+Number of specification files: ___
 
 ### Specification Source
 
@@ -236,7 +235,7 @@ Where are your API specifications stored?
 - [ ] Internal documentation system
 - [ ] AWS API Gateway
 - [ ] Azure API Management
-- [ ] Other:
+- [ ] Other: ___
 
 ---
 
@@ -279,7 +278,7 @@ Do you have existing API management infrastructure?
 | Google Apigee | [ ] | [ ] |
 | Kong | [ ] | [ ] |
 | MuleSoft | [ ] | [ ] |
-| Other: | [ ] | [ ] |
+| Other: ___ | [ ] | [ ] |
 
 ### CI/CD Integration
 
@@ -293,7 +292,7 @@ CI/CD platforms in use:
 - [ ] GitHub Actions
 - [ ] GitLab CI
 - [ ] Azure DevOps
-- [ ] Other:
+- [ ] Other: ___
 
 ---
 
@@ -301,9 +300,9 @@ CI/CD platforms in use:
 
 | Requirement | Value |
 | --- | --- |
-| Number of API Endpoints |  |
+| Number of API Endpoints | ___ |
 | API Discovery Required | [ ] Yes [ ] No |
-| Estimated Monthly API Requests |  |
+| Estimated Monthly API Requests | ___ |
 | Schema Validation Required | [ ] Yes [ ] No |
 | Sensitive Data Protection Required | [ ] Yes [ ] No |
 | Tier Required | [ ] Standard [ ] Advanced |
@@ -311,7 +310,5 @@ CI/CD platforms in use:
 Additional notes or special requirements:
 
 ```text
-
-
-
+___
 ```

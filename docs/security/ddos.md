@@ -22,9 +22,9 @@ If yes, describe recent attacks:
 
 | Date | Attack Type | Peak Size | Duration | Impact |
 | --- | --- | --- | --- | --- |
-|  |  | Gbps | min |  |
-|  |  | Gbps | min |  |
-|  |  | Gbps | min |  |
+| ___ | ___ | ___ Gbps | ___ min | ___ |
+| ___ | ___ | ___ Gbps | ___ min | ___ |
+| ___ | ___ | ___ Gbps | ___ min | ___ |
 
 ---
 
@@ -35,7 +35,7 @@ If yes, describe recent attacks:
 Does your company have an Autonomous System Number (ASN) assigned by an Internet
 Authority?
 
-- [ ] **YES** - ASN:
+- [ ] **YES** - ASN: ___
 - [ ] **NO**
 
 !!! warning "No ASN"
@@ -59,12 +59,12 @@ If yes, list your network prefixes:
 
 | Prefix (CIDR) | Size | Announced via BGP? |
 | --- | --- | --- |
-|  | / | ( ) Yes ( ) No |
-|  | / | ( ) Yes ( ) No |
-|  | / | ( ) Yes ( ) No |
-|  | / | ( ) Yes ( ) No |
+| ___ | /___ | ( ) Yes ( ) No |
+| ___ | /___ | ( ) Yes ( ) No |
+| ___ | /___ | ( ) Yes ( ) No |
+| ___ | /___ | ( ) Yes ( ) No |
 
-Total number of prefixes:
+Total number of prefixes: ___
 
 ---
 
@@ -76,12 +76,12 @@ How many data centers do you need to protect from DDoS attacks?
 
 | Data Center Location | Provider | Router Count |
 | --- | --- | --- |
-|  | ( ) On-Prem ( ) Colo ( ) Cloud |  |
-|  | ( ) On-Prem ( ) Colo ( ) Cloud |  |
-|  | ( ) On-Prem ( ) Colo ( ) Cloud |  |
-|  | ( ) On-Prem ( ) Colo ( ) Cloud |  |
+| ___ | ( ) On-Prem ( ) Colo ( ) Cloud | ___ |
+| ___ | ( ) On-Prem ( ) Colo ( ) Cloud | ___ |
+| ___ | ( ) On-Prem ( ) Colo ( ) Cloud | ___ |
+| ___ | ( ) On-Prem ( ) Colo ( ) Cloud | ___ |
 
-**Total Data Centers:**
+**Total Data Centers:** ___
 
 ### Edge Routers
 
@@ -90,12 +90,12 @@ detection?
 
 | Router Location | Router Type | Vendor/Model |
 | --- | --- | --- |
-|  | ( ) Edge ( ) Core ( ) Border |  |
-|  | ( ) Edge ( ) Core ( ) Border |  |
-|  | ( ) Edge ( ) Core ( ) Border |  |
-|  | ( ) Edge ( ) Core ( ) Border |  |
+| ___ | ( ) Edge ( ) Core ( ) Border | ___ |
+| ___ | ( ) Edge ( ) Core ( ) Border | ___ |
+| ___ | ( ) Edge ( ) Core ( ) Border | ___ |
+| ___ | ( ) Edge ( ) Core ( ) Border | ___ |
 
-**Total Edge Routers:**
+**Total Edge Routers:** ___
 
 ---
 
@@ -108,9 +108,9 @@ prefixes you would like to protect:
 
 | Metric | Value |
 | --- | --- |
-| 95th Percentile Inbound Bandwidth | Mbps |
-| Peak Inbound Bandwidth | Mbps |
-| Average Inbound Bandwidth | Mbps |
+| 95th Percentile Inbound Bandwidth | ___ Mbps |
+| Peak Inbound Bandwidth | ___ Mbps |
+| Average Inbound Bandwidth | ___ Mbps |
 
 !!! note "Measurement"
     The bandwidth measurement should be provided in Mbps, calculated using 95th
@@ -122,9 +122,9 @@ What is your total internet connectivity capacity?
 
 | Metric | Value |
 | --- | --- |
-| Total uplink capacity | Gbps |
-| Number of ISP connections |  |
-| ISP providers |  |
+| Total uplink capacity | ___ Gbps |
+| Number of ISP connections | ___ |
+| ISP providers | ___ |
 
 ---
 
@@ -152,7 +152,7 @@ If On-Demand, how should mitigation be activated?
 - [ ] Manual (Customer initiates activation)
 - [ ] Hybrid (Auto-detect with manual confirmation)
 
-Acceptable time to mitigate after detection: minutes
+Acceptable time to mitigate after detection: ___ minutes
 
 ---
 
@@ -219,9 +219,9 @@ Alert contacts:
 
 | Name | Role | Email | Phone |
 | --- | --- | --- | --- |
-|  | Primary |  |  |
-|  | Secondary |  |  |
-|  | Escalation |  |  |
+| ___ | Primary | ___ | ___ |
+| ___ | Secondary | ___ | ___ |
+| ___ | Escalation | ___ | ___ |
 
 ### Reporting Requirements
 
@@ -248,15 +248,15 @@ BGP session details (if applicable):
 
 | Peer Location | Your Router IP | F5 Peer IP |
 | --- | --- | --- |
-|  |  | TBD |
-|  |  | TBD |
+| ___ | ___ | TBD |
+| ___ | ___ | TBD |
 
 ### GRE Tunnel Requirements
 
 - [ ] Yes - GRE tunnels to our routers
 - [ ] No - Direct routing
 
-Number of GRE tunnel endpoints:
+Number of GRE tunnel endpoints: ___
 
 ### Existing DDoS Solutions
 
@@ -264,7 +264,7 @@ Do you have existing DDoS protection?
 
 | Solution | Provider | Replace or Layer? |
 | --- | --- | --- |
-|  |  | ( ) Replace ( ) Layer |
+| ___ | ___ | ( ) Replace ( ) Layer |
 
 ---
 
@@ -276,10 +276,10 @@ What SLA requirements do you have?
 
 | Metric | Requirement |
 | --- | --- |
-| Time to Detect | < minutes |
-| Time to Mitigate | < minutes |
-| Uptime SLA | % |
-| False Positive Rate | < % |
+| Time to Detect | < ___ minutes |
+| Time to Mitigate | < ___ minutes |
+| Uptime SLA | ___ % |
+| False Positive Rate | < ___ % |
 
 ### Support Level
 
@@ -296,10 +296,10 @@ What level of DDoS support do you need?
 | Requirement | Value |
 | --- | --- |
 | Customer ASN | ( ) Yes ( ) No |
-| Number of Prefixes |  |
-| Number of Data Centers |  |
-| Number of Edge Routers |  |
-| Clean Bandwidth (95th percentile) | Mbps |
+| Number of Prefixes | ___ |
+| Number of Data Centers | ___ |
+| Number of Edge Routers | ___ |
+| Clean Bandwidth (95th percentile) | ___ Mbps |
 | Protection Mode | ( ) Always On ( ) On-Demand |
 | L3/L4 Protection | ( ) Yes ( ) No |
 | L7 Protection | ( ) Yes ( ) No |
@@ -310,7 +310,5 @@ Network diagram attached: [ ] Yes [ ] No
 Additional notes or special requirements:
 
 ```text
-
-
-
+___
 ```

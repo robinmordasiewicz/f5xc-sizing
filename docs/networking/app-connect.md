@@ -43,11 +43,11 @@ If yes:
 
 | Cluster Name | Location | Distribution | Services |
 | --- | --- | --- | --- |
-|  |  | [ ] EKS [ ] AKS [ ] GKE [ ] OpenShift [ ] Other |  |
-|  |  | [ ] EKS [ ] AKS [ ] GKE [ ] OpenShift [ ] Other |  |
-|  |  | [ ] EKS [ ] AKS [ ] GKE [ ] OpenShift [ ] Other |  |
+| ___ | ___ | [ ] EKS [ ] AKS [ ] GKE [ ] OpenShift [ ] Other | ___ |
+| ___ | ___ | [ ] EKS [ ] AKS [ ] GKE [ ] OpenShift [ ] Other | ___ |
+| ___ | ___ | [ ] EKS [ ] AKS [ ] GKE [ ] OpenShift [ ] Other | ___ |
 
-Total Kubernetes clusters:
+Total Kubernetes clusters: ___
 
 ### Service Inventory
 
@@ -55,10 +55,10 @@ How many services need connectivity?
 
 | Environment | Service Count |
 | --- | --- |
-| Production |  |
-| Staging |  |
-| Development |  |
-| **Total** |  |
+| Production | ___ |
+| Staging | ___ |
+| Development | ___ |
+| **Total** | ___ |
 
 ---
 
@@ -72,7 +72,7 @@ What service discovery mechanisms do you use?
 - [ ] Consul
 - [ ] DNS-based
 - [ ] Static configuration
-- [ ] Other:
+- [ ] Other: ___
 
 ### Cross-Environment Discovery
 
@@ -110,9 +110,9 @@ Describe service-to-service traffic patterns:
 
 | Source Service | Destination Service | RPS | Latency Requirement |
 | --- | --- | --- | --- |
-|  |  |  | < ms |
-|  |  |  | < ms |
-|  |  |  | < ms |
+| ___ | ___ | ___ | < ___ ms |
+| ___ | ___ | ___ | < ___ ms |
+| ___ | ___ | ___ | < ___ ms |
 
 ---
 
@@ -130,9 +130,9 @@ What security is required between services?
 
 | Source | Destination | Action | Notes |
 | --- | --- | --- | --- |
-|  |  | [ ] Allow [ ] Deny |  |
-|  |  | [ ] Allow [ ] Deny |  |
-|  |  | [ ] Allow [ ] Deny |  |
+| ___ | ___ | [ ] Allow [ ] Deny | ___ |
+| ___ | ___ | [ ] Allow [ ] Deny | ___ |
+| ___ | ___ | [ ] Allow [ ] Deny | ___ |
 
 ### Identity Integration
 
@@ -164,7 +164,7 @@ Do you use distributed tracing?
 
 - [ ] Yes - Jaeger
 - [ ] Yes - Zipkin
-- [ ] Yes - Other:
+- [ ] Yes - Other: ___
 - [ ] No
 
 ---
@@ -184,8 +184,8 @@ Migration details:
 
 | Application | From | To | Timeline |
 | --- | --- | --- | --- |
-|  |  |  |  |
-|  |  |  |  |
+| ___ | ___ | ___ | ___ |
+| ___ | ___ | ___ | ___ |
 
 ### Hybrid Operation
 
@@ -204,7 +204,7 @@ Do you have an existing service mesh?
 - [ ] Yes - Istio
 - [ ] Yes - Linkerd
 - [ ] Yes - Consul Connect
-- [ ] Yes - Other:
+- [ ] Yes - Other: ___
 - [ ] No
 
 If yes, will you:
@@ -227,8 +227,8 @@ Do you have F5 BIG-IP to integrate?
 
 | Requirement | Value |
 | --- | --- |
-| Total Services |  |
-| Kubernetes Clusters |  |
+| Total Services | ___ |
+| Kubernetes Clusters | ___ |
 | Cross-Environment Discovery | [ ] Yes [ ] No |
 | mTLS Required | [ ] Yes [ ] No |
 | Advanced Traffic Management | [ ] Yes [ ] No |
@@ -240,6 +240,5 @@ Service mesh diagram attached: [ ] Yes [ ] No
 Additional notes:
 
 ```text
-
-
+___
 ```

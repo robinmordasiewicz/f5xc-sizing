@@ -17,7 +17,7 @@ What are your primary CDN goals?
 - [ ] Reduce bandwidth/egress costs
 - [ ] Global content distribution
 - [ ] DDoS protection at the edge
-- [ ] Other:
+- [ ] Other: ___
 
 ---
 
@@ -29,22 +29,22 @@ What content will be cached?
 
 | Content Type | Percentage | Cache TTL |
 | --- | --- | --- |
-| Static images (jpg, png, gif, svg) | % | hours |
-| JavaScript / CSS | % | hours |
-| Video / Media files | % | hours |
-| HTML pages | % | hours |
-| API responses | % | seconds |
-| Documents (PDF, etc.) | % | hours |
-| Other: | % |  |
+| Static images (jpg, png, gif, svg) | ___ % | ___ hours |
+| JavaScript / CSS | ___ % | ___ hours |
+| Video / Media files | ___ % | ___ hours |
+| HTML pages | ___ % | ___ hours |
+| API responses | ___ % | ___ seconds |
+| Documents (PDF, etc.) | ___ % | ___ hours |
+| Other: ___ | ___ % | ___ |
 
 ### Content Size
 
 | Metric | Value |
 | --- | --- |
-| Total unique content size | GB/TB |
-| Average object size | KB |
-| Largest object size | MB |
-| Total number of unique objects |  |
+| Total unique content size | ___ GB/TB |
+| Average object size | ___ KB |
+| Largest object size | ___ MB |
+| Total number of unique objects | ___ |
 
 ### Content Origin
 
@@ -52,8 +52,8 @@ Where is your origin content hosted?
 
 | Origin Location | Provider | Percentage |
 | --- | --- | --- |
-|  | [ ] AWS [ ] Azure [ ] GCP [ ] On-Prem [ ] Other | % |
-|  | [ ] AWS [ ] Azure [ ] GCP [ ] On-Prem [ ] Other | % |
+| ___ | [ ] AWS [ ] Azure [ ] GCP [ ] On-Prem [ ] Other | ___ % |
+| ___ | [ ] AWS [ ] Azure [ ] GCP [ ] On-Prem [ ] Other | ___ % |
 
 ---
 
@@ -63,9 +63,9 @@ Where is your origin content hosted?
 
 | Metric | Average | Peak |
 | --- | --- | --- |
-| Requests per second |  |  |
-| Requests per month |  |  |
-| Bandwidth (Gbps) |  |  |
+| Requests per second | ___ | ___ |
+| Requests per month | ___ | ___ |
+| Bandwidth (Gbps) | ___ | ___ |
 
 ### Regional Distribution
 
@@ -73,11 +73,11 @@ Where are your users located?
 
 | Region | Traffic Percentage |
 | --- | --- |
-| North America | % |
-| Europe | % |
-| Asia-Pacific | % |
-| South America | % |
-| Other | % |
+| North America | ___ % |
+| Europe | ___ % |
+| Asia-Pacific | ___ % |
+| South America | ___ % |
+| Other | ___ % |
 
 !!! note "Regional Pricing"
     CDN data transfer and request pricing varies by region.
@@ -100,8 +100,8 @@ What should be included in cache keys?
 
 - [ ] URL path
 - [ ] Query string parameters
-- [ ] Specific headers:
-- [ ] Cookies:
+- [ ] Specific headers: ___
+- [ ] Cookies: ___
 
 ### Cache Purge Requirements
 
@@ -113,7 +113,7 @@ How will you purge cached content?
 - [ ] Path-based purge
 - [ ] Full cache purge
 
-Estimated purge frequency: per day/week
+Estimated purge frequency: ___ per day/week
 
 ---
 
@@ -151,10 +151,10 @@ Estimated purge frequency: per day/week
 
 | URL Pattern | Cache Behavior | TTL |
 | --- | --- | --- |
-| /api/* | [ ] Cache [ ] Bypass |  |
-| /static/* | [ ] Cache [ ] Bypass |  |
-| *.css | [ ] Cache [ ] Bypass |  |
-|  | [ ] Cache [ ] Bypass |  |
+| /api/* | [ ] Cache [ ] Bypass | ___ |
+| /static/* | [ ] Cache [ ] Bypass | ___ |
+| *.css | [ ] Cache [ ] Bypass | ___ |
+| ___ | [ ] Cache [ ] Bypass | ___ |
 
 ---
 
@@ -164,9 +164,9 @@ Estimated purge frequency: per day/week
 
 | Metric | Target |
 | --- | --- |
-| Target cache hit ratio | > % |
-| Target TTFB from edge | < ms |
-| Acceptable origin load reduction | % |
+| Target cache hit ratio | > ___ % |
+| Target TTFB from edge | < ___ ms |
+| Acceptable origin load reduction | ___ % |
 
 ### Monitoring Requirements
 
@@ -185,16 +185,15 @@ What CDN metrics do you need?
 
 | Requirement | Value |
 | --- | --- |
-| Domains to CDN |  |
-| Monthly Requests |  |
-| Monthly Data Transfer | GB |
-| Primary Regions |  |
+| Domains to CDN | ___ |
+| Monthly Requests | ___ |
+| Monthly Data Transfer | ___ GB |
+| Primary Regions | ___ |
 | Security Integration | [ ] Yes [ ] No |
 | Custom Cache Rules | [ ] Yes [ ] No |
 
 Additional notes:
 
 ```text
-
-
+___
 ```

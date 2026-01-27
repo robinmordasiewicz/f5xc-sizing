@@ -27,8 +27,7 @@ What bot-related challenges are you experiencing?
 Describe specific bot challenges:
 
 ```text
-
-
+___
 ```
 
 ---
@@ -41,9 +40,9 @@ Which applications need bot protection?
 
 | Application/Domain | Critical Pages | Platform |
 | --- | --- | --- |
-|  | [ ] Login [ ] Registration [ ] Checkout [ ] Search | [ ] Web [ ] Mobile [ ] API |
-|  | [ ] Login [ ] Registration [ ] Checkout [ ] Search | [ ] Web [ ] Mobile [ ] API |
-|  | [ ] Login [ ] Registration [ ] Checkout [ ] Search | [ ] Web [ ] Mobile [ ] API |
+| ___ | [ ] Login [ ] Registration [ ] Checkout [ ] Search | [ ] Web [ ] Mobile [ ] API |
+| ___ | [ ] Login [ ] Registration [ ] Checkout [ ] Search | [ ] Web [ ] Mobile [ ] API |
+| ___ | [ ] Login [ ] Registration [ ] Checkout [ ] Search | [ ] Web [ ] Mobile [ ] API |
 
 ### FQDNs to Protect
 
@@ -51,10 +50,10 @@ List the fully qualified domain names requiring bot defense:
 
 | FQDN | Environment |
 | --- | --- |
-|  | [ ] Production [ ] Staging |
-|  | [ ] Production [ ] Staging |
-|  | [ ] Production [ ] Staging |
-|  | [ ] Production [ ] Staging |
+| ___ | [ ] Production [ ] Staging |
+| ___ | [ ] Production [ ] Staging |
+| ___ | [ ] Production [ ] Staging |
+| ___ | [ ] Production [ ] Staging |
 
 !!! note "Standard Tier"
     Standard Bot Defense includes protection for 2 FQDNs. Additional FQDNs
@@ -73,8 +72,8 @@ If yes, provide mobile app details:
 
 | App Name | Platform | Downloads (est.) |
 | --- | --- | --- |
-|  | [ ] iOS [ ] Android |  |
-|  | [ ] iOS [ ] Android |  |
+| ___ | [ ] iOS [ ] Android | ___ |
+| ___ | [ ] iOS [ ] Android | ___ |
 
 ---
 
@@ -86,12 +85,12 @@ Provide estimated transaction volumes:
 
 | Metric | Daily Volume |
 | --- | --- |
-| Total page views / transactions |  |
-| Login attempts |  |
-| Registration attempts |  |
-| Checkout / purchase attempts |  |
-| Search queries |  |
-| API calls |  |
+| Total page views / transactions | ___ |
+| Login attempts | ___ |
+| Registration attempts | ___ |
+| Checkout / purchase attempts | ___ |
+| Search queries | ___ |
+| API calls | ___ |
 
 !!! note "Tier Entitlements"
     - Standard: Up to 500,000 transactions/day
@@ -102,9 +101,9 @@ Provide estimated transaction volumes:
 
 | Metric | Peak Value | When |
 | --- | --- | --- |
-| Peak transactions per day |  |  |
-| Peak transactions per hour |  |  |
-| Seasonal peaks (e.g., Black Friday) |  |  |
+| Peak transactions per day | ___ | ___ |
+| Peak transactions per hour | ___ | ___ |
+| Seasonal peaks (e.g., Black Friday) | ___ | ___ |
 
 ### Current Bot Traffic Estimate
 
@@ -151,14 +150,14 @@ Which automated threat categories are priorities?
 
 | OWASP Automated Threat | Priority | Notes |
 | --- | --- | --- |
-| Credential Stuffing | [ ] Critical [ ] High [ ] Medium [ ] Low [ ] N/A | |
-| Account Takeover | [ ] Critical [ ] High [ ] Medium [ ] Low [ ] N/A | |
-| Carding | [ ] Critical [ ] High [ ] Medium [ ] Low [ ] N/A | |
-| Scraping | [ ] Critical [ ] High [ ] Medium [ ] Low [ ] N/A | |
-| Scalping | [ ] Critical [ ] High [ ] Medium [ ] Low [ ] N/A | |
-| Spamming | [ ] Critical [ ] High [ ] Medium [ ] Low [ ] N/A | |
-| Denial of Inventory | [ ] Critical [ ] High [ ] Medium [ ] Low [ ] N/A | |
-| Sniping | [ ] Critical [ ] High [ ] Medium [ ] Low [ ] N/A | |
+| Credential Stuffing | [ ] Critical [ ] High [ ] Medium [ ] Low [ ] N/A | ___ |
+| Account Takeover | [ ] Critical [ ] High [ ] Medium [ ] Low [ ] N/A | ___ |
+| Carding | [ ] Critical [ ] High [ ] Medium [ ] Low [ ] N/A | ___ |
+| Scraping | [ ] Critical [ ] High [ ] Medium [ ] Low [ ] N/A | ___ |
+| Scalping | [ ] Critical [ ] High [ ] Medium [ ] Low [ ] N/A | ___ |
+| Spamming | [ ] Critical [ ] High [ ] Medium [ ] Low [ ] N/A | ___ |
+| Denial of Inventory | [ ] Critical [ ] High [ ] Medium [ ] Low [ ] N/A | ___ |
+| Sniping | [ ] Critical [ ] High [ ] Medium [ ] Low [ ] N/A | ___ |
 
 ---
 
@@ -195,8 +194,8 @@ Do you have existing bot management solutions?
 
 | Solution | Replace or Integrate |
 | --- | --- |
-|  | [ ] Replace [ ] Integrate |
-|  | [ ] Replace [ ] Integrate |
+| ___ | [ ] Replace [ ] Integrate |
+| ___ | [ ] Replace [ ] Integrate |
 
 ---
 
@@ -241,7 +240,7 @@ What bot visibility do you need?
 - [ ] Yes - Send to data lake (S3, etc.)
 - [ ] No - F5 console is sufficient
 
-Target system:
+Target system: ___
 
 ---
 
@@ -287,8 +286,8 @@ What level of bot defense support do you need?
 
 | Requirement | Value |
 | --- | --- |
-| Number of FQDNs |  |
-| Estimated Daily Transactions |  |
+| Number of FQDNs | ___ |
+| Estimated Daily Transactions | ___ |
 | Mobile SDK Required | [ ] Yes [ ] No |
 | Detection Method | [ ] Signature [ ] Behavioral [ ] Both |
 | Tier Required | [ ] Standard [ ] Advanced [ ] Premium |
@@ -297,15 +296,13 @@ What level of bot defense support do you need?
 Primary bot threats to address:
 
 ```text
-1.
-2.
-3.
+1. ___
+2. ___
+3. ___
 ```
 
 Additional notes or special requirements:
 
 ```text
-
-
-
+___
 ```
