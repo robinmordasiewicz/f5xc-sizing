@@ -29,7 +29,7 @@ jobs:
 
       - name: Build MkDocs site with PDF
         run: |
-          docker run --rm -e ENABLE_PDF_EXPORT=1 -v ${PWD}:/docs ghcr.io/robinmordasiewicz/f5xc-mkdocs:latest build
+          docker run --rm -e ENABLE_PDF_EXPORT=1 -v ${PWD}:/docs -u $(id -u):$(id -g) ghcr.io/robinmordasiewicz/f5xc-mkdocs:latest build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
@@ -60,7 +60,7 @@ jobs:
 
       - name: Build MkDocs site with PDF
         run: |
-          docker run --rm -e ENABLE_PDF_EXPORT=1 -v ${PWD}:/docs ghcr.io/robinmordasiewicz/f5xc-mkdocs:latest build
+          docker run --rm -e ENABLE_PDF_EXPORT=1 -v ${PWD}:/docs -u $(id -u):$(id -g) ghcr.io/robinmordasiewicz/f5xc-mkdocs:latest build
 
       - name: Deploy to gh-pages branch
         uses: peaceiris/actions-gh-pages@v4

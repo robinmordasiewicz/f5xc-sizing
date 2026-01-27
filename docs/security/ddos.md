@@ -32,11 +32,6 @@ If yes, describe recent attacks:
 
 ### Customer ASN
 
-!!! question "What is an ASN?"
-    An Autonomous System Number (ASN) is a unique identifier assigned by an
-Internet authority that identifies a collection of IP networks under a single
-administrative domain.
-
 Does your company have an Autonomous System Number (ASN) assigned by an Internet
 Authority?
 
@@ -45,13 +40,9 @@ Authority?
 
 !!! warning "No ASN"
     If you do not have an Autonomous System Number, please inform your F5 Sales
-Specialist immediately as this affects BGP-based DDoS mitigation options.
+    Specialist immediately as this affects BGP-based DDoS mitigation options.
 
 ### BGP Network Prefix
-
-!!! question "What is a Network Prefix?"
-    A network prefix is a range of network addresses (e.g., 192.0.2.0/24)
-assigned by your ISP or Internet authority that you can announce via BGP.
 
 Have you been assigned a network prefix by your ISP or Internet authority to
 announce via BGP using your ASN?
@@ -61,8 +52,8 @@ announce via BGP using your ASN?
 
 !!! note "Prefix Size Requirements"
     The network prefix size must be a /24 or shorter (/23, /22, /21, etc.). If
-you do not have a network prefix assigned and under control of your ASN, please
-inform your F5 Sales Specialist immediately.
+    you do not have a network prefix assigned and under control of your ASN, please
+    inform your F5 Sales Specialist immediately.
 
 If yes, list your network prefixes:
 
@@ -81,10 +72,6 @@ Total number of prefixes: _____
 
 ### Data Centers
 
-!!! question "What is a Data Center?"
-    For DDoS protection sizing, F5 XC quantifies a data center as a physical or
-virtual hosting location with a minimum of one to two routers.
-
 How many data centers do you need to protect from DDoS attacks?
 
 | Data Center Location | Provider | Router Count |
@@ -97,10 +84,6 @@ How many data centers do you need to protect from DDoS attacks?
 **Total Data Centers:** _____
 
 ### Edge Routers
-
-!!! question "What is an Edge Router?"
-    Edge/Core/Border routers are the routers at the edge of your network that F5
-will monitor for DDoS attack detection.
 
 How many EDGE/CORE/BORDER routers do you want F5 to monitor for DDoS attack
 detection?
@@ -120,11 +103,6 @@ detection?
 
 ### Clean Bandwidth
 
-!!! question "What is Clean Bandwidth?"
-    Clean bandwidth is the amount of legitimate traffic (after DDoS mitigation)
-that flows to your network prefixes. Measured using 95th percentile for INBOUND
-TRAFFIC ONLY.
-
 Please provide the amount of **CLEAN BANDWIDTH** utilized by the network
 prefixes you would like to protect:
 
@@ -136,7 +114,7 @@ prefixes you would like to protect:
 
 !!! note "Measurement"
     The bandwidth measurement should be provided in Mbps, calculated using 95th
-percentile usage, for **INBOUND TRAFFIC ONLY**.
+    percentile usage, for **INBOUND TRAFFIC ONLY**.
 
 ### Current Internet Connectivity
 
@@ -153,12 +131,6 @@ What is your total internet connectivity capacity?
 ## Protection Mode
 
 ### Mode of Protection
-
-!!! question "Protection Modes"
-    - **ALWAYS ON (Continuous)**: All traffic continuously routes through F5
-scrubbing infrastructure. Immediate protection with no detection delay.
-    - **ALWAYS AVAILABLE (On-Demand)**: Protection activates when attacks are
-detected. Traffic diverts to F5 scrubbing during attacks.
 
 Please select your preferred protection mode:
 
@@ -219,7 +191,7 @@ Attack types to protect against:
 
 !!! warning "L7 DDoS"
     Layer 7 DDoS mitigation with ML-based anomaly detection requires the
-Advanced WAAP tier.
+    Advanced WAAP tier.
 
 ---
 

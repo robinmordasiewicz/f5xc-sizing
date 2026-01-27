@@ -1,5 +1,5 @@
-site_name: F5 Distributed Cloud Sizing Guide
-site_description: Comprehensive sizing questionnaire for F5 XC deployments
+site_name: Sizing Questionnaire
+site_description: Sizing Questionnaire
 site_author: Robin Mordasiewicz
 site_url: https://robinmordasiewicz.github.io/f5xc-sizing/
 
@@ -39,8 +39,8 @@ theme:
 plugins:
   - search
   - with-pdf:
-      author: F5 Networks
-      cover_title: F5 Distributed Cloud
+      author: Robin Mordasiewicz
+      cover_title: SaaS Platform
       cover_subtitle: Scoping and Requirements Guide
       cover_logo: assets/f5-logo.svg
       toc_title: Table of Contents
@@ -53,6 +53,18 @@ plugins:
       debug_html: false
       verbose: false
       custom_template_path: docs/pdf_templates
+  - page-to-pdf:
+      disableOnServe: true
+      printBackground: true
+      displayHeaderFooter: false
+      format: A4
+      margin:
+        top: 20mm
+        right: 20mm
+        bottom: 20mm
+        left: 20mm
+      exclude:
+        - index.md
 
 markdown_extensions:
   - pymdownx.highlight:

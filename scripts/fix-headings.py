@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Remove redundant 'Do you need' question patterns."""
+"""Remove redundant patterns from documentation."""
 
 import os
 import re
@@ -16,6 +16,29 @@ def fix_file(filepath):
 
     while i < len(lines):
         line = lines[i]
+
+        # Remove !!! question "What is..." and "Protection Modes" admonition blocks
+        # These blocks may have multi-line content with wrapped text (no indent)
+        if re.match(r'^!!!\s+question\s+"(What is|Protection Modes)', line):
+            changed = True
+            i += 1
+            # Skip indented content (4-space indent)
+            while i < len(lines) and lines[i].startswith('    '):
+                i += 1
+            # Skip wrapped continuation lines (not blank, not a new structural element)
+            while i < len(lines):
+                curr = lines[i]
+                # Stop at blank line - marks end of admonition
+                if curr.strip() == '':
+                    break
+                # Stop at new structural elements
+                if (curr.startswith('#') or curr.startswith('!!!') or
+                    curr.startswith('- ') or curr.startswith('| ') or
+                    curr.startswith('```')):
+                    break
+                # Otherwise it's a wrapped continuation line - skip it
+                i += 1
+            continue
 
         # Remove "Section X: " prefixes: "## Section 1: Title" -> "## Title"
         match = re.match(r'^(#{1,4})\s+Section\s+\d+:\s+(.+)$', line)
