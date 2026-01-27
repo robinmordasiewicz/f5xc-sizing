@@ -1,17 +1,14 @@
 # CDN Sizing
 
-F5 Distributed Cloud CDN provides global content delivery with intelligent caching, reducing latency and bandwidth costs while integrating with F5's security services.
+F5 Distributed Cloud CDN provides global content delivery with intelligent
+caching, reducing latency and bandwidth costs while integrating with F5's
+security services.
 
 ---
 
-## Section 1: CDN Requirements
+## CDN Requirements
 
-### 1.1 Do You Need CDN?
-
-- [ ] Yes - We need content caching and delivery
-- [ ] No - Skip this section
-
-### 1.2 CDN Goals
+### CDN Goals
 
 What are your primary CDN goals?
 
@@ -24,14 +21,14 @@ What are your primary CDN goals?
 
 ---
 
-## Section 2: Content Profile
+## Content Profile
 
-### 2.1 Content Types
+### Content Types
 
 What content will be cached?
 
 | Content Type | Percentage | Cache TTL |
-|--------------|------------|-----------|
+| --- | --- | --- |
 | Static images (jpg, png, gif, svg) | _____% | _____ hours |
 | JavaScript / CSS | _____% | _____ hours |
 | Video / Media files | _____% | _____ hours |
@@ -40,42 +37,42 @@ What content will be cached?
 | Documents (PDF, etc.) | _____% | _____ hours |
 | Other: _____________ | _____% | _____ |
 
-### 2.2 Content Size
+### Content Size
 
 | Metric | Value |
-|--------|-------|
+| --- | --- |
 | Total unique content size | _____ GB/TB |
 | Average object size | _____ KB |
 | Largest object size | _____ MB |
 | Total number of unique objects | _____ |
 
-### 2.3 Content Origin
+### Content Origin
 
 Where is your origin content hosted?
 
 | Origin Location | Provider | Percentage |
-|-----------------|----------|------------|
+| --- | --- | --- |
 | _____________ | [ ] AWS [ ] Azure [ ] GCP [ ] On-Prem [ ] Other | _____% |
 | _____________ | [ ] AWS [ ] Azure [ ] GCP [ ] On-Prem [ ] Other | _____% |
 
 ---
 
-## Section 3: Traffic Volume
+## Traffic Volume
 
-### 3.1 Request Metrics
+### Request Metrics
 
 | Metric | Average | Peak |
-|--------|---------|------|
+| --- | --- | --- |
 | Requests per second | _____ | _____ |
 | Requests per month | _____ | _____ |
 | Bandwidth (Gbps) | _____ | _____ |
 
-### 3.2 Regional Distribution
+### Regional Distribution
 
 Where are your users located?
 
 | Region | Traffic Percentage |
-|--------|-------------------|
+| --- | --- |
 | North America | _____% |
 | Europe | _____% |
 | Asia-Pacific | _____% |
@@ -87,9 +84,9 @@ Where are your users located?
 
 ---
 
-## Section 4: Caching Configuration
+## Caching Configuration
 
-### 4.1 Cache Policy
+### Cache Policy
 
 How should content be cached?
 
@@ -97,7 +94,7 @@ How should content be cached?
 - [ ] **Override with custom TTL** - Set custom cache times
 - [ ] **Query string handling**: [ ] Include [ ] Ignore [ ] Selective
 
-### 4.2 Cache Key Configuration
+### Cache Key Configuration
 
 What should be included in cache keys?
 
@@ -106,7 +103,7 @@ What should be included in cache keys?
 - [ ] Specific headers: _________________
 - [ ] Cookies: _________________
 
-### 4.3 Cache Purge Requirements
+### Cache Purge Requirements
 
 How will you purge cached content?
 
@@ -120,11 +117,9 @@ Estimated purge frequency: _____ per day/week
 
 ---
 
-## Section 5: Security Integration
+## Security Integration
 
-### 5.1 CDN with Security
-
-Do you need security services integrated with CDN?
+### CDN with Security
 
 - [ ] WAF at the edge
 - [ ] Bot defense at the edge
@@ -132,10 +127,10 @@ Do you need security services integrated with CDN?
 - [ ] Rate limiting
 - [ ] Geographic restrictions
 
-### 5.2 TLS Configuration
+### TLS Configuration
 
 | Parameter | Value |
-|-----------|-------|
+| --- | --- |
 | TLS termination at edge | [ ] Yes [ ] No |
 | Minimum TLS version | [ ] TLS 1.2 [ ] TLS 1.3 |
 | Custom certificates | [ ] Yes [ ] No |
@@ -143,23 +138,19 @@ Do you need security services integrated with CDN?
 
 ---
 
-## Section 6: Advanced Features
+## Advanced Features
 
-### 6.1 Dynamic Content Optimization
-
-Do you need dynamic content optimization?
+### Dynamic Content Optimization
 
 - [ ] Image optimization / WebP conversion
 - [ ] Minification (JS/CSS/HTML)
 - [ ] Compression (Gzip/Brotli)
 - [ ] HTTP/2 / HTTP/3 support
 
-### 6.2 Custom Rules
-
-Do you need custom caching rules?
+### Custom Rules
 
 | URL Pattern | Cache Behavior | TTL |
-|-------------|----------------|-----|
+| --- | --- | --- |
 | /api/* | [ ] Cache [ ] Bypass | _____ |
 | /static/* | [ ] Cache [ ] Bypass | _____ |
 | *.css | [ ] Cache [ ] Bypass | _____ |
@@ -167,17 +158,17 @@ Do you need custom caching rules?
 
 ---
 
-## Section 7: Performance Metrics
+## Performance Metrics
 
-### 7.1 Expected Cache Performance
+### Expected Cache Performance
 
 | Metric | Target |
-|--------|--------|
+| --- | --- |
 | Target cache hit ratio | > _____% |
 | Target TTFB from edge | < _____ ms |
 | Acceptable origin load reduction | _____% |
 
-### 7.2 Monitoring Requirements
+### Monitoring Requirements
 
 What CDN metrics do you need?
 
@@ -193,7 +184,7 @@ What CDN metrics do you need?
 ## Summary: CDN Requirements
 
 | Requirement | Value |
-|-------------|-------|
+| --- | --- |
 | Domains to CDN | _____ |
 | Monthly Requests | _____ |
 | Monthly Data Transfer | _____ GB |
@@ -203,7 +194,7 @@ What CDN metrics do you need?
 
 Additional notes:
 
-```
+```text
 _____________________________________________________________
 _____________________________________________________________
 ```

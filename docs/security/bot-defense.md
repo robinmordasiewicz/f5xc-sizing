@@ -1,18 +1,14 @@
 # Bot Defense Sizing
 
-F5 Distributed Cloud Bot Defense provides AI/ML-powered protection against automated threats including credential stuffing, account takeover, content scraping, and other bot attacks.
+F5 Distributed Cloud Bot Defense provides AI/ML-powered protection against
+automated threats including credential stuffing, account takeover, content
+scraping, and other bot attacks.
 
 ---
 
-## Section 1: Bot Defense Requirements Assessment
+## Bot Defense Requirements Assessment
 
-### 1.1 Do You Need Bot Defense?
-
-- [ ] Yes - We experience bot attacks or need proactive protection
-- [ ] No - Skip this section
-- [ ] Unsure - We need visibility into our bot traffic
-
-### 1.2 Current Bot Challenges
+### Current Bot Challenges
 
 What bot-related challenges are you experiencing?
 
@@ -30,40 +26,41 @@ What bot-related challenges are you experiencing?
 
 Describe specific bot challenges:
 
-```
+```text
 _____________________________________________________________
 _____________________________________________________________
 ```
 
 ---
 
-## Section 2: Application Scope
+## Application Scope
 
-### 2.1 Applications Requiring Bot Defense
+### Applications Requiring Bot Defense
 
 Which applications need bot protection?
 
 | Application/Domain | Critical Pages | Platform |
-|-------------------|----------------|----------|
+| --- | --- | --- |
 | _____________ | [ ] Login [ ] Registration [ ] Checkout [ ] Search | [ ] Web [ ] Mobile [ ] API |
 | _____________ | [ ] Login [ ] Registration [ ] Checkout [ ] Search | [ ] Web [ ] Mobile [ ] API |
 | _____________ | [ ] Login [ ] Registration [ ] Checkout [ ] Search | [ ] Web [ ] Mobile [ ] API |
 
-### 2.2 FQDNs to Protect
+### FQDNs to Protect
 
 List the fully qualified domain names requiring bot defense:
 
 | FQDN | Environment |
-|------|-------------|
+| --- | --- |
 | _____________ | [ ] Production [ ] Staging |
 | _____________ | [ ] Production [ ] Staging |
 | _____________ | [ ] Production [ ] Staging |
 | _____________ | [ ] Production [ ] Staging |
 
 !!! note "Standard Tier"
-    Standard Bot Defense includes protection for 2 FQDNs. Additional FQDNs require add-ons.
+    Standard Bot Defense includes protection for 2 FQDNs. Additional FQDNs
+require add-ons.
 
-### 2.3 Mobile Applications
+### Mobile Applications
 
 Do you have mobile applications requiring bot protection?
 
@@ -75,20 +72,20 @@ Do you have mobile applications requiring bot protection?
 If yes, provide mobile app details:
 
 | App Name | Platform | Downloads (est.) |
-|----------|----------|------------------|
+| --- | --- | --- |
 | _____________ | [ ] iOS [ ] Android | _____________ |
 | _____________ | [ ] iOS [ ] Android | _____________ |
 
 ---
 
-## Section 3: Traffic Volume
+## Traffic Volume
 
-### 3.1 Transaction Volume
+### Transaction Volume
 
 Provide estimated transaction volumes:
 
 | Metric | Daily Volume |
-|--------|--------------|
+| --- | --- |
 | Total page views / transactions | _____ |
 | Login attempts | _____ |
 | Registration attempts | _____ |
@@ -101,15 +98,15 @@ Provide estimated transaction volumes:
     - Advanced: Up to 1,000,000 transactions/day
     - Additional capacity available as add-ons
 
-### 3.2 Peak Traffic
+### Peak Traffic
 
 | Metric | Peak Value | When |
-|--------|------------|------|
+| --- | --- | --- |
 | Peak transactions per day | _____ | _____________ |
 | Peak transactions per hour | _____ | _____________ |
 | Seasonal peaks (e.g., Black Friday) | _____ | _____________ |
 
-### 3.3 Current Bot Traffic Estimate
+### Current Bot Traffic Estimate
 
 What percentage of your traffic do you estimate is bot traffic?
 
@@ -122,9 +119,9 @@ What percentage of your traffic do you estimate is bot traffic?
 
 ---
 
-## Section 4: Bot Defense Features
+## Bot Defense Features
 
-### 4.1 Detection Method
+### Detection Method
 
 What level of bot detection do you need?
 
@@ -132,27 +129,28 @@ What level of bot detection do you need?
 - [ ] **Behavioral** (Advanced) - AI/ML analysis of device signals and behavior
 - [ ] **Both** - Maximum protection
 
-### 4.2 Mitigation Actions
+### Mitigation Actions
 
 What actions should be taken when bots are detected?
 
 | Detection Confidence | Action |
-|---------------------|--------|
+| --- | --- |
 | High confidence bot | [ ] Block [ ] Challenge [ ] Log only |
 | Medium confidence bot | [ ] Block [ ] Challenge [ ] Log only |
 | Low confidence bot | [ ] Block [ ] Challenge [ ] Log only |
 
 Challenge types acceptable:
+
 - [ ] JavaScript challenges
 - [ ] CAPTCHA (as last resort)
 - [ ] Custom challenge pages
 
-### 4.3 Specific Bot Types to Address
+### Specific Bot Types to Address
 
 Which automated threat categories are priorities?
 
 | OWASP Automated Threat | Priority | Notes |
-|----------------------|----------|-------|
+| --- | --- | --- |
 | Credential Stuffing | [ ] Critical [ ] High [ ] Medium [ ] Low [ ] N/A | |
 | Account Takeover | [ ] Critical [ ] High [ ] Medium [ ] Low [ ] N/A | |
 | Carding | [ ] Critical [ ] High [ ] Medium [ ] Low [ ] N/A | |
@@ -164,9 +162,9 @@ Which automated threat categories are priorities?
 
 ---
 
-## Section 5: Integration Requirements
+## Integration Requirements
 
-### 5.1 Deployment Method
+### Deployment Method
 
 How will Bot Defense be deployed?
 
@@ -174,7 +172,7 @@ How will Bot Defense be deployed?
 - [ ] JavaScript tag injection only
 - [ ] Both (recommended for full protection)
 
-### 5.2 JavaScript Integration
+### JavaScript Integration
 
 For web applications, how will the Bot Defense JavaScript be injected?
 
@@ -183,7 +181,7 @@ For web applications, how will the Bot Defense JavaScript be injected?
 - [ ] Tag manager (Google Tag Manager, etc.)
 - [ ] CDN-based injection
 
-### 5.3 Mobile SDK Integration
+### Mobile SDK Integration
 
 For mobile applications, can you integrate the F5 Mobile SDK?
 
@@ -191,36 +189,30 @@ For mobile applications, can you integrate the F5 Mobile SDK?
 - [ ] No - Mobile integration not possible
 - [ ] N/A - No mobile applications
 
-### 5.4 Existing Bot Solutions
+### Existing Bot Solutions
 
 Do you have existing bot management solutions?
 
 | Solution | Replace or Integrate |
-|----------|---------------------|
+| --- | --- |
 | _____________ | [ ] Replace [ ] Integrate |
 | _____________ | [ ] Replace [ ] Integrate |
 
 ---
 
-## Section 6: Advanced Features (Advanced Tier)
+## Advanced Features (Advanced Tier)
 
-### 6.1 Device Fingerprinting
-
-Do you need advanced device fingerprinting?
+### Device Fingerprinting
 
 - [ ] Yes - Identify devices across sessions
 - [ ] No
 
-### 6.2 Content Scraping Protection
-
-Do you need protection against content/data scraping?
+### Content Scraping Protection
 
 - [ ] Yes - Protect proprietary content, pricing, inventory
 - [ ] No
 
-### 6.3 Managed Threat Intelligence
-
-Do you need managed bot threat intelligence?
+### Managed Threat Intelligence
 
 - [ ] Yes - 24x7 SOC monitoring for bot threats
 - [ ] Yes - Custom detection rules developed by F5
@@ -232,9 +224,9 @@ Do you need managed bot threat intelligence?
 
 ---
 
-## Section 7: Reporting and Analytics
+## Reporting and Analytics
 
-### 7.1 Visibility Requirements
+### Visibility Requirements
 
 What bot visibility do you need?
 
@@ -243,9 +235,7 @@ What bot visibility do you need?
 - [ ] Detailed attack attribution
 - [ ] Custom reports
 
-### 7.2 Integration with SIEM/Analytics
-
-Do you need to export bot defense data?
+### Integration with SIEM/Analytics
 
 - [ ] Yes - Send to SIEM (Splunk, etc.)
 - [ ] Yes - Send to data lake (S3, etc.)
@@ -255,14 +245,14 @@ Target system: _________________
 
 ---
 
-## Section 8: Geographic Distribution
+## Geographic Distribution
 
-### 8.1 Bot Engine Regions
+### Bot Engine Regions
 
 Where do you need bot detection infrastructure?
 
 | Region | Required |
-|--------|----------|
+| --- | --- |
 | North America | [ ] Yes [ ] No |
 | Europe | [ ] Yes [ ] No |
 | Asia-Pacific | [ ] Yes [ ] No |
@@ -275,9 +265,9 @@ Where do you need bot detection infrastructure?
 
 ---
 
-## Section 9: Support Requirements
+## Support Requirements
 
-### 9.1 Support Level
+### Support Level
 
 What level of bot defense support do you need?
 
@@ -285,9 +275,7 @@ What level of bot defense support do you need?
 - [ ] **Enhanced** - 24x7 support with named resources
 - [ ] **Enhanced Plus** - Dedicated resources + managed service
 
-### 9.2 Onboarding Support
-
-Do you need assistance with initial deployment?
+### Onboarding Support
 
 - [ ] Yes - Full onboarding support
 - [ ] Yes - Integration assistance only
@@ -298,7 +286,7 @@ Do you need assistance with initial deployment?
 ## Summary: Bot Defense Requirements
 
 | Requirement | Value |
-|-------------|-------|
+| --- | --- |
 | Number of FQDNs | _____ |
 | Estimated Daily Transactions | _____ |
 | Mobile SDK Required | [ ] Yes [ ] No |
@@ -308,7 +296,7 @@ Do you need assistance with initial deployment?
 
 Primary bot threats to address:
 
-```
+```text
 1. _____________________________________________________________
 2. _____________________________________________________________
 3. _____________________________________________________________
@@ -316,7 +304,7 @@ Primary bot threats to address:
 
 Additional notes or special requirements:
 
-```
+```text
 _____________________________________________________________
 _____________________________________________________________
 _____________________________________________________________

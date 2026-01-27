@@ -1,17 +1,13 @@
 # Edge Compute Sizing
 
-F5 Distributed Cloud provides edge compute capabilities through Customer Edge sites and App Stack, enabling you to run application logic closer to users.
+F5 Distributed Cloud provides edge compute capabilities through Customer Edge
+sites and App Stack, enabling you to run application logic closer to users.
 
 ---
 
-## Section 1: Edge Compute Requirements
+## Edge Compute Requirements
 
-### 1.1 Do You Need Edge Compute?
-
-- [ ] Yes - We need to run compute at the edge
-- [ ] No - Skip this section
-
-### 1.2 Edge Compute Use Cases
+### Edge Compute Use Cases
 
 What are your edge compute requirements?
 
@@ -26,9 +22,9 @@ What are your edge compute requirements?
 
 ---
 
-## Section 2: Workload Profile
+## Workload Profile
 
-### 2.1 Workload Types
+### Workload Types
 
 What types of workloads will run at the edge?
 
@@ -37,15 +33,15 @@ What types of workloads will run at the edge?
 - [ ] Serverless functions
 - [ ] Custom applications
 
-### 2.2 Workload Details
+### Workload Details
 
 | Workload Name | Type | CPU | Memory | Storage |
-|---------------|------|-----|--------|---------|
+| --- | --- | --- | --- | --- |
 | _____________ | [ ] Container [ ] VM | _____ cores | _____ GB | _____ GB |
 | _____________ | [ ] Container [ ] VM | _____ cores | _____ GB | _____ GB |
 | _____________ | [ ] Container [ ] VM | _____ cores | _____ GB | _____ GB |
 
-### 2.3 Workload Scaling
+### Workload Scaling
 
 How should workloads scale?
 
@@ -55,46 +51,44 @@ How should workloads scale?
 
 ---
 
-## Section 3: Edge Locations
+## Edge Locations
 
-### 3.1 Edge Site Locations
+### Edge Site Locations
 
 Where do you need edge compute?
 
 | Location | Site Type | Workloads |
-|----------|-----------|-----------|
+| --- | --- | --- |
 | _____________ | [ ] Data Center [ ] Branch [ ] Retail [ ] Other | _____________ |
 | _____________ | [ ] Data Center [ ] Branch [ ] Retail [ ] Other | _____________ |
 | _____________ | [ ] Data Center [ ] Branch [ ] Retail [ ] Other | _____________ |
 
 Total edge compute locations: _____
 
-### 3.2 Edge Infrastructure
+### Edge Infrastructure
 
 What infrastructure is available at edge locations?
 
 | Location | Compute Available | Network | Power/Cooling |
-|----------|-------------------|---------|---------------|
+| --- | --- | --- | --- |
 | _____________ | [ ] Servers [ ] VMs [ ] None | _____ Mbps | [ ] Yes [ ] Limited |
 | _____________ | [ ] Servers [ ] VMs [ ] None | _____ Mbps | [ ] Yes [ ] Limited |
 
 ---
 
-## Section 4: App Stack Requirements
+## App Stack Requirements
 
-### 4.1 App Stack Deployment
-
-Do you need F5 App Stack (managed Kubernetes)?
+### App Stack Deployment
 
 - [ ] Yes - Managed K8s at the edge
 - [ ] No - Using existing infrastructure
 
-### 4.2 Container Requirements
+### Container Requirements
 
 If using containers:
 
 | Parameter | Value |
-|-----------|-------|
+| --- | --- |
 | Total containers | _____ |
 | Container registry | [ ] Docker Hub [ ] Private [ ] AWS ECR [ ] Azure ACR [ ] GCR |
 | Container sizes needed | [ ] Tiny [ ] Medium [ ] Large |
@@ -106,9 +100,9 @@ If using containers:
 
 ---
 
-## Section 5: Networking
+## Networking
 
-### 5.1 Edge Network Requirements
+### Edge Network Requirements
 
 How do edge workloads need to communicate?
 
@@ -117,19 +111,19 @@ How do edge workloads need to communicate?
 - [ ] With local devices (IoT, sensors)
 - [ ] With external APIs
 
-### 5.2 Network Performance
+### Network Performance
 
 | Requirement | Value |
-|-------------|-------|
+| --- | --- |
 | Latency to local users | < _____ ms |
 | Bandwidth to cloud | _____ Mbps |
 | Local network bandwidth | _____ Mbps |
 
 ---
 
-## Section 6: Data Management
+## Data Management
 
-### 6.1 Data at the Edge
+### Data at the Edge
 
 What data will be processed at the edge?
 
@@ -139,7 +133,7 @@ What data will be processed at the edge?
 - [ ] Log data
 - [ ] Media / video
 
-### 6.2 Data Residency
+### Data Residency
 
 Are there data residency requirements?
 
@@ -148,9 +142,7 @@ Are there data residency requirements?
 
 Regions with data residency requirements: _________________
 
-### 6.3 Edge Storage
-
-Do you need persistent storage at the edge?
+### Edge Storage
 
 - [ ] Yes - _____ GB per site
 - [ ] No - Stateless workloads only
@@ -160,7 +152,7 @@ Do you need persistent storage at the edge?
 ## Summary: Edge Compute Requirements
 
 | Requirement | Value |
-|-------------|-------|
+| --- | --- |
 | Edge Compute Locations | _____ |
 | Total Workloads | _____ |
 | App Stack (Managed K8s) | [ ] Yes [ ] No |
@@ -169,7 +161,7 @@ Do you need persistent storage at the edge?
 
 Primary edge compute use case:
 
-```
+```text
 _____________________________________________________________
 _____________________________________________________________
 ```

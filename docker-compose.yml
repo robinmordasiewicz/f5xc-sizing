@@ -1,0 +1,9 @@
+services:
+  mkdocs:
+    image: ghcr.io/robinmordasiewicz/f5xc-mkdocs:latest
+    container_name: f5-mkdocs-preview
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/docs
+    entrypoint: ["/bin/sh", "/docs/scripts/start-mkdocs.sh"]

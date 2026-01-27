@@ -1,4 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
-  <circle cx="50" cy="50" r="45" fill="#E4002B"/>
-  <text x="50" y="62" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="white" text-anchor="middle">F5</text>
+  <!-- F5 Official Logo - Simplified version matching F5 brand colors -->
+  <circle cx="50" cy="50" r="48" fill="#E4002B"/>
+  <g fill="#FFFFFF">
+    <!-- F letter -->
+    <path d="M30 30h24v8H40v8h12v8H40v16h-10V30z"/>
+    <!-- 5 numeral -->
+    <path d="M58 30h18v8H66v6h10v2c0 8-4 14-10 16-2 1-4 1-6 1-8 0-14-6-14-14h10c0 3 2 5 4 5s4-2 4-5-2-5-6-5h-6V30z"/>
+  </g>
 </svg>

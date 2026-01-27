@@ -1,17 +1,14 @@
 # App Connect Sizing
 
-F5 Distributed Cloud App Connect provides service mesh capabilities with app-to-app connectivity, service discovery, and centralized orchestration across distributed environments.
+F5 Distributed Cloud App Connect provides service mesh capabilities with
+app-to-app connectivity, service discovery, and centralized orchestration across
+distributed environments.
 
 ---
 
-## Section 1: App Connect Requirements
+## App Connect Requirements
 
-### 1.1 Do You Need App Connect?
-
-- [ ] Yes - We need service mesh / app-to-app connectivity
-- [ ] No - Skip this section
-
-### 1.2 Use Cases
+### Use Cases
 
 What App Connect capabilities do you need?
 
@@ -23,9 +20,9 @@ What App Connect capabilities do you need?
 
 ---
 
-## Section 2: Application Environment
+## Application Environment
 
-### 2.1 Application Architecture
+### Application Architecture
 
 What type of applications do you have?
 
@@ -35,7 +32,7 @@ What type of applications do you have?
 - [ ] Serverless / Functions
 - [ ] Legacy applications
 
-### 2.2 Kubernetes Deployments
+### Kubernetes Deployments
 
 Do you have Kubernetes clusters?
 
@@ -45,19 +42,19 @@ Do you have Kubernetes clusters?
 If yes:
 
 | Cluster Name | Location | Distribution | Services |
-|--------------|----------|--------------|----------|
+| --- | --- | --- | --- |
 | _____________ | _____________ | [ ] EKS [ ] AKS [ ] GKE [ ] OpenShift [ ] Other | _____ |
 | _____________ | _____________ | [ ] EKS [ ] AKS [ ] GKE [ ] OpenShift [ ] Other | _____ |
 | _____________ | _____________ | [ ] EKS [ ] AKS [ ] GKE [ ] OpenShift [ ] Other | _____ |
 
 Total Kubernetes clusters: _____
 
-### 2.3 Service Inventory
+### Service Inventory
 
 How many services need connectivity?
 
 | Environment | Service Count |
-|-------------|---------------|
+| --- | --- |
 | Production | _____ |
 | Staging | _____ |
 | Development | _____ |
@@ -65,9 +62,9 @@ How many services need connectivity?
 
 ---
 
-## Section 3: Service Discovery
+## Service Discovery
 
-### 3.1 Service Discovery Requirements
+### Service Discovery Requirements
 
 What service discovery mechanisms do you use?
 
@@ -77,7 +74,7 @@ What service discovery mechanisms do you use?
 - [ ] Static configuration
 - [ ] Other: _________________
 
-### 3.2 Cross-Environment Discovery
+### Cross-Environment Discovery
 
 Do services need to discover services in other environments?
 
@@ -88,9 +85,9 @@ Do services need to discover services in other environments?
 
 ---
 
-## Section 4: Traffic Management
+## Traffic Management
 
-### 4.1 Load Balancing
+### Load Balancing
 
 What load balancing is needed between services?
 
@@ -99,9 +96,7 @@ What load balancing is needed between services?
 - [ ] Weighted distribution
 - [ ] Geographic / Proximity-based
 
-### 4.2 Advanced Traffic Management
-
-Do you need advanced traffic management?
+### Advanced Traffic Management
 
 - [ ] **A/B testing** - Route percentage to different versions
 - [ ] **Canary deployments** - Gradual rollout
@@ -109,21 +104,21 @@ Do you need advanced traffic management?
 - [ ] **Header-based routing** - Route based on headers
 - [ ] **Fault injection** - Test resilience
 
-### 4.3 Traffic Patterns
+### Traffic Patterns
 
 Describe service-to-service traffic patterns:
 
 | Source Service | Destination Service | RPS | Latency Requirement |
-|----------------|---------------------|-----|---------------------|
+| --- | --- | --- | --- |
 | _____________ | _____________ | _____ | < _____ ms |
 | _____________ | _____________ | _____ | < _____ ms |
 | _____________ | _____________ | _____ | < _____ ms |
 
 ---
 
-## Section 5: Security
+## Security
 
-### 5.1 Service-to-Service Security
+### Service-to-Service Security
 
 What security is required between services?
 
@@ -131,17 +126,15 @@ What security is required between services?
 - [ ] **Service policies** - Allow/deny between services
 - [ ] **Encryption** - Encrypt all service traffic
 
-### 5.2 Policy Requirements
-
-Do you need service policies?
+### Policy Requirements
 
 | Source | Destination | Action | Notes |
-|--------|-------------|--------|-------|
+| --- | --- | --- | --- |
 | _____________ | _____________ | [ ] Allow [ ] Deny | _____________ |
 | _____________ | _____________ | [ ] Allow [ ] Deny | _____________ |
 | _____________ | _____________ | [ ] Allow [ ] Deny | _____________ |
 
-### 5.3 Identity Integration
+### Identity Integration
 
 What identity systems need integration?
 
@@ -153,9 +146,9 @@ What identity systems need integration?
 
 ---
 
-## Section 6: Observability
+## Observability
 
-### 6.1 Service Observability
+### Service Observability
 
 What service observability do you need?
 
@@ -165,7 +158,7 @@ What service observability do you need?
 - [ ] Error rate monitoring
 - [ ] Latency metrics
 
-### 6.2 Distributed Tracing
+### Distributed Tracing
 
 Do you use distributed tracing?
 
@@ -176,9 +169,9 @@ Do you use distributed tracing?
 
 ---
 
-## Section 7: Migration Use Cases
+## Migration Use Cases
 
-### 7.1 Application Migration
+### Application Migration
 
 Are you migrating applications?
 
@@ -190,13 +183,11 @@ Are you migrating applications?
 Migration details:
 
 | Application | From | To | Timeline |
-|-------------|------|----|----------|
+| --- | --- | --- | --- |
 | _____________ | _____________ | _____________ | _____________ |
 | _____________ | _____________ | _____________ | _____________ |
 
-### 7.2 Hybrid Operation
-
-Do you need to run services in multiple locations simultaneously?
+### Hybrid Operation
 
 - [ ] Yes - Active/Active across locations
 - [ ] Yes - Active/Standby failover
@@ -204,9 +195,9 @@ Do you need to run services in multiple locations simultaneously?
 
 ---
 
-## Section 8: Integration
+## Integration
 
-### 8.1 Existing Service Mesh
+### Existing Service Mesh
 
 Do you have an existing service mesh?
 
@@ -222,7 +213,7 @@ If yes, will you:
 - [ ] Integrate/coexist
 - [ ] Migrate gradually
 
-### 8.2 F5 BIG-IP Integration
+### F5 BIG-IP Integration
 
 Do you have F5 BIG-IP to integrate?
 
@@ -235,7 +226,7 @@ Do you have F5 BIG-IP to integrate?
 ## Summary: App Connect Requirements
 
 | Requirement | Value |
-|-------------|-------|
+| --- | --- |
 | Total Services | _____ |
 | Kubernetes Clusters | _____ |
 | Cross-Environment Discovery | [ ] Yes [ ] No |
@@ -248,7 +239,7 @@ Service mesh diagram attached: [ ] Yes [ ] No
 
 Additional notes:
 
-```
+```text
 _____________________________________________________________
 _____________________________________________________________
 ```

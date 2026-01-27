@@ -1,19 +1,18 @@
 # Multi-Cloud Networking Sizing
 
-F5 Distributed Cloud Network Connect provides secure, encrypted connectivity between public clouds, on-premises data centers, and edge sites with centralized management and observability.
+F5 Distributed Cloud Network Connect provides secure, encrypted connectivity
+between public clouds, on-premises data centers, and edge sites with centralized
+management and observability.
 
 ---
 
-## Section 1: Multi-Cloud Networking Requirements
-
-### 1.1 Do You Need Multi-Cloud Networking?
+## Multi-Cloud Networking Requirements
 
 - [ ] Yes - Connect multiple cloud environments
 - [ ] Yes - Connect cloud to on-premises
 - [ ] Yes - Connect distributed edge sites
-- [ ] No - Skip this section
 
-### 1.2 Current Multi-Cloud Challenges
+### Current Multi-Cloud Challenges
 
 What networking challenges are you experiencing?
 
@@ -27,31 +26,31 @@ What networking challenges are you experiencing?
 
 ---
 
-## Section 2: Site Inventory
+## Site Inventory
 
-### 2.1 Cloud Environments
+### Cloud Environments
 
 What cloud environments need connectivity?
 
 | Cloud Provider | Regions | VPCs/VNets | Workloads |
-|---------------|---------|------------|-----------|
+| --- | --- | --- | --- |
 | AWS | _____ | _____ | _____________ |
 | Azure | _____ | _____ | _____________ |
 | Google Cloud | _____ | _____ | _____________ |
 | Other: _______ | _____ | _____ | _____________ |
 
-### 2.2 On-Premises Data Centers
+### On-Premises Data Centers
 
 | Data Center Location | Network Connectivity | Workloads |
-|---------------------|---------------------|-----------|
+| --- | --- | --- |
 | _____________ | [ ] Internet [ ] MPLS [ ] Direct Connect | _____________ |
 | _____________ | [ ] Internet [ ] MPLS [ ] Direct Connect | _____________ |
 | _____________ | [ ] Internet [ ] MPLS [ ] Direct Connect | _____________ |
 
-### 2.3 Edge/Branch Sites
+### Edge/Branch Sites
 
 | Site Type | Count | Connectivity |
-|-----------|-------|--------------|
+| --- | --- | --- |
 | Branch offices | _____ | [ ] Internet [ ] MPLS |
 | Retail locations | _____ | [ ] Internet [ ] MPLS |
 | Manufacturing sites | _____ | [ ] Internet [ ] MPLS |
@@ -62,9 +61,9 @@ What cloud environments need connectivity?
 
 ---
 
-## Section 3: Connectivity Requirements
+## Connectivity Requirements
 
-### 3.1 Site-to-Site Connectivity
+### Site-to-Site Connectivity
 
 What site-to-site connectivity patterns do you need?
 
@@ -74,42 +73,42 @@ What site-to-site connectivity patterns do you need?
 
 Diagram your connectivity requirements:
 
-```
+```text
 [Draw or describe your target topology]
 _____________________________________________________________
 _____________________________________________________________
 _____________________________________________________________
 ```
 
-### 3.2 Traffic Patterns
+### Traffic Patterns
 
 What traffic flows between sites?
 
 | Source | Destination | Traffic Type | Bandwidth |
-|--------|-------------|--------------|-----------|
+| --- | --- | --- | --- |
 | _____________ | _____________ | _____________ | _____ Mbps |
 | _____________ | _____________ | _____________ | _____ Mbps |
 | _____________ | _____________ | _____________ | _____ Mbps |
 | _____________ | _____________ | _____________ | _____ Mbps |
 
-### 3.3 Bandwidth Requirements
+### Bandwidth Requirements
 
 | Metric | Value |
-|--------|-------|
+| --- | --- |
 | Total inter-site bandwidth | _____ Mbps |
 | Peak inter-site bandwidth | _____ Mbps |
 | Average latency requirement | < _____ ms |
 
 ---
 
-## Section 4: Customer Edge Deployment
+## Customer Edge Deployment
 
-### 4.1 CE Site Deployment
+### CE Site Deployment
 
 Where will F5 Customer Edge (CE) nodes be deployed?
 
 | Site | Deployment Type | Node Count | Size |
-|------|-----------------|------------|------|
+| --- | --- | --- | --- |
 | _____________ | [ ] Physical [ ] VM [ ] Cloud | _____ | [ ] Small [ ] Medium [ ] Large |
 | _____________ | [ ] Physical [ ] VM [ ] Cloud | _____ | [ ] Small [ ] Medium [ ] Large |
 | _____________ | [ ] Physical [ ] VM [ ] Cloud | _____ | [ ] Small [ ] Medium [ ] Large |
@@ -120,7 +119,7 @@ Where will F5 Customer Edge (CE) nodes be deployed?
     - **Medium**: 8 vCPU, 32GB RAM, 100GB disk (App Stack)
     - **Large**: 16 vCPU, 64GB RAM, 100GB disk
 
-### 4.2 High Availability
+### High Availability
 
 CE high availability requirements:
 
@@ -129,19 +128,19 @@ CE high availability requirements:
 
 ---
 
-## Section 5: Network Configuration
+## Network Configuration
 
-### 5.1 IP Addressing
+### IP Addressing
 
 Provide subnet information for connected networks:
 
 | Site | Inside Subnet (CIDR) | Outside Subnet (CIDR) | Gateway |
-|------|---------------------|----------------------|---------|
-| _____________ | _____/___  | _____/___  | _____________ |
-| _____________ | _____/___  | _____/___  | _____________ |
-| _____________ | _____/___  | _____/___  | _____________ |
+| --- | --- | --- | --- |
+| _____________ | ___**/**_ | ___**/**_ | _____________ |
+| _____________ | ___**/**_ | ___**/**_ | _____________ |
+| _____________ | ___**/**_ | ___**/**_ | _____________ |
 
-### 5.2 Routing Requirements
+### Routing Requirements
 
 What routing is required?
 
@@ -152,12 +151,12 @@ What routing is required?
 BGP requirements (if applicable):
 
 | Parameter | Value |
-|-----------|-------|
+| --- | --- |
 | Local ASN | _____ |
 | Peer ASN(s) | _____ |
 | Advertised prefixes | _____ |
 
-### 5.3 NAT Requirements
+### NAT Requirements
 
 What NAT is required?
 
@@ -166,11 +165,9 @@ What NAT is required?
 
 ---
 
-## Section 6: Security Features
+## Security Features
 
-### 6.1 Network Firewall
-
-Do you need network firewall between sites?
+### Network Firewall
 
 - [ ] Yes - L3/L4 firewall policies
 - [ ] No
@@ -178,31 +175,25 @@ Do you need network firewall between sites?
 Firewall requirements:
 
 | Source | Destination | Protocol | Port | Action |
-|--------|-------------|----------|------|--------|
+| --- | --- | --- | --- | --- |
 | _____________ | _____________ | _____ | _____ | [ ] Allow [ ] Deny |
 | _____________ | _____________ | _____ | _____ | [ ] Allow [ ] Deny |
 | _____________ | _____________ | _____ | _____ | [ ] Allow [ ] Deny |
 
 Number of firewall rules: _____
 
-### 6.2 Micro-Segmentation
-
-Do you need network micro-segmentation?
+### Micro-Segmentation
 
 - [ ] Yes - Segment traffic within sites
 - [ ] No
 
-### 6.3 Forward Proxy
-
-Do you need forward proxy for outbound traffic?
+### Forward Proxy
 
 - [ ] Yes - HTTP/HTTPS inspection
 - [ ] Yes - URL filtering
 - [ ] No
 
-### 6.4 Service Insertion
-
-Do you need to insert third-party security services?
+### Service Insertion
 
 - [ ] Yes - F5 BIG-IP integration
 - [ ] Yes - Palo Alto Networks
@@ -211,45 +202,45 @@ Do you need to insert third-party security services?
 
 ---
 
-## Section 7: Cloud Integration
+## Cloud Integration
 
-### 7.1 AWS Connectivity
+### AWS Connectivity
 
 If connecting AWS:
 
 | Parameter | Value |
-|-----------|-------|
+| --- | --- |
 | AWS regions | _____________ |
 | VPCs to connect | _____ |
 | Transit Gateway integration | [ ] Yes [ ] No |
 | Direct Connect | [ ] Yes [ ] No |
 
-### 7.2 Azure Connectivity
+### Azure Connectivity
 
 If connecting Azure:
 
 | Parameter | Value |
-|-----------|-------|
+| --- | --- |
 | Azure regions | _____________ |
 | VNets to connect | _____ |
 | Virtual WAN integration | [ ] Yes [ ] No |
 | ExpressRoute | [ ] Yes [ ] No |
 
-### 7.3 GCP Connectivity
+### GCP Connectivity
 
 If connecting Google Cloud:
 
 | Parameter | Value |
-|-----------|-------|
+| --- | --- |
 | GCP regions | _____________ |
 | VPCs to connect | _____ |
 | Cloud Interconnect | [ ] Yes [ ] No |
 
 ---
 
-## Section 8: Observability
+## Observability
 
-### 8.1 Visibility Requirements
+### Visibility Requirements
 
 What network visibility do you need?
 
@@ -259,7 +250,7 @@ What network visibility do you need?
 - [ ] Flow logs / traffic analysis
 - [ ] Security event logging
 
-### 8.2 Integration
+### Integration
 
 Where should network telemetry be sent?
 
@@ -269,19 +260,15 @@ Where should network telemetry be sent?
 
 ---
 
-## Section 9: Advanced Features (Advanced Tier)
+## Advanced Features (Advanced Tier)
 
-### 9.1 Advanced Network Connect Features
-
-Do you need advanced features?
+### Advanced Network Connect Features
 
 - [ ] **Anomaly detection** - ML-based traffic analysis
 - [ ] **Integrated WAF/DDoS/Bot** - Security at network edge
 - [ ] **Advanced service chaining** - Complex traffic flows
 
-### 9.2 Site Mesh Groups
-
-Do you need site mesh groups?
+### Site Mesh Groups
 
 - [ ] **Full mesh** - Direct connectivity between all sites
 - [ ] **Hub-spoke mesh** - Connectivity through hub sites
@@ -292,7 +279,7 @@ Do you need site mesh groups?
 ## Summary: Multi-Cloud Networking Requirements
 
 | Requirement | Value |
-|-------------|-------|
+| --- | --- |
 | Total Sites to Connect | _____ |
 | Cloud Environments | _____ |
 | On-Premises Data Centers | _____ |
@@ -306,7 +293,7 @@ Network topology diagram attached: [ ] Yes [ ] No
 
 Additional notes:
 
-```
+```text
 _____________________________________________________________
 _____________________________________________________________
 _____________________________________________________________

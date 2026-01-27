@@ -1,6 +1,22 @@
-/* Custom PDF styles to fix CSS grid compatibility with WeasyPrint */
+/* ==========================================================================
+   F5 Distributed Cloud PDF Styles
+   Custom styles for WeasyPrint PDF generation
+   ========================================================================== */
 
-/* Override grid layouts - WeasyPrint doesn't support CSS grid properly */
+/* --------------------------------------------------------------------------
+   Variables (matching web design system)
+   -------------------------------------------------------------------------- */
+$f5-primary-blue: #4F73FF;
+$f5-navy: #0F1E57;
+$f5-text-primary: rgba(0, 0, 0, 0.87);
+$f5-text-secondary: #6C778C;
+$f5-bg-page: #F7F8FA;
+$f5-bg-card: #FFFFFF;
+$f5-border: #E5E9F7;
+
+/* --------------------------------------------------------------------------
+   Override grid layouts - WeasyPrint doesn't support CSS grid properly
+   -------------------------------------------------------------------------- */
 .grid,
 .grid.cards,
 [class*="grid"] {
@@ -20,71 +36,202 @@
     display: block !important;
     margin-bottom: 1.5em !important;
     padding: 1em !important;
-    border: 1px solid #ccc !important;
+    border: 1px solid $f5-border !important;
+    border-left: 4px solid $f5-primary-blue !important;
     border-radius: 4px !important;
-    background: #fafafa !important;
+    background: $f5-bg-card !important;
 }
 
-/* Hero section */
+/* --------------------------------------------------------------------------
+   Hero section
+   -------------------------------------------------------------------------- */
 .hero-section {
     text-align: center;
-    padding: 2em 0;
+    padding: 2em;
     margin-bottom: 2em;
+    background: $f5-primary-blue !important;
+    color: white !important;
+    border-radius: 8px;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
 }
 
-/* Hide interactive elements in PDF */
+.hero-section h1,
+.hero-section p {
+    color: white !important;
+}
+
+/* --------------------------------------------------------------------------
+   Hide interactive elements in PDF
+   -------------------------------------------------------------------------- */
 .md-button,
 .md-button--primary,
 [href*="pdf/document.pdf"] {
     display: none !important;
 }
 
-/* Table styling */
+/* --------------------------------------------------------------------------
+   Typography
+   -------------------------------------------------------------------------- */
+body {
+    font-family: Inter, "Inter Fallback", Helvetica, Arial, sans-serif;
+    font-size: 11pt;
+    line-height: 1.5;
+    color: $f5-text-primary;
+}
+
+h1 {
+    font-size: 24pt;
+    font-weight: 700;
+    color: $f5-navy;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+h2 {
+    font-size: 18pt;
+    font-weight: 700;
+    color: $f5-navy;
+    margin-top: 1.2em;
+    margin-bottom: 0.4em;
+}
+
+h3 {
+    font-size: 14pt;
+    font-weight: 700;
+    color: $f5-navy;
+    margin-top: 1em;
+    margin-bottom: 0.3em;
+}
+
+h4, h5, h6 {
+    color: $f5-navy;
+    font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   Links
+   -------------------------------------------------------------------------- */
+a {
+    color: $f5-primary-blue;
+    text-decoration: none;
+}
+
+/* --------------------------------------------------------------------------
+   Table styling
+   -------------------------------------------------------------------------- */
 table {
     width: 100% !important;
     border-collapse: collapse !important;
     margin: 1em 0 !important;
+    font-size: 10pt !important;
 }
 
 th, td {
-    border: 1px solid #ddd !important;
+    border: 1px solid $f5-border !important;
     padding: 8px 12px !important;
     text-align: left !important;
 }
 
 th {
-    background-color: #f5f5f5 !important;
-    font-weight: bold !important;
+    background-color: $f5-navy !important;
+    color: white !important;
+    font-weight: 600 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
 }
 
-/* Admonitions */
+tr:nth-child(even) {
+    background-color: $f5-bg-page !important;
+}
+
+/* --------------------------------------------------------------------------
+   Admonitions
+   -------------------------------------------------------------------------- */
 .admonition {
-    border: 1px solid #448aff !important;
-    border-left-width: 4px !important;
+    border: none !important;
+    border-left: 4px solid $f5-primary-blue !important;
     border-radius: 4px !important;
     padding: 1em !important;
     margin: 1em 0 !important;
-    background: #f8f9fa !important;
+    background: rgba(79, 115, 255, 0.1) !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
 }
 
 .admonition.info {
-    border-color: #00b0ff !important;
+    border-left-color: #00B0FF !important;
+    background: rgba(0, 176, 255, 0.1) !important;
 }
 
 .admonition.tip {
-    border-color: #00c853 !important;
+    border-left-color: #00C853 !important;
+    background: rgba(0, 200, 83, 0.1) !important;
 }
 
 .admonition.warning {
-    border-color: #ff9100 !important;
+    border-left-color: #FF9100 !important;
+    background: rgba(255, 145, 0, 0.1) !important;
+}
+
+.admonition.danger {
+    border-left-color: #FF5252 !important;
+    background: rgba(255, 82, 82, 0.1) !important;
 }
 
 .admonition-title {
-    font-weight: bold !important;
+    font-weight: 600 !important;
     margin-bottom: 0.5em !important;
+    color: $f5-primary-blue;
 }
 
-/* Page break control */
+.admonition.info .admonition-title {
+    color: #0091EA;
+}
+
+.admonition.tip .admonition-title {
+    color: #00A847;
+}
+
+.admonition.warning .admonition-title {
+    color: #E68200;
+}
+
+.admonition.danger .admonition-title {
+    color: #D32F2F;
+}
+
+/* --------------------------------------------------------------------------
+   Question boxes
+   -------------------------------------------------------------------------- */
+.question-box {
+    border: 2px solid $f5-primary-blue !important;
+    border-radius: 8px !important;
+    padding: 1em !important;
+    margin: 1em 0 !important;
+    background: $f5-bg-card !important;
+}
+
+.question-box h4 {
+    color: $f5-primary-blue !important;
+    margin-top: 0 !important;
+}
+
+/* --------------------------------------------------------------------------
+   Response fields
+   -------------------------------------------------------------------------- */
+.response-field {
+    border: 1px solid $f5-border !important;
+    border-radius: 4px !important;
+    padding: 0.75em !important;
+    margin: 0.5em 0 !important;
+    min-height: 2em !important;
+    background: $f5-bg-card !important;
+}
+
+/* --------------------------------------------------------------------------
+   Page break control
+   -------------------------------------------------------------------------- */
 h1, h2 {
     page-break-after: avoid !important;
 }
@@ -96,11 +243,14 @@ h3, h4 {
 .admonition,
 table,
 pre,
-.highlight {
+.highlight,
+.question-box {
     page-break-inside: avoid !important;
 }
 
-/* Task lists */
+/* --------------------------------------------------------------------------
+   Task lists
+   -------------------------------------------------------------------------- */
 .task-list-item {
     list-style: none !important;
 }
@@ -109,39 +259,138 @@ pre,
     margin-right: 0.5em !important;
 }
 
-/* Code blocks */
+/* --------------------------------------------------------------------------
+   Code blocks
+   -------------------------------------------------------------------------- */
 pre {
-    background: #f5f5f5 !important;
+    background: $f5-bg-page !important;
     padding: 1em !important;
     border-radius: 4px !important;
+    border: 1px solid $f5-border !important;
     overflow-x: auto !important;
+    font-size: 9pt !important;
 }
 
 code {
-    background: #f0f0f0 !important;
+    background: $f5-bg-page !important;
     padding: 0.2em 0.4em !important;
     border-radius: 3px !important;
     font-size: 0.9em !important;
+    border: 1px solid $f5-border !important;
 }
 
-/* Icons - replace with text or hide */
+pre > code {
+    border: none !important;
+    padding: 0 !important;
+}
+
+/* --------------------------------------------------------------------------
+   Icons - replace with text or hide
+   -------------------------------------------------------------------------- */
 .twemoji,
 .emojione,
 [class*="material-"] {
     display: none !important;
 }
 
-/* Cover page styling */
+/* --------------------------------------------------------------------------
+   Cover page styling
+   -------------------------------------------------------------------------- */
 .pdf-cover {
     text-align: center;
 }
 
 .pdf-cover h1 {
-    font-size: 2.5em;
+    font-size: 28pt;
     margin-top: 2em;
+    color: $f5-navy;
 }
 
 .pdf-cover h2 {
-    font-size: 1.5em;
-    color: #666;
+    font-size: 18pt;
+    color: $f5-text-secondary;
+}
+
+/* --------------------------------------------------------------------------
+   Sizing cards
+   -------------------------------------------------------------------------- */
+.sizing-card {
+    border: 1px solid $f5-border !important;
+    border-radius: 8px !important;
+    padding: 1em !important;
+    margin: 1em 0 !important;
+    background: $f5-bg-card !important;
+}
+
+.sizing-card h3 {
+    margin-top: 0 !important;
+    color: $f5-primary-blue !important;
+}
+
+/* --------------------------------------------------------------------------
+   Section numbers
+   -------------------------------------------------------------------------- */
+.section-number {
+    display: inline-block;
+    background: $f5-primary-blue;
+    color: white;
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 1.5em;
+    margin-right: 0.5em;
+    font-weight: bold;
+    font-size: 10pt;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+
+/* --------------------------------------------------------------------------
+   Calculator
+   -------------------------------------------------------------------------- */
+.calculator {
+    background: $f5-bg-page !important;
+    padding: 1em !important;
+    border-radius: 8px !important;
+    margin: 1em 0 !important;
+    border: 1px solid $f5-border !important;
+}
+
+/* --------------------------------------------------------------------------
+   Info boxes
+   -------------------------------------------------------------------------- */
+.info-box {
+    background: rgba(79, 115, 255, 0.1) !important;
+    border-left: 4px solid $f5-primary-blue !important;
+    padding: 1em !important;
+    margin: 1em 0 !important;
+    border-radius: 0 4px 4px 0 !important;
+}
+
+.warning-box {
+    background: rgba(255, 145, 0, 0.1) !important;
+    border-left: 4px solid #FF9100 !important;
+    padding: 1em !important;
+    margin: 1em 0 !important;
+    border-radius: 0 4px 4px 0 !important;
+}
+
+.note-box {
+    background: rgba(79, 115, 255, 0.1) !important;
+    border-left: 4px solid $f5-primary-blue !important;
+    padding: 1em !important;
+    margin: 1em 0 !important;
+    border-radius: 0 4px 4px 0 !important;
+}
+
+/* --------------------------------------------------------------------------
+   Page margins and layout
+   -------------------------------------------------------------------------- */
+@page {
+    margin: 2cm;
+}
+
+@page :first {
+    margin-top: 0;
 }
