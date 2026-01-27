@@ -22,7 +22,7 @@ What networking challenges are you experiencing?
 - [ ] High latency between sites
 - [ ] Difficult troubleshooting
 - [ ] Manual configuration overhead
-- [ ] Other: _________________
+- [ ] Other:
 
 ---
 
@@ -34,30 +34,30 @@ What cloud environments need connectivity?
 
 | Cloud Provider | Regions | VPCs/VNets | Workloads |
 | --- | --- | --- | --- |
-| AWS | _____ | _____ | _____________ |
-| Azure | _____ | _____ | _____________ |
-| Google Cloud | _____ | _____ | _____________ |
-| Other: _______ | _____ | _____ | _____________ |
+| AWS |  |  |  |
+| Azure |  |  |  |
+| Google Cloud |  |  |  |
+| Other: |  |  |  |
 
 ### On-Premises Data Centers
 
 | Data Center Location | Network Connectivity | Workloads |
 | --- | --- | --- |
-| _____________ | [ ] Internet [ ] MPLS [ ] Direct Connect | _____________ |
-| _____________ | [ ] Internet [ ] MPLS [ ] Direct Connect | _____________ |
-| _____________ | [ ] Internet [ ] MPLS [ ] Direct Connect | _____________ |
+|  | [ ] Internet [ ] MPLS [ ] Direct Connect |  |
+|  | [ ] Internet [ ] MPLS [ ] Direct Connect |  |
+|  | [ ] Internet [ ] MPLS [ ] Direct Connect |  |
 
 ### Edge/Branch Sites
 
 | Site Type | Count | Connectivity |
 | --- | --- | --- |
-| Branch offices | _____ | [ ] Internet [ ] MPLS |
-| Retail locations | _____ | [ ] Internet [ ] MPLS |
-| Manufacturing sites | _____ | [ ] Internet [ ] MPLS |
-| Remote workers | _____ | [ ] Internet [ ] VPN |
-| Other: _______ | _____ | _____________ |
+| Branch offices |  | [ ] Internet [ ] MPLS |
+| Retail locations |  | [ ] Internet [ ] MPLS |
+| Manufacturing sites |  | [ ] Internet [ ] MPLS |
+| Remote workers |  | [ ] Internet [ ] VPN |
+| Other: |  |  |
 
-**Total sites to connect:** _____
+**Total sites to connect:**
 
 ---
 
@@ -75,9 +75,9 @@ Diagram your connectivity requirements:
 
 ```text
 [Draw or describe your target topology]
-_____________________________________________________________
-_____________________________________________________________
-_____________________________________________________________
+
+
+
 ```
 
 ### Traffic Patterns
@@ -86,18 +86,18 @@ What traffic flows between sites?
 
 | Source | Destination | Traffic Type | Bandwidth |
 | --- | --- | --- | --- |
-| _____________ | _____________ | _____________ | _____ Mbps |
-| _____________ | _____________ | _____________ | _____ Mbps |
-| _____________ | _____________ | _____________ | _____ Mbps |
-| _____________ | _____________ | _____________ | _____ Mbps |
+|  |  |  | Mbps |
+|  |  |  | Mbps |
+|  |  |  | Mbps |
+|  |  |  | Mbps |
 
 ### Bandwidth Requirements
 
 | Metric | Value |
 | --- | --- |
-| Total inter-site bandwidth | _____ Mbps |
-| Peak inter-site bandwidth | _____ Mbps |
-| Average latency requirement | < _____ ms |
+| Total inter-site bandwidth | Mbps |
+| Peak inter-site bandwidth | Mbps |
+| Average latency requirement | < ms |
 
 ---
 
@@ -109,10 +109,10 @@ Where will F5 Customer Edge (CE) nodes be deployed?
 
 | Site | Deployment Type | Node Count | Size |
 | --- | --- | --- | --- |
-| _____________ | [ ] Physical [ ] VM [ ] Cloud | _____ | [ ] Small [ ] Medium [ ] Large |
-| _____________ | [ ] Physical [ ] VM [ ] Cloud | _____ | [ ] Small [ ] Medium [ ] Large |
-| _____________ | [ ] Physical [ ] VM [ ] Cloud | _____ | [ ] Small [ ] Medium [ ] Large |
-| _____________ | [ ] Physical [ ] VM [ ] Cloud | _____ | [ ] Small [ ] Medium [ ] Large |
+|  | [ ] Physical [ ] VM [ ] Cloud |  | [ ] Small [ ] Medium [ ] Large |
+|  | [ ] Physical [ ] VM [ ] Cloud |  | [ ] Small [ ] Medium [ ] Large |
+|  | [ ] Physical [ ] VM [ ] Cloud |  | [ ] Small [ ] Medium [ ] Large |
+|  | [ ] Physical [ ] VM [ ] Cloud |  | [ ] Small [ ] Medium [ ] Large |
 
 !!! info "CE Node Sizes"
     - **Small**: 8 vCPU, 32GB RAM, 80GB disk
@@ -136,9 +136,9 @@ Provide subnet information for connected networks:
 
 | Site | Inside Subnet (CIDR) | Outside Subnet (CIDR) | Gateway |
 | --- | --- | --- | --- |
-| _____________ | ___**/**_ | ___**/**_ | _____________ |
-| _____________ | ___**/**_ | ___**/**_ | _____________ |
-| _____________ | ___**/**_ | ___**/**_ | _____________ |
+|  |  |  |  |
+|  |  |  |  |
+|  |  |  |  |
 
 ### Routing Requirements
 
@@ -152,9 +152,9 @@ BGP requirements (if applicable):
 
 | Parameter | Value |
 | --- | --- |
-| Local ASN | _____ |
-| Peer ASN(s) | _____ |
-| Advertised prefixes | _____ |
+| Local ASN |  |
+| Peer ASN(s) |  |
+| Advertised prefixes |  |
 
 ### NAT Requirements
 
@@ -176,11 +176,11 @@ Firewall requirements:
 
 | Source | Destination | Protocol | Port | Action |
 | --- | --- | --- | --- | --- |
-| _____________ | _____________ | _____ | _____ | [ ] Allow [ ] Deny |
-| _____________ | _____________ | _____ | _____ | [ ] Allow [ ] Deny |
-| _____________ | _____________ | _____ | _____ | [ ] Allow [ ] Deny |
+|  |  |  |  | [ ] Allow [ ] Deny |
+|  |  |  |  | [ ] Allow [ ] Deny |
+|  |  |  |  | [ ] Allow [ ] Deny |
 
-Number of firewall rules: _____
+Number of firewall rules:
 
 ### Micro-Segmentation
 
@@ -197,7 +197,7 @@ Number of firewall rules: _____
 
 - [ ] Yes - F5 BIG-IP integration
 - [ ] Yes - Palo Alto Networks
-- [ ] Yes - Other: _________________
+- [ ] Yes - Other:
 - [ ] No
 
 ---
@@ -210,8 +210,8 @@ If connecting AWS:
 
 | Parameter | Value |
 | --- | --- |
-| AWS regions | _____________ |
-| VPCs to connect | _____ |
+| AWS regions |  |
+| VPCs to connect |  |
 | Transit Gateway integration | [ ] Yes [ ] No |
 | Direct Connect | [ ] Yes [ ] No |
 
@@ -221,8 +221,8 @@ If connecting Azure:
 
 | Parameter | Value |
 | --- | --- |
-| Azure regions | _____________ |
-| VNets to connect | _____ |
+| Azure regions |  |
+| VNets to connect |  |
 | Virtual WAN integration | [ ] Yes [ ] No |
 | ExpressRoute | [ ] Yes [ ] No |
 
@@ -232,8 +232,8 @@ If connecting Google Cloud:
 
 | Parameter | Value |
 | --- | --- |
-| GCP regions | _____________ |
-| VPCs to connect | _____ |
+| GCP regions |  |
+| VPCs to connect |  |
 | Cloud Interconnect | [ ] Yes [ ] No |
 
 ---
@@ -255,8 +255,8 @@ What network visibility do you need?
 Where should network telemetry be sent?
 
 - [ ] F5 XC Console only
-- [ ] SIEM integration: _________________
-- [ ] Network monitoring tool: _________________
+- [ ] SIEM integration:
+- [ ] Network monitoring tool:
 
 ---
 
@@ -280,13 +280,13 @@ Where should network telemetry be sent?
 
 | Requirement | Value |
 | --- | --- |
-| Total Sites to Connect | _____ |
-| Cloud Environments | _____ |
-| On-Premises Data Centers | _____ |
-| Edge/Branch Sites | _____ |
-| Total Inter-Site Bandwidth | _____ Mbps |
-| CE Nodes Required | _____ |
-| Network Firewall Rules | _____ |
+| Total Sites to Connect |  |
+| Cloud Environments |  |
+| On-Premises Data Centers |  |
+| Edge/Branch Sites |  |
+| Total Inter-Site Bandwidth | Mbps |
+| CE Nodes Required |  |
+| Network Firewall Rules |  |
 | Tier Required | [ ] Standard [ ] Advanced |
 
 Network topology diagram attached: [ ] Yes [ ] No
@@ -294,7 +294,7 @@ Network topology diagram attached: [ ] Yes [ ] No
 Additional notes:
 
 ```text
-_____________________________________________________________
-_____________________________________________________________
-_____________________________________________________________
+
+
+
 ```

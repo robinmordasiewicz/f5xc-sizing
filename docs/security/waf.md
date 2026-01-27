@@ -14,10 +14,10 @@ How many web applications require WAF protection?
 
 | Category | Count |
 | --- | --- |
-| Production Applications | _____ |
-| Staging/QA Applications | _____ |
-| Development Applications | _____ |
-| **Total Applications** | _____ |
+| Production Applications |  |
+| Staging/QA Applications |  |
+| Development Applications |  |
+| **Total Applications** |  |
 
 ### Application Details
 
@@ -25,11 +25,11 @@ For each major application, provide the following:
 
 | Application Name | Domain/FQDN | Environment | Protocol | Criticality |
 | --- | --- | --- | --- | --- |
-| _____________ | _____________ | [ ] Prod [ ] Stage [ ] Dev | [ ] HTTP [ ] HTTPS | [ ] Critical [ ] High [ ] Medium [ ] Low |
-| _____________ | _____________ | [ ] Prod [ ] Stage [ ] Dev | [ ] HTTP [ ] HTTPS | [ ] Critical [ ] High [ ] Medium [ ] Low |
-| _____________ | _____________ | [ ] Prod [ ] Stage [ ] Dev | [ ] HTTP [ ] HTTPS | [ ] Critical [ ] High [ ] Medium [ ] Low |
-| _____________ | _____________ | [ ] Prod [ ] Stage [ ] Dev | [ ] HTTP [ ] HTTPS | [ ] Critical [ ] High [ ] Medium [ ] Low |
-| _____________ | _____________ | [ ] Prod [ ] Stage [ ] Dev | [ ] HTTP [ ] HTTPS | [ ] Critical [ ] High [ ] Medium [ ] Low |
+|  |  | [ ] Prod [ ] Stage [ ] Dev | [ ] HTTP [ ] HTTPS | [ ] Critical [ ] High [ ] Medium [ ] Low |
+|  |  | [ ] Prod [ ] Stage [ ] Dev | [ ] HTTP [ ] HTTPS | [ ] Critical [ ] High [ ] Medium [ ] Low |
+|  |  | [ ] Prod [ ] Stage [ ] Dev | [ ] HTTP [ ] HTTPS | [ ] Critical [ ] High [ ] Medium [ ] Low |
+|  |  | [ ] Prod [ ] Stage [ ] Dev | [ ] HTTP [ ] HTTPS | [ ] Critical [ ] High [ ] Medium [ ] Low |
+|  |  | [ ] Prod [ ] Stage [ ] Dev | [ ] HTTP [ ] HTTPS | [ ] Critical [ ] High [ ] Medium [ ] Low |
 
 !!! info "Additional Applications"
     If you have more than 5 applications, please attach a separate spreadsheet
@@ -45,7 +45,7 @@ What types of applications are you protecting?
 - [ ] API-only services (covered in API Security section)
 - [ ] Legacy applications
 - [ ] Microservices
-- [ ] Other: _________________
+- [ ] Other:
 
 ---
 
@@ -57,9 +57,9 @@ Provide estimated request volumes:
 
 | Metric | Average | Peak |
 | --- | --- | --- |
-| Requests per Second (RPS) | _____ | _____ |
-| Requests per Day | _____ | _____ |
-| Requests per Month | _____ | _____ |
+| Requests per Second (RPS) |  |  |
+| Requests per Day |  |  |
+| Requests per Month |  |  |
 
 !!! note "Base Package Includes"
     Standard tier includes 30 million requests per month from Regional Edges.
@@ -68,9 +68,9 @@ Provide estimated request volumes:
 
 | Metric | Value | Unit |
 | --- | --- | --- |
-| Average Inbound Bandwidth | _____ | Mbps |
-| Peak Inbound Bandwidth | _____ | Mbps |
-| Average Response Size | _____ | KB |
+| Average Inbound Bandwidth |  | Mbps |
+| Peak Inbound Bandwidth |  | Mbps |
+| Average Response Size |  | KB |
 
 ### Geographic Distribution
 
@@ -78,11 +78,11 @@ Where are your users located?
 
 | Region | Percentage of Traffic |
 | --- | --- |
-| North America | _____% |
-| Europe | _____% |
-| Asia-Pacific | _____% |
-| South America | _____% |
-| Middle East / Africa | _____% |
+| North America | % |
+| Europe | % |
+| Asia-Pacific | % |
+| South America | % |
+| Middle East / Africa | % |
 | **Total** | 100% |
 
 ---
@@ -125,7 +125,7 @@ What WAF operating mode do you prefer?
 - [ ] **Monitoring Mode** - Log but don't block (for initial deployment)
 - [ ] **Start in Monitoring, transition to Blocking** after tuning period
 
-Tuning period preference: _____ days/weeks
+Tuning period preference: days/weeks
 
 ---
 
@@ -137,11 +137,11 @@ Where are your application origin servers hosted?
 
 | Location | Count | Provider |
 | --- | --- | --- |
-| AWS | _____ | Region(s): _____________ |
-| Azure | _____ | Region(s): _____________ |
-| Google Cloud | _____ | Region(s): _____________ |
-| On-Premises Data Center | _____ | Location(s): _____________ |
-| Other Cloud | _____ | Provider: _____________ |
+| AWS |  | Region(s): |
+| Azure |  | Region(s): |
+| Google Cloud |  | Region(s): |
+| On-Premises Data Center |  | Location(s): |
+| Other Cloud |  | Provider: |
 
 ### Origin Connectivity
 
@@ -160,7 +160,7 @@ Do you have multiple origin servers per application?
 - [ ] Yes - Active/Standby failover
 - [ ] No - Single origin server
 
-Number of origin servers per application: _____
+Number of origin servers per application:
 
 ---
 
@@ -178,15 +178,15 @@ How do you want to manage TLS certificates?
 
 | Domain | Certificate Type | Expiration | Notes |
 | --- | --- | --- | --- |
-| _____________ | [ ] Single [ ] Wildcard [ ] SAN | _________ | _____ |
-| _____________ | [ ] Single [ ] Wildcard [ ] SAN | _________ | _____ |
-| _____________ | [ ] Single [ ] Wildcard [ ] SAN | _________ | _____ |
+|  | [ ] Single [ ] Wildcard [ ] SAN |  |  |
+|  | [ ] Single [ ] Wildcard [ ] SAN |  |  |
+|  | [ ] Single [ ] Wildcard [ ] SAN |  |  |
 
 ### TLS Requirements
 
 - Minimum TLS version required: [ ] TLS 1.2 [ ] TLS 1.3
 - Do you require mTLS (Mutual TLS)? [ ] Yes [ ] No
-- Cipher suite requirements: _________________
+- Cipher suite requirements:
 
 ---
 
@@ -198,7 +198,7 @@ How do you want to manage TLS certificates?
 - [ ] IP Denylisting (block specific IPs)
 - [ ] Geographic restrictions (block certain countries)
 
-Number of IP prefixes to manage: _____
+Number of IP prefixes to manage:
 
 ### Rate Limiting
 
@@ -209,9 +209,9 @@ If yes, provide requirements:
 
 | Scope | Limit | Time Window |
 | --- | --- | --- |
-| Per IP Address | _____ requests | _____ seconds |
-| Per User | _____ requests | _____ seconds |
-| Per API Endpoint | _____ requests | _____ seconds |
+| Per IP Address | requests | seconds |
+| Per User | requests | seconds |
+| Per API Endpoint | requests | seconds |
 
 ### Geographic Blocking (OFAC Compliance)
 
@@ -219,7 +219,7 @@ If yes, provide requirements:
 - [ ] Yes - Custom country list
 - [ ] No
 
-Countries to block: _________________
+Countries to block:
 
 ---
 
@@ -244,11 +244,11 @@ Where should logs be sent?
 - [ ] AWS S3
 - [ ] Azure Blob Storage
 - [ ] Sumo Logic
-- [ ] Other SIEM: _________________
+- [ ] Other SIEM:
 
 ### Retention Requirements
 
-Log retention period required: _____ days
+Log retention period required: days
 
 ---
 
@@ -276,16 +276,16 @@ Do you want F5 to manage WAF policies?
 
 | Requirement | Value |
 | --- | --- |
-| Number of Applications | _____ |
-| Estimated Monthly Requests | _____ |
+| Number of Applications |  |
+| Estimated Monthly Requests |  |
 | Tier Required | [ ] Standard [ ] Advanced |
 | Support Level | [ ] Standard [ ] Enhanced [ ] Enhanced Plus |
-| Primary Deployment Region | _____ |
+| Primary Deployment Region |  |
 
 Additional notes or special requirements:
 
 ```text
-_____________________________________________________________
-_____________________________________________________________
-_____________________________________________________________
+
+
+
 ```

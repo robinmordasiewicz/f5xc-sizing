@@ -27,8 +27,8 @@ What bot-related challenges are you experiencing?
 Describe specific bot challenges:
 
 ```text
-_____________________________________________________________
-_____________________________________________________________
+
+
 ```
 
 ---
@@ -41,9 +41,9 @@ Which applications need bot protection?
 
 | Application/Domain | Critical Pages | Platform |
 | --- | --- | --- |
-| _____________ | [ ] Login [ ] Registration [ ] Checkout [ ] Search | [ ] Web [ ] Mobile [ ] API |
-| _____________ | [ ] Login [ ] Registration [ ] Checkout [ ] Search | [ ] Web [ ] Mobile [ ] API |
-| _____________ | [ ] Login [ ] Registration [ ] Checkout [ ] Search | [ ] Web [ ] Mobile [ ] API |
+|  | [ ] Login [ ] Registration [ ] Checkout [ ] Search | [ ] Web [ ] Mobile [ ] API |
+|  | [ ] Login [ ] Registration [ ] Checkout [ ] Search | [ ] Web [ ] Mobile [ ] API |
+|  | [ ] Login [ ] Registration [ ] Checkout [ ] Search | [ ] Web [ ] Mobile [ ] API |
 
 ### FQDNs to Protect
 
@@ -51,10 +51,10 @@ List the fully qualified domain names requiring bot defense:
 
 | FQDN | Environment |
 | --- | --- |
-| _____________ | [ ] Production [ ] Staging |
-| _____________ | [ ] Production [ ] Staging |
-| _____________ | [ ] Production [ ] Staging |
-| _____________ | [ ] Production [ ] Staging |
+|  | [ ] Production [ ] Staging |
+|  | [ ] Production [ ] Staging |
+|  | [ ] Production [ ] Staging |
+|  | [ ] Production [ ] Staging |
 
 !!! note "Standard Tier"
     Standard Bot Defense includes protection for 2 FQDNs. Additional FQDNs
@@ -73,8 +73,8 @@ If yes, provide mobile app details:
 
 | App Name | Platform | Downloads (est.) |
 | --- | --- | --- |
-| _____________ | [ ] iOS [ ] Android | _____________ |
-| _____________ | [ ] iOS [ ] Android | _____________ |
+|  | [ ] iOS [ ] Android |  |
+|  | [ ] iOS [ ] Android |  |
 
 ---
 
@@ -86,12 +86,12 @@ Provide estimated transaction volumes:
 
 | Metric | Daily Volume |
 | --- | --- |
-| Total page views / transactions | _____ |
-| Login attempts | _____ |
-| Registration attempts | _____ |
-| Checkout / purchase attempts | _____ |
-| Search queries | _____ |
-| API calls | _____ |
+| Total page views / transactions |  |
+| Login attempts |  |
+| Registration attempts |  |
+| Checkout / purchase attempts |  |
+| Search queries |  |
+| API calls |  |
 
 !!! note "Tier Entitlements"
     - Standard: Up to 500,000 transactions/day
@@ -102,9 +102,9 @@ Provide estimated transaction volumes:
 
 | Metric | Peak Value | When |
 | --- | --- | --- |
-| Peak transactions per day | _____ | _____________ |
-| Peak transactions per hour | _____ | _____________ |
-| Seasonal peaks (e.g., Black Friday) | _____ | _____________ |
+| Peak transactions per day |  |  |
+| Peak transactions per hour |  |  |
+| Seasonal peaks (e.g., Black Friday) |  |  |
 
 ### Current Bot Traffic Estimate
 
@@ -195,8 +195,8 @@ Do you have existing bot management solutions?
 
 | Solution | Replace or Integrate |
 | --- | --- |
-| _____________ | [ ] Replace [ ] Integrate |
-| _____________ | [ ] Replace [ ] Integrate |
+|  | [ ] Replace [ ] Integrate |
+|  | [ ] Replace [ ] Integrate |
 
 ---
 
@@ -241,7 +241,7 @@ What bot visibility do you need?
 - [ ] Yes - Send to data lake (S3, etc.)
 - [ ] No - F5 console is sufficient
 
-Target system: _________________
+Target system:
 
 ---
 
@@ -287,8 +287,8 @@ What level of bot defense support do you need?
 
 | Requirement | Value |
 | --- | --- |
-| Number of FQDNs | _____ |
-| Estimated Daily Transactions | _____ |
+| Number of FQDNs |  |
+| Estimated Daily Transactions |  |
 | Mobile SDK Required | [ ] Yes [ ] No |
 | Detection Method | [ ] Signature [ ] Behavioral [ ] Both |
 | Tier Required | [ ] Standard [ ] Advanced [ ] Premium |
@@ -297,15 +297,15 @@ What level of bot defense support do you need?
 Primary bot threats to address:
 
 ```text
-1. _____________________________________________________________
-2. _____________________________________________________________
-3. _____________________________________________________________
+1.
+2.
+3.
 ```
 
 Additional notes or special requirements:
 
 ```text
-_____________________________________________________________
-_____________________________________________________________
-_____________________________________________________________
+
+
+
 ```

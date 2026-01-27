@@ -17,7 +17,7 @@ What are your primary CDN goals?
 - [ ] Reduce bandwidth/egress costs
 - [ ] Global content distribution
 - [ ] DDoS protection at the edge
-- [ ] Other: _________________
+- [ ] Other:
 
 ---
 
@@ -29,22 +29,22 @@ What content will be cached?
 
 | Content Type | Percentage | Cache TTL |
 | --- | --- | --- |
-| Static images (jpg, png, gif, svg) | _____% | _____ hours |
-| JavaScript / CSS | _____% | _____ hours |
-| Video / Media files | _____% | _____ hours |
-| HTML pages | _____% | _____ hours |
-| API responses | _____% | _____ seconds |
-| Documents (PDF, etc.) | _____% | _____ hours |
-| Other: _____________ | _____% | _____ |
+| Static images (jpg, png, gif, svg) | % | hours |
+| JavaScript / CSS | % | hours |
+| Video / Media files | % | hours |
+| HTML pages | % | hours |
+| API responses | % | seconds |
+| Documents (PDF, etc.) | % | hours |
+| Other: | % |  |
 
 ### Content Size
 
 | Metric | Value |
 | --- | --- |
-| Total unique content size | _____ GB/TB |
-| Average object size | _____ KB |
-| Largest object size | _____ MB |
-| Total number of unique objects | _____ |
+| Total unique content size | GB/TB |
+| Average object size | KB |
+| Largest object size | MB |
+| Total number of unique objects |  |
 
 ### Content Origin
 
@@ -52,8 +52,8 @@ Where is your origin content hosted?
 
 | Origin Location | Provider | Percentage |
 | --- | --- | --- |
-| _____________ | [ ] AWS [ ] Azure [ ] GCP [ ] On-Prem [ ] Other | _____% |
-| _____________ | [ ] AWS [ ] Azure [ ] GCP [ ] On-Prem [ ] Other | _____% |
+|  | [ ] AWS [ ] Azure [ ] GCP [ ] On-Prem [ ] Other | % |
+|  | [ ] AWS [ ] Azure [ ] GCP [ ] On-Prem [ ] Other | % |
 
 ---
 
@@ -63,9 +63,9 @@ Where is your origin content hosted?
 
 | Metric | Average | Peak |
 | --- | --- | --- |
-| Requests per second | _____ | _____ |
-| Requests per month | _____ | _____ |
-| Bandwidth (Gbps) | _____ | _____ |
+| Requests per second |  |  |
+| Requests per month |  |  |
+| Bandwidth (Gbps) |  |  |
 
 ### Regional Distribution
 
@@ -73,11 +73,11 @@ Where are your users located?
 
 | Region | Traffic Percentage |
 | --- | --- |
-| North America | _____% |
-| Europe | _____% |
-| Asia-Pacific | _____% |
-| South America | _____% |
-| Other | _____% |
+| North America | % |
+| Europe | % |
+| Asia-Pacific | % |
+| South America | % |
+| Other | % |
 
 !!! note "Regional Pricing"
     CDN data transfer and request pricing varies by region.
@@ -100,8 +100,8 @@ What should be included in cache keys?
 
 - [ ] URL path
 - [ ] Query string parameters
-- [ ] Specific headers: _________________
-- [ ] Cookies: _________________
+- [ ] Specific headers:
+- [ ] Cookies:
 
 ### Cache Purge Requirements
 
@@ -113,7 +113,7 @@ How will you purge cached content?
 - [ ] Path-based purge
 - [ ] Full cache purge
 
-Estimated purge frequency: _____ per day/week
+Estimated purge frequency: per day/week
 
 ---
 
@@ -151,10 +151,10 @@ Estimated purge frequency: _____ per day/week
 
 | URL Pattern | Cache Behavior | TTL |
 | --- | --- | --- |
-| /api/* | [ ] Cache [ ] Bypass | _____ |
-| /static/* | [ ] Cache [ ] Bypass | _____ |
-| *.css | [ ] Cache [ ] Bypass | _____ |
-| _____________ | [ ] Cache [ ] Bypass | _____ |
+| /api/* | [ ] Cache [ ] Bypass |  |
+| /static/* | [ ] Cache [ ] Bypass |  |
+| *.css | [ ] Cache [ ] Bypass |  |
+|  | [ ] Cache [ ] Bypass |  |
 
 ---
 
@@ -164,9 +164,9 @@ Estimated purge frequency: _____ per day/week
 
 | Metric | Target |
 | --- | --- |
-| Target cache hit ratio | > _____% |
-| Target TTFB from edge | < _____ ms |
-| Acceptable origin load reduction | _____% |
+| Target cache hit ratio | > % |
+| Target TTFB from edge | < ms |
+| Acceptable origin load reduction | % |
 
 ### Monitoring Requirements
 
@@ -185,16 +185,16 @@ What CDN metrics do you need?
 
 | Requirement | Value |
 | --- | --- |
-| Domains to CDN | _____ |
-| Monthly Requests | _____ |
-| Monthly Data Transfer | _____ GB |
-| Primary Regions | _____________ |
+| Domains to CDN |  |
+| Monthly Requests |  |
+| Monthly Data Transfer | GB |
+| Primary Regions |  |
 | Security Integration | [ ] Yes [ ] No |
 | Custom Cache Rules | [ ] Yes [ ] No |
 
 Additional notes:
 
 ```text
-_____________________________________________________________
-_____________________________________________________________
+
+
 ```

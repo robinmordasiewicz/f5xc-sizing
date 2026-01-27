@@ -434,30 +434,84 @@ body,
 }
 
 /* --------------------------------------------------------------------------
-   Tables
+   Tables - Questionnaire Style
    -------------------------------------------------------------------------- */
 .md-typeset table:not([class]) {
   border: 1px solid var(--f5-border);
   border-radius: 4px;
   overflow: hidden;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
 }
 
 .md-typeset table:not([class]) th {
   background-color: var(--f5-navy);
   color: white;
   font-weight: 600;
-  text-transform: none;
-  padding: 0.75rem 1rem;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.03em;
+  padding: 0.875rem 1rem;
+  text-align: left;
 }
 
 .md-typeset table:not([class]) td {
   padding: 0.75rem 1rem;
   border-bottom: 1px solid var(--f5-border);
+  background-color: var(--f5-bg-subtle);
+  transition: background-color 0.15s ease;
+  min-height: 2.5rem;
+  vertical-align: middle;
 }
 
-.md-typeset table:not([class]) tr:nth-child(even) {
+/* Input field appearance for empty cells */
+.md-typeset table:not([class]) td:empty,
+.md-typeset table:not([class]) td:blank {
+  background-color: #FFFFFF;
+  border: 1px solid var(--f5-border);
+  border-bottom: 2px solid var(--f5-border);
+  min-width: 120px;
+}
+
+/* Hover states for web interactivity */
+.md-typeset table:not([class]) tbody tr:hover td {
+  background-color: var(--f5-bg-note);
+}
+
+/* First column styling - labels */
+.md-typeset table:not([class]) td:first-child {
+  font-weight: 500;
+  color: var(--f5-navy);
   background-color: var(--f5-bg-page);
+}
+
+/* Alternating row colors removed for cleaner questionnaire look */
+.md-typeset table:not([class]) tr:nth-child(even) td {
+  background-color: var(--f5-bg-subtle);
+}
+
+.md-typeset table:not([class]) tr:nth-child(even) td:first-child {
+  background-color: var(--f5-bg-page);
+}
+
+/* Dark mode adjustments */
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) td {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) td:first-child {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) td:empty,
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) td:blank {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) tbody tr:hover td {
+  background-color: rgba(79, 115, 255, 0.15);
 }
 
 /* --------------------------------------------------------------------------
@@ -897,20 +951,25 @@ textarea:focus {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.4rem;
+  padding: 0.5rem 1.25rem;
   margin: 1rem 0;
   background-color: var(--f5-bg-note);
   border: 1px solid var(--f5-primary-blue);
-  border-radius: 4px;
+  border-radius: 6px;
   color: var(--f5-primary-blue);
   font-size: 0.875rem;
-  font-weight: 500;
+  font-weight: 600;
   text-decoration: none;
 }
 
+/* Hide the SVG icon */
 .md-content a[href$=".pdf"][download] svg {
-  width: 1.75rem;
-  height: 1.75rem;
+  display: none;
+}
+
+/* Add "Download PDF" text */
+.md-content a[href$=".pdf"][download]::before {
+  content: "Download PDF";
 }
 
 .md-content a[href$=".pdf"][download]:hover {
@@ -951,6 +1010,77 @@ textarea:focus {
 
   .hero-section {
     background: var(--f5-primary-blue) !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Print-optimized table styles for questionnaires */
+  .md-typeset table:not([class]) {
+    border: 1px solid #333 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .md-typeset table:not([class]) th {
+    background-color: #0F1E57 !important;
+    color: white !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    font-size: 0.7rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .md-typeset table:not([class]) td {
+    border: 1px solid #ccc !important;
+    padding: 0.5rem 0.75rem;
+    min-height: 1.5rem;
+    background-color: transparent !important;
+  }
+
+  /* Dotted line for writable fields in print */
+  .md-typeset table:not([class]) td:not(:first-child) {
+    border-bottom: 1px dotted #666 !important;
+  }
+
+  .md-typeset table:not([class]) td:first-child {
+    font-weight: 600;
+    background-color: #f5f5f5 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Prevent tables from breaking across pages */
+  .md-typeset table:not([class]) {
+    page-break-inside: avoid;
+  }
+
+  .md-typeset table:not([class]) tr {
+    page-break-inside: avoid;
+  }
+
+  /* Radio and checkbox options for print */
+  .radio-option,
+  .checkbox-option {
+    display: inline-flex !important;
+    align-items: center !important;
+    padding: 2px 6px !important;
+    margin: 2px 4px !important;
+  }
+
+  .radio-option::before {
+    width: 10px !important;
+    height: 10px !important;
+    border: 2px solid #4F73FF !important;
+    border-radius: 50% !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .checkbox-option::before {
+    width: 10px !important;
+    height: 10px !important;
+    border: 2px solid #4F73FF !important;
+    border-radius: 2px !important;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
@@ -1006,4 +1136,93 @@ textarea:focus {
   .hero-section {
     padding: 1.5rem;
   }
+}
+
+/* --------------------------------------------------------------------------
+   Radio Button and Checkbox Option Styling
+   ( ) renders as radio (circle) - single-select
+   [ ] renders as checkbox (square) - multi-select
+   -------------------------------------------------------------------------- */
+
+/* Base option styling */
+.radio-option,
+.checkbox-option {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.5rem;
+  margin: 0.125rem 0.25rem;
+  border-radius: 4px;
+  cursor: default;
+  transition: background-color 0.15s ease;
+  white-space: nowrap;
+}
+
+/* Radio button - circle indicator (single-select) */
+.radio-option::before {
+  content: '';
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--f5-primary-blue);
+  border-radius: 50%; /* Circle for radio */
+  margin-right: 0.5rem;
+  flex-shrink: 0;
+  background-color: transparent;
+  transition: all 0.15s ease;
+}
+
+/* Checkbox - square indicator (multi-select) */
+.checkbox-option::before {
+  content: '';
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--f5-primary-blue);
+  border-radius: 2px; /* Square for checkbox */
+  margin-right: 0.5rem;
+  flex-shrink: 0;
+  background-color: transparent;
+  transition: all 0.15s ease;
+}
+
+/* Hover states */
+.radio-option:hover,
+.checkbox-option:hover {
+  background-color: var(--f5-bg-note);
+}
+
+.radio-option:hover::before,
+.checkbox-option:hover::before {
+  border-color: var(--f5-primary-blue-hover);
+  background-color: rgba(79, 115, 255, 0.1);
+}
+
+/* Dark mode adjustments */
+[data-md-color-scheme="slate"] .radio-option,
+[data-md-color-scheme="slate"] .checkbox-option {
+  color: var(--f5-text-primary);
+}
+
+[data-md-color-scheme="slate"] .radio-option:hover,
+[data-md-color-scheme="slate"] .checkbox-option:hover {
+  background-color: rgba(79, 115, 255, 0.15);
+}
+
+[data-md-color-scheme="slate"] .radio-option::before,
+[data-md-color-scheme="slate"] .checkbox-option::before {
+  border-color: var(--f5-primary-blue);
+}
+
+[data-md-color-scheme="slate"] .radio-option:hover::before,
+[data-md-color-scheme="slate"] .checkbox-option:hover::before {
+  background-color: rgba(79, 115, 255, 0.2);
+}
+
+/* Table cell containing options - flex layout */
+.md-typeset td:has(.radio-option),
+.md-typeset td:has(.checkbox-option) {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem;
 }
