@@ -1,0 +1,2435 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Sizing Questionnaire">
+      
+      
+        <meta name="author" content="Robin Mordasiewicz">
+      
+      
+        <link rel="canonical" href="https://robinmordasiewicz.github.io/f5xc-sizing/security/api-security/">
+      
+      
+        <link rel="prev" href="../waf/">
+      
+      
+        <link rel="next" href="../bot-defense/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>API Security - Sizing Questionnaire</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  
+  <!-- F5 Distributed Cloud Documentation Styles -->
+  <style>
+    /* Ensure Inter font is loaded */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+  </style>
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#api-security-sizing" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Sizing Questionnaire" class="md-header__button md-logo" aria-label="Sizing Questionnaire" data-md-component="logo">
+      
+  <img src="../../assets/f5-logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Sizing Questionnaire
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              API Security
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/robinmordasiewicz/f5xc-sizing" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    robinmordasiewicz/f5xc-sizing
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Sizing Questionnaire" class="md-nav__button md-logo" aria-label="Sizing Questionnaire" data-md-component="logo">
+      
+  <img src="../../assets/f5-logo.svg" alt="logo">
+
+    </a>
+    Sizing Questionnaire
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/robinmordasiewicz/f5xc-sizing" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    robinmordasiewicz/f5xc-sizing
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Security
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../waf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web Application Firewall (WAF)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Security
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#api-inventory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Inventory
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="API Inventory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api-discovery-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Discovery Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#known-api-count" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Known API Count
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Details
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-traffic-volume" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Traffic Volume
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="API Traffic Volume">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request-volume" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Request Volume
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-consumer-distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Consumer Distribution
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-security-features-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Security Features Required
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="API Security Features Required">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api-discovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Discovery
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-schema-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Schema Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-rate-limiting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Rate Limiting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sensitive-data-protection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sensitive Data Protection
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-authentication-and-authorization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Authentication and Authorization
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="API Authentication and Authorization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authentication-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jwt-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JWT Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorization-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authorization Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-security-threats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Security Threats
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="API Security Threats">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#owasp-api-security-top-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OWASP API Security Top 10
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#historical-api-attacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Historical API Attacks
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#openapi-specification-import" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OpenAPI Specification Import
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="OpenAPI Specification Import">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#existing-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Existing Specifications
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specification-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Specification Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specification-source" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Specification Source
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-api-security-advanced-tier" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced API Security (Advanced Tier)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced API Security (Advanced Tier)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#behavioral-api-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Behavioral API Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-posture-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Posture Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-intelligence-tier" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Intelligence Tier
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration Requirements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Integration Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#existing-api-infrastructure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Existing API Infrastructure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cicd-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CI/CD Integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-api-security-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary: API Security Requirements
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bot-defense/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bot Defense
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ddos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DDoS Protection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../client-side-defense/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Client-Side Defense
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Networking
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Networking
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../networking/http-load-balancer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HTTP Load Balancing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../networking/tcp-load-balancer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TCP Load Balancing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../networking/dns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DNS Services
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../networking/multi-cloud-networking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multi-Cloud Networking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../networking/app-connect/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    App Connect
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Performance
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Performance
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../performance/cdn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CDN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../performance/edge-compute/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Edge Compute
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Infrastructure
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Infrastructure
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../infrastructure/customer-edge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Customer Edge Sites
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../infrastructure/cloud-sites/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud Sites
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#api-inventory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Inventory
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="API Inventory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api-discovery-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Discovery Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#known-api-count" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Known API Count
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Details
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-traffic-volume" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Traffic Volume
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="API Traffic Volume">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#request-volume" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Request Volume
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-consumer-distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Consumer Distribution
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-security-features-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Security Features Required
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="API Security Features Required">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api-discovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Discovery
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-schema-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Schema Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-rate-limiting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Rate Limiting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sensitive-data-protection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sensitive Data Protection
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-authentication-and-authorization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Authentication and Authorization
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="API Authentication and Authorization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authentication-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jwt-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JWT Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorization-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authorization Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-security-threats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Security Threats
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="API Security Threats">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#owasp-api-security-top-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OWASP API Security Top 10
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#historical-api-attacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Historical API Attacks
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#openapi-specification-import" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OpenAPI Specification Import
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="OpenAPI Specification Import">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#existing-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Existing Specifications
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specification-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Specification Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specification-source" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Specification Source
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-api-security-advanced-tier" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced API Security (Advanced Tier)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced API Security (Advanced Tier)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#behavioral-api-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Behavioral API Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-posture-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Posture Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-intelligence-tier" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Intelligence Tier
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration Requirements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Integration Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#existing-api-infrastructure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Existing API Infrastructure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cicd-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CI/CD Integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-api-security-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary: API Security Requirements
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset"><a class="md-content__button md-icon" download href="api-security.pdf" title="PDF"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 10.5h1v3h-1v-3m-5 1h1v-1H7v1M20 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2M9.5 10.5A1.5 1.5 0 0 0 8 9H5.5v6H7v-2h1a1.5 1.5 0 0 0 1.5-1.5v-1m5 0A1.5 1.5 0 0 0 13 9h-2.5v6H13a1.5 1.5 0 0 0 1.5-1.5v-3m4-1.5h-3v6H17v-2h1.5v-1.5H17v-1h1.5V9z"></path></svg></a>
+                
+                  
+
+
+  
+  
+
+
+<h1 id="api-security-sizing">API Security Sizing<a class="headerlink" href="#api-security-sizing" title="Permanent link">&para;</a></h1>
+<p>F5 Distributed Cloud API Security provides comprehensive protection for your
+APIs including automatic discovery, schema validation, rate limiting, and
+behavioral analysis.</p>
+<hr />
+<h2 id="api-inventory">API Inventory<a class="headerlink" href="#api-inventory" title="Permanent link">&para;</a></h2>
+<h3 id="api-discovery-requirements">API Discovery Requirements<a class="headerlink" href="#api-discovery-requirements" title="Permanent link">&para;</a></h3>
+<p>Do you have complete documentation of all your APIs?</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Yes - All APIs are documented with OpenAPI/Swagger specs</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Partial - Some APIs are documented</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> No - We need to discover our API landscape</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Shadow API Discovery</p>
+<p>F5 XC can automatically discover APIs in your traffic, including
+undocumented "shadow" APIs that may pose security risks.</p>
+</div>
+<h3 id="known-api-count">Known API Count<a class="headerlink" href="#known-api-count" title="Permanent link">&para;</a></h3>
+<p>If you know your API landscape, provide details:</p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Public APIs (internet-facing)</td>
+<td>___</td>
+</tr>
+<tr>
+<td>Partner APIs (B2B)</td>
+<td>___</td>
+</tr>
+<tr>
+<td>Internal APIs</td>
+<td>___</td>
+</tr>
+<tr>
+<td><strong>Total API Endpoints</strong></td>
+<td>___</td>
+</tr>
+</tbody>
+</table>
+<h3 id="api-details">API Details<a class="headerlink" href="#api-details" title="Permanent link">&para;</a></h3>
+<p>For major API services, provide:</p>
+<table>
+<thead>
+<tr>
+<th>API Name/Service</th>
+<th>Base Path</th>
+<th>Protocol</th>
+<th>Auth Method</th>
+<th>Documentation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>___</td>
+<td>___</td>
+<td>[ ] REST [ ] GraphQL [ ] gRPC</td>
+<td>[ ] API Key [ ] OAuth [ ] JWT [ ] None</td>
+<td>[ ] OpenAPI [ ] None</td>
+</tr>
+<tr>
+<td>___</td>
+<td>___</td>
+<td>[ ] REST [ ] GraphQL [ ] gRPC</td>
+<td>[ ] API Key [ ] OAuth [ ] JWT [ ] None</td>
+<td>[ ] OpenAPI [ ] None</td>
+</tr>
+<tr>
+<td>___</td>
+<td>___</td>
+<td>[ ] REST [ ] GraphQL [ ] gRPC</td>
+<td>[ ] API Key [ ] OAuth [ ] JWT [ ] None</td>
+<td>[ ] OpenAPI [ ] None</td>
+</tr>
+<tr>
+<td>___</td>
+<td>___</td>
+<td>[ ] REST [ ] GraphQL [ ] gRPC</td>
+<td>[ ] API Key [ ] OAuth [ ] JWT [ ] None</td>
+<td>[ ] OpenAPI [ ] None</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="api-traffic-volume">API Traffic Volume<a class="headerlink" href="#api-traffic-volume" title="Permanent link">&para;</a></h2>
+<h3 id="request-volume">Request Volume<a class="headerlink" href="#request-volume" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Average</th>
+<th>Peak</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>API Requests per Second</td>
+<td>___</td>
+<td>___</td>
+</tr>
+<tr>
+<td>API Requests per Day</td>
+<td>___</td>
+<td>___</td>
+</tr>
+<tr>
+<td>API Requests per Month</td>
+<td>___</td>
+<td>___</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Base Package</p>
+<p>Standard includes up to 500,000 API requests per month for API protection.</p>
+</div>
+<h3 id="api-consumer-distribution">API Consumer Distribution<a class="headerlink" href="#api-consumer-distribution" title="Permanent link">&para;</a></h3>
+<p>Who consumes your APIs?</p>
+<table>
+<thead>
+<tr>
+<th>Consumer Type</th>
+<th>Percentage</th>
+<th>Estimated Daily Requests</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Web Applications (browsers)</td>
+<td>___ %</td>
+<td>___</td>
+</tr>
+<tr>
+<td>Mobile Applications</td>
+<td>___ %</td>
+<td>___</td>
+</tr>
+<tr>
+<td>Partner Integrations (B2B)</td>
+<td>___ %</td>
+<td>___</td>
+</tr>
+<tr>
+<td>Internal Services (M2M)</td>
+<td>___ %</td>
+<td>___</td>
+</tr>
+<tr>
+<td>Third-Party Developers</td>
+<td>___ %</td>
+<td>___</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td>100%</td>
+<td>___</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="api-security-features-required">API Security Features Required<a class="headerlink" href="#api-security-features-required" title="Permanent link">&para;</a></h2>
+<h3 id="api-discovery">API Discovery<a class="headerlink" href="#api-discovery" title="Permanent link">&para;</a></h3>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>Yes - Critical</strong> - We need to discover all APIs in our traffic</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>Yes - Nice to have</strong> - We have docs but want validation</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>No</strong> - We have complete API documentation</li>
+</ul>
+<p>Discovery scope:</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Production traffic only</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> All environments (Prod, Stage, Dev)</li>
+</ul>
+<h3 id="api-schema-validation">API Schema Validation<a class="headerlink" href="#api-schema-validation" title="Permanent link">&para;</a></h3>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Yes - Enforce requests match OpenAPI specification</li>
+</ul>
+<p>If yes, what actions should be taken on violations?</p>
+<table>
+<thead>
+<tr>
+<th>Violation Type</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Unknown endpoints</td>
+<td>[ ] Block [ ] Log Only [ ] Allow</td>
+</tr>
+<tr>
+<td>Invalid request parameters</td>
+<td>[ ] Block [ ] Log Only [ ] Allow</td>
+</tr>
+<tr>
+<td>Invalid request body</td>
+<td>[ ] Block [ ] Log Only [ ] Allow</td>
+</tr>
+<tr>
+<td>Missing required fields</td>
+<td>[ ] Block [ ] Log Only [ ] Allow</td>
+</tr>
+<tr>
+<td>Wrong data types</td>
+<td>[ ] Block [ ] Log Only [ ] Allow</td>
+</tr>
+</tbody>
+</table>
+<h3 id="api-rate-limiting">API Rate Limiting<a class="headerlink" href="#api-rate-limiting" title="Permanent link">&para;</a></h3>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Yes</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> No</li>
+</ul>
+<p>If yes, provide requirements:</p>
+<table>
+<thead>
+<tr>
+<th>Rate Limit Type</th>
+<th>Limit</th>
+<th>Time Window</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Per API Key</td>
+<td>___ requests</td>
+<td>[ ] second [ ] minute [ ] hour</td>
+<td>[ ] Block [ ] Throttle</td>
+</tr>
+<tr>
+<td>Per User/Token</td>
+<td>___ requests</td>
+<td>[ ] second [ ] minute [ ] hour</td>
+<td>[ ] Block [ ] Throttle</td>
+</tr>
+<tr>
+<td>Per Endpoint</td>
+<td>___ requests</td>
+<td>[ ] second [ ] minute [ ] hour</td>
+<td>[ ] Block [ ] Throttle</td>
+</tr>
+<tr>
+<td>Per IP Address</td>
+<td>___ requests</td>
+<td>[ ] second [ ] minute [ ] hour</td>
+<td>[ ] Block [ ] Throttle</td>
+</tr>
+<tr>
+<td>Global (all traffic)</td>
+<td>___ requests</td>
+<td>[ ] second [ ] minute [ ] hour</td>
+<td>[ ] Block [ ] Throttle</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sensitive-data-protection">Sensitive Data Protection<a class="headerlink" href="#sensitive-data-protection" title="Permanent link">&para;</a></h3>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Yes</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> No</li>
+</ul>
+<p>If yes, what data types need detection?</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Credit Card Numbers (PCI-DSS)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Social Security Numbers</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Email Addresses</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Phone Numbers</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Healthcare Data (HIPAA)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Custom Patterns: ___</li>
+</ul>
+<p>What action should be taken when sensitive data is detected?</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Block the request/response</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Mask the data in transit</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Log and alert only</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Allow (detection only)</li>
+</ul>
+<hr />
+<h2 id="api-authentication-and-authorization">API Authentication and Authorization<a class="headerlink" href="#api-authentication-and-authorization" title="Permanent link">&para;</a></h2>
+<h3 id="authentication-methods">Authentication Methods<a class="headerlink" href="#authentication-methods" title="Permanent link">&para;</a></h3>
+<p>What authentication methods do your APIs use?</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> API Keys (header or query parameter)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> OAuth 2.0 / OpenID Connect</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> JWT (JSON Web Tokens)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Basic Authentication</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Mutual TLS (mTLS)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Custom authentication</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> No authentication (public APIs)</li>
+</ul>
+<h3 id="jwt-validation">JWT Validation<a class="headerlink" href="#jwt-validation" title="Permanent link">&para;</a></h3>
+<p>If using JWT, do you need F5 XC to validate tokens?</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Yes - Validate JWT signatures</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Yes - Validate JWT claims (expiration, audience, etc.)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> No - Application handles JWT validation</li>
+</ul>
+<p>JWT issuer (if applicable): ___</p>
+<h3 id="authorization-requirements">Authorization Requirements<a class="headerlink" href="#authorization-requirements" title="Permanent link">&para;</a></h3>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Yes - Enforce role-based access to API endpoints</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> No - Application handles authorization</li>
+</ul>
+<hr />
+<h2 id="api-security-threats">API Security Threats<a class="headerlink" href="#api-security-threats" title="Permanent link">&para;</a></h2>
+<h3 id="owasp-api-security-top-10">OWASP API Security Top 10<a class="headerlink" href="#owasp-api-security-top-10" title="Permanent link">&para;</a></h3>
+<p>Which API-specific threats are you concerned about?</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>API1</strong> - Broken Object Level Authorization</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>API2</strong> - Broken Authentication</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>API3</strong> - Broken Object Property Level Authorization</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>API4</strong> - Unrestricted Resource Consumption</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>API5</strong> - Broken Function Level Authorization</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>API6</strong> - Unrestricted Access to Sensitive Business Flows</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>API7</strong> - Server Side Request Forgery (SSRF)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>API8</strong> - Security Misconfiguration</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>API9</strong> - Improper Inventory Management</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>API10</strong> - Unsafe Consumption of APIs</li>
+</ul>
+<h3 id="historical-api-attacks">Historical API Attacks<a class="headerlink" href="#historical-api-attacks" title="Permanent link">&para;</a></h3>
+<p>Have you experienced any API-specific attacks?</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> API scraping / data harvesting</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Credential stuffing on login APIs</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Abuse of business logic</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Inventory/pricing manipulation</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Enumeration attacks</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> None / Unknown</li>
+</ul>
+<p>Describe any specific concerns:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>___
+</code></pre></div>
+<hr />
+<h2 id="openapi-specification-import">OpenAPI Specification Import<a class="headerlink" href="#openapi-specification-import" title="Permanent link">&para;</a></h2>
+<h3 id="existing-specifications">Existing Specifications<a class="headerlink" href="#existing-specifications" title="Permanent link">&para;</a></h3>
+<p>Do you have OpenAPI/Swagger specifications for your APIs?</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Yes - OpenAPI 3.x</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Yes - OpenAPI 2.0 (Swagger)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Partial - Some APIs only</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> No - We need to generate specs</li>
+</ul>
+<h3 id="specification-management">Specification Management<a class="headerlink" href="#specification-management" title="Permanent link">&para;</a></h3>
+<p>How will you manage API specifications?</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Upload static files to F5 XC</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Automatic sync from API gateway/management platform</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Generate from live traffic discovery</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> CI/CD pipeline integration</li>
+</ul>
+<p>Number of specification files: ___</p>
+<h3 id="specification-source">Specification Source<a class="headerlink" href="#specification-source" title="Permanent link">&para;</a></h3>
+<p>Where are your API specifications stored?</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Git repository</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> API management platform (Apigee, Kong, etc.)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Internal documentation system</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> AWS API Gateway</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Azure API Management</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Other: ___</li>
+</ul>
+<hr />
+<h2 id="advanced-api-security-advanced-tier">Advanced API Security (Advanced Tier)<a class="headerlink" href="#advanced-api-security-advanced-tier" title="Permanent link">&para;</a></h2>
+<h3 id="behavioral-api-security">Behavioral API Security<a class="headerlink" href="#behavioral-api-security" title="Permanent link">&para;</a></h3>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Yes - Detect anomalies in API usage patterns</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> No - Schema validation is sufficient</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Advanced Tier Required</p>
+<p>Behavioral API security with ML-based anomaly detection requires the
+Advanced tier.</p>
+</div>
+<h3 id="api-posture-management">API Posture Management<a class="headerlink" href="#api-posture-management" title="Permanent link">&para;</a></h3>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Yes - Score APIs based on security risk</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> No</li>
+</ul>
+<h3 id="data-intelligence-tier">Data Intelligence Tier<a class="headerlink" href="#data-intelligence-tier" title="Permanent link">&para;</a></h3>
+<p>What level of data intelligence do you need?</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>Basic</strong> - Standard PII detection</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>Advanced</strong> - Custom patterns + compliance data types</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>Premium</strong> - Full data classification + custom policies</li>
+</ul>
+<hr />
+<h2 id="integration-requirements">Integration Requirements<a class="headerlink" href="#integration-requirements" title="Permanent link">&para;</a></h2>
+<h3 id="existing-api-infrastructure">Existing API Infrastructure<a class="headerlink" href="#existing-api-infrastructure" title="Permanent link">&para;</a></h3>
+<p>Do you have existing API management infrastructure?</p>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>In Use</th>
+<th>Integration Needed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AWS API Gateway</td>
+<td>[ ]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>Azure API Management</td>
+<td>[ ]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>Google Apigee</td>
+<td>[ ]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>Kong</td>
+<td>[ ]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>MuleSoft</td>
+<td>[ ]</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>Other: ___</td>
+<td>[ ]</td>
+<td>[ ]</td>
+</tr>
+</tbody>
+</table>
+<h3 id="cicd-integration">CI/CD Integration<a class="headerlink" href="#cicd-integration" title="Permanent link">&para;</a></h3>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Yes - Scan API specs before deployment</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Yes - Security gates in deployment pipeline</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> No</li>
+</ul>
+<p>CI/CD platforms in use:</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Jenkins</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> GitHub Actions</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> GitLab CI</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Azure DevOps</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Other: ___</li>
+</ul>
+<hr />
+<h2 id="summary-api-security-requirements">Summary: API Security Requirements<a class="headerlink" href="#summary-api-security-requirements" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Requirement</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Number of API Endpoints</td>
+<td>___</td>
+</tr>
+<tr>
+<td>API Discovery Required</td>
+<td>[ ] Yes [ ] No</td>
+</tr>
+<tr>
+<td>Estimated Monthly API Requests</td>
+<td>___</td>
+</tr>
+<tr>
+<td>Schema Validation Required</td>
+<td>[ ] Yes [ ] No</td>
+</tr>
+<tr>
+<td>Sensitive Data Protection Required</td>
+<td>[ ] Yes [ ] No</td>
+</tr>
+<tr>
+<td>Tier Required</td>
+<td>[ ] Standard [ ] Advanced</td>
+</tr>
+</tbody>
+</table>
+<p>Additional notes or special requirements:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>___
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://twitter.com/F5" target="_blank" rel="noopener" title="F5 on X" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M357.2 48h70.6L273.6 224.2 455 464H313L201.7 318.6 74.5 464H3.8l164.9-188.5L-5.2 48h145.6l100.5 132.9zm-24.8 373.8h39.1L119.1 88h-42z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://www.linkedin.com/company/f5/" target="_blank" rel="noopener" title="F5 on LinkedIn" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://www.f5.com/company/blog" target="_blank" rel="noopener" title="F5 Blog" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M0 64c0-17.7 14.3-32 32-32 229.8 0 416 186.2 416 416 0 17.7-14.3 32-32 32s-32-14.3-32-32C384 253.6 226.4 96 32 96 14.3 96 0 81.7 0 64m0 352a64 64 0 1 1 128 0 64 64 0 1 1-128 0m32-256c159.1 0 288 128.9 288 288 0 17.7-14.3 32-32 32s-32-14.3-32-32c0-123.7-100.3-224-224-224-17.7 0-32-14.3-32-32s14.3-32 32-32"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/robinmordasiewicz/f5xc-sizing" target="_blank" rel="noopener" title="GitHub Repository" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.top", "navigation.indexes", "search.suggest", "search.highlight", "content.tabs.link", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+  
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../javascripts/form-styling.js"></script>
+      
+    
+  <script>
+    // Transform ( ) and [ ] patterns into styled radio/checkbox options
+    document.addEventListener('DOMContentLoaded', function() {
+      // Process table cells and list items for option patterns
+      const containers = document.querySelectorAll('.md-typeset td, .md-typeset li');
+
+      containers.forEach(function(container) {
+        // Skip if already processed or contains other elements we shouldn't modify
+        if (container.querySelector('.radio-option, .checkbox-option')) return;
+
+        let html = container.innerHTML;
+
+        // Pattern for radio buttons: ( ) followed by text until next ( ) or [ ] or end
+        // Matches: ( ) Option Text
+        const radioPattern = /\(\s*\)\s*([^(\[<\n]+?)(?=\s*\(\s*\)|\s*\[\s*\]|<|$)/g;
+
+        // Pattern for checkboxes: [ ] followed by text until next ( ) or [ ] or end
+        // Matches: [ ] Option Text
+        const checkboxPattern = /\[\s*\]\s*([^(\[<\n]+?)(?=\s*\(\s*\)|\s*\[\s*\]|<|$)/g;
+
+        // Check if this cell contains option patterns
+        const hasRadio = /\(\s*\)/.test(html);
+        const hasCheckbox = /\[\s*\]/.test(html);
+
+        if (hasRadio || hasCheckbox) {
+          // Replace radio button patterns first
+          html = html.replace(radioPattern, '<span class="radio-option">$1</span>');
+
+          // Replace checkbox patterns
+          html = html.replace(checkboxPattern, '<span class="checkbox-option">$1</span>');
+
+          container.innerHTML = html;
+        }
+      });
+    });
+  </script>
+
+  </body>
+</html>

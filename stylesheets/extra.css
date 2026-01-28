@@ -1,0 +1,1453 @@
+/* ==========================================================================
+   F5 Distributed Cloud Documentation Design System
+   Matches: https://docs.cloud.f5.com/docs-v2
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   CSS Custom Properties (Design Tokens)
+   -------------------------------------------------------------------------- */
+:root {
+  /* Primary Colors */
+  --f5-primary-blue: #4F73FF;
+  --f5-primary-blue-hover: #3D5FE0;
+  --f5-navy: #0F1E57;
+
+  /* Text Colors */
+  --f5-text-primary: rgba(0, 0, 0, 0.87);
+  --f5-text-secondary: #6C778C;
+  --f5-text-breadcrumb: #6C778C;
+
+  /* Backgrounds */
+  --f5-bg-page: #FFFFFF;
+  --f5-bg-subtle: #F7F8FA;
+  --f5-bg-card: #FFFFFF;
+  --f5-bg-note: rgba(79, 115, 255, 0.1);
+
+  /* Borders */
+  --f5-border: #E5E9F7;
+  --f5-border-header: #E6E9F3;
+
+  /* F5 Red (for logo and accents) */
+  --f5-red: #E4002B;
+
+  /* Document-Standard Typography (Industry PDF/Form Standards) */
+  --md-text-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --md-code-font: "SF Mono", Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  /* Standardized Sizes (pt-based for document consistency) */
+  --doc-body-size: 11pt;      /* ~14.67px - Standard for official forms */
+  --doc-label-size: 10pt;     /* ~13.33px - Form labels */
+  --doc-h1-size: 18pt;        /* ~24px - Document title */
+  --doc-h2-size: 14pt;        /* ~18.67px - Section header */
+  --doc-h3-size: 12pt;        /* ~16px - Subsection */
+  --doc-small-size: 9pt;      /* ~12px - Footer/header text */
+  --doc-line-height: 1.5;     /* WCAG 2.1 accessibility standard */
+
+  /* Material Theme Overrides */
+  --md-primary-fg-color: var(--f5-primary-blue);
+  --md-primary-fg-color--light: #7B96FF;
+  --md-primary-fg-color--dark: #3D5FE0;
+  --md-accent-fg-color: var(--f5-primary-blue);
+  --md-typeset-a-color: var(--f5-primary-blue);
+  --md-default-bg-color: var(--f5-bg-page);
+}
+
+/* Dark mode variables */
+[data-md-color-scheme="slate"] {
+  --f5-bg-page: #1a1a2e;
+  --f5-bg-card: #16213e;
+  --f5-text-primary: rgba(255, 255, 255, 0.87);
+  --f5-text-secondary: #9BA4B5;
+  --f5-border: #394867;
+  --f5-border-header: #394867;
+  --f5-bg-note: rgba(79, 115, 255, 0.15);
+  --f5-navy: #E8EAED;
+  --md-default-bg-color: var(--f5-bg-page);
+}
+
+/* --------------------------------------------------------------------------
+   Typography (Industry PDF/Form Standards - Unified HTML & PDF)
+   -------------------------------------------------------------------------- */
+body,
+.md-typeset {
+  font-family: var(--md-text-font);
+  font-size: var(--doc-body-size);
+  line-height: var(--doc-line-height);
+  color: var(--f5-text-primary);
+}
+
+/* Headings - Document standard sizing */
+.md-typeset h1 {
+  font-size: var(--doc-h1-size); /* 18pt */
+  font-weight: 700;
+  color: var(--f5-navy);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.md-typeset h2 {
+  font-size: var(--doc-h2-size); /* 14pt */
+  font-weight: 700;
+  color: var(--f5-navy);
+  line-height: 1.3;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  border-bottom: none;
+}
+
+.md-typeset h3 {
+  font-size: var(--doc-h3-size); /* 12pt */
+  font-weight: 600;
+  color: var(--f5-navy);
+  line-height: 1.4;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+  color: var(--f5-navy);
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   Links
+   -------------------------------------------------------------------------- */
+.md-typeset a {
+  color: var(--f5-primary-blue);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.md-typeset a:hover {
+  color: var(--f5-primary-blue-hover);
+  text-decoration: underline;
+}
+
+/* --------------------------------------------------------------------------
+   Header
+   -------------------------------------------------------------------------- */
+.md-header {
+  background-color: var(--f5-bg-card);
+  border-bottom: 1px solid var(--f5-border-header);
+  box-shadow: none;
+}
+
+.md-header[data-md-state="shadow"] {
+  box-shadow: 0 0 0.2rem rgba(0, 0, 0, 0.1), 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1);
+}
+
+.md-header__title {
+  color: var(--f5-navy);
+  font-weight: 600;
+}
+
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg {
+  height: 1.5rem;
+  width: auto;
+}
+
+/* Search - Filled style matching F5 docs exactly */
+.md-search__form {
+  background-color: var(--f5-bg-subtle) !important;
+  border-radius: 4px !important;
+  display: flex;
+  align-items: center;
+  height: 2.4rem;
+}
+
+.md-search__input {
+  background-color: transparent !important;
+  border: none !important;
+  border-radius: 4px;
+  color: rgba(0, 0, 0, 0.87) !important;
+  transition: background-color 0.2s ease;
+  height: 100%;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.md-search__input::placeholder {
+  color: rgba(0, 0, 0, 0.6) !important;
+}
+
+.md-search__input:focus {
+  background-color: transparent !important;
+  outline: none;
+}
+
+.md-search__icon {
+  color: var(--f5-primary-blue) !important;
+}
+
+.md-search__icon[for="__search"] {
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+}
+
+[data-md-color-scheme="slate"] .md-search__form {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+[data-md-color-scheme="slate"] .md-search__input {
+  background-color: transparent !important;
+  color: rgba(255, 255, 255, 0.87) !important;
+}
+
+[data-md-color-scheme="slate"] .md-search__input::placeholder {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* --------------------------------------------------------------------------
+   Navigation Tabs (Top Bar)
+   -------------------------------------------------------------------------- */
+.md-tabs {
+  background-color: var(--f5-navy);
+  border-bottom: 1px solid var(--f5-border-header);
+}
+
+.md-tabs__link {
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
+  font-size: 0.8rem;
+}
+
+.md-tabs__link:hover,
+.md-tabs__link:focus {
+  color: white;
+}
+
+.md-tabs__link--active,
+.md-tabs__item--active .md-tabs__link {
+  color: white;
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   Navigation Sidebar
+   -------------------------------------------------------------------------- */
+.md-sidebar {
+  background-color: var(--f5-bg-subtle);
+  position: relative;
+}
+
+/* Reduce primary sidebar width for more content space */
+.md-sidebar--primary {
+  width: 10rem;
+}
+
+@media screen and (min-width: 76.25em) {
+  .md-sidebar--primary {
+    width: 12.75rem;
+  }
+}
+
+/* Create full-height sidebar background column from nav tabs to bottom */
+.md-container {
+  position: relative;
+}
+
+.md-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 240px; /* Cover sidebar area from edge */
+  bottom: 0;
+  background-color: var(--f5-bg-subtle);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Ensure main content is above the background */
+.md-main {
+  position: relative;
+  z-index: 1;
+}
+
+.md-sidebar--primary {
+  z-index: 2;
+  width: 12.75rem;
+}
+
+/* Reduce inner padding of sidebar - position nav close to left edge */
+.md-sidebar__inner {
+  padding: 0.5rem 0.4rem 0.5rem 0;
+  margin-left: 0;
+}
+
+.md-sidebar__scrollwrap {
+  margin: 0;
+  padding-left: 0;
+}
+
+/* Position sidebar at left edge with 20px padding */
+.md-sidebar--primary {
+  left: 0;
+}
+
+.md-sidebar--primary .md-sidebar__inner {
+  padding-left: 20px;
+}
+
+/* Compact navigation items */
+.md-nav__item {
+  padding: 0;
+  margin: 0;
+}
+
+/* Reduce spacing in nested navigation lists */
+.md-nav__list {
+  margin: 0;
+  padding: 0;
+}
+
+/* Navigation toggle (expand/collapse arrows) */
+.md-nav__toggle ~ .md-nav__link::after,
+.md-nav__link--index[for]::after {
+  transform: scale(0.8);
+}
+
+/* Section labels in collapsible nav */
+.md-nav__item--section > .md-nav__link {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--f5-text-secondary);
+  padding-top: 0.15rem;
+  padding-bottom: 0.15rem;
+}
+
+.md-nav__title {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--f5-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.3rem 0.25rem 0;
+}
+
+.md-nav__link {
+  color: var(--f5-text-primary);
+  font-size: 0.75rem;
+  padding: 0.2rem 0.3rem 0.2rem 0;
+  border-left: 3px solid transparent;
+  margin-left: 0;
+  transition: all 0.15s ease;
+  /* Remove MkDocs Material default white background and shadow */
+  background-color: transparent !important;
+  box-shadow: none !important;
+  line-height: 1.3;
+}
+
+.md-nav__link:hover {
+  color: var(--f5-primary-blue);
+  background-color: var(--f5-bg-note);
+}
+
+.md-nav__link--active,
+.md-nav__item .md-nav__link--active {
+  color: var(--f5-primary-blue);
+  font-weight: 600;
+  border-left: 3px solid var(--f5-primary-blue);
+  background-color: var(--f5-bg-note);
+}
+
+/* Secondary navigation (TOC - "On this page" right sidebar) */
+.md-nav--secondary .md-nav__title {
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--f5-text-secondary);
+  padding: 0.2rem 0;
+}
+
+.md-nav--secondary .md-nav__link {
+  font-size: 0.7rem;
+  padding: 0.15rem 0.5rem;
+  margin-left: 0;
+  border-left: none;
+  line-height: 1.25;
+}
+
+.md-nav--secondary .md-nav__link:hover {
+  color: var(--f5-primary-blue);
+  background-color: transparent;
+}
+
+.md-nav--secondary .md-nav__link--active {
+  color: var(--f5-primary-blue);
+  font-weight: 500;
+  border-left: none;
+  background-color: transparent;
+}
+
+/* Nested TOC items */
+.md-nav--secondary .md-nav__item--nested > .md-nav__link {
+  font-size: 0.7rem;
+}
+
+.md-nav--secondary .md-nav .md-nav__link {
+  font-size: 0.65rem;
+  padding-left: 0.75rem;
+  padding-top: 0.1rem;
+  padding-bottom: 0.1rem;
+}
+
+/* Right sidebar container */
+.md-sidebar--secondary {
+  background-color: transparent;
+}
+
+/* --------------------------------------------------------------------------
+   Content Area
+   -------------------------------------------------------------------------- */
+.md-main__inner {
+  margin-top: 0;
+}
+
+/* Override MkDocs Material centering to position nav at left edge */
+.md-main__inner.md-grid {
+  margin-left: 0 !important;
+  margin-right: auto;
+  max-width: none;
+}
+
+.md-content {
+  background-color: var(--f5-bg-card);
+  border-radius: 4px;
+  padding: 1.5rem 2rem;
+  margin: 1rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.md-content__inner {
+  margin: 0;
+  padding: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Breadcrumbs
+   -------------------------------------------------------------------------- */
+.md-path {
+  font-size: 0.75rem;
+  color: var(--f5-text-breadcrumb);
+}
+
+.md-path a {
+  color: var(--f5-text-breadcrumb);
+}
+
+.md-path a:hover {
+  color: var(--f5-primary-blue);
+}
+
+/* --------------------------------------------------------------------------
+   Tables - Questionnaire Style
+   -------------------------------------------------------------------------- */
+.md-typeset table:not([class]) {
+  border: 1px solid var(--f5-border);
+  border-radius: 4px;
+  overflow: hidden;
+  font-size: 0.85rem;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.md-typeset table:not([class]) th {
+  background-color: var(--f5-navy);
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.03em;
+  padding: 0.875rem 1rem;
+  text-align: left;
+}
+
+.md-typeset table:not([class]) td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--f5-border);
+  background-color: var(--f5-bg-subtle);
+  transition: background-color 0.15s ease;
+  min-height: 2.5rem;
+  vertical-align: middle;
+}
+
+/* Input field appearance for empty cells */
+.md-typeset table:not([class]) td:empty,
+.md-typeset table:not([class]) td:blank {
+  background-color: #FFFFFF;
+  border: 1px solid var(--f5-border);
+  border-bottom: 2px solid var(--f5-border);
+  min-width: 120px;
+}
+
+/* Hover states for web interactivity */
+.md-typeset table:not([class]) tbody tr:hover td {
+  background-color: var(--f5-bg-note);
+}
+
+/* First column styling - labels */
+.md-typeset table:not([class]) td:first-child {
+  font-weight: 500;
+  color: var(--f5-navy);
+  background-color: var(--f5-bg-page);
+}
+
+/* Alternating row colors removed for cleaner questionnaire look */
+.md-typeset table:not([class]) tr:nth-child(even) td {
+  background-color: var(--f5-bg-subtle);
+}
+
+.md-typeset table:not([class]) tr:nth-child(even) td:first-child {
+  background-color: var(--f5-bg-page);
+}
+
+/* Dark mode adjustments */
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) td {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) td:first-child {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) td:empty,
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) td:blank {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) tbody tr:hover td {
+  background-color: rgba(79, 115, 255, 0.15);
+}
+
+/* --------------------------------------------------------------------------
+   Admonitions / Note Boxes
+   -------------------------------------------------------------------------- */
+.md-typeset .admonition,
+.md-typeset details {
+  border: none;
+  border-radius: 4px;
+  box-shadow: none;
+  font-size: 0.9375rem;
+}
+
+/* Note - Light blue */
+.md-typeset .admonition.note,
+.md-typeset details.note {
+  background-color: var(--f5-bg-note);
+  border-left: 4px solid var(--f5-primary-blue);
+}
+
+.md-typeset .admonition.note .admonition-title,
+.md-typeset details.note summary {
+  background-color: transparent;
+  color: var(--f5-primary-blue);
+  font-weight: 600;
+}
+
+/* Info */
+.md-typeset .admonition.info,
+.md-typeset details.info {
+  background-color: rgba(0, 176, 255, 0.1);
+  border-left: 4px solid #00B0FF;
+}
+
+.md-typeset .admonition.info .admonition-title,
+.md-typeset details.info summary {
+  background-color: transparent;
+  color: #0091EA;
+}
+
+/* Tip */
+.md-typeset .admonition.tip,
+.md-typeset details.tip {
+  background-color: rgba(0, 200, 83, 0.1);
+  border-left: 4px solid #00C853;
+}
+
+.md-typeset .admonition.tip .admonition-title,
+.md-typeset details.tip summary {
+  background-color: transparent;
+  color: #00A847;
+}
+
+/* Warning */
+.md-typeset .admonition.warning,
+.md-typeset details.warning {
+  background-color: rgba(255, 145, 0, 0.1);
+  border-left: 4px solid #FF9100;
+}
+
+.md-typeset .admonition.warning .admonition-title,
+.md-typeset details.warning summary {
+  background-color: transparent;
+  color: #E68200;
+}
+
+/* Danger */
+.md-typeset .admonition.danger,
+.md-typeset details.danger {
+  background-color: rgba(255, 82, 82, 0.1);
+  border-left: 4px solid #FF5252;
+}
+
+.md-typeset .admonition.danger .admonition-title,
+.md-typeset details.danger summary {
+  background-color: transparent;
+  color: #D32F2F;
+}
+
+/* --------------------------------------------------------------------------
+   Cards (Grid)
+   -------------------------------------------------------------------------- */
+.md-typeset .grid.cards > ul > li {
+  border: 1px solid var(--f5-border);
+  border-radius: 4px;
+  border-left: 4px solid var(--f5-primary-blue);
+  background-color: var(--f5-bg-card);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.md-typeset .grid.cards > ul > li:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-left-color: var(--f5-primary-blue-hover);
+}
+
+/* --------------------------------------------------------------------------
+   Buttons
+   -------------------------------------------------------------------------- */
+.md-typeset .md-button {
+  border-radius: 4px;
+  font-weight: 600;
+  padding: 0.625rem 1.25rem;
+  transition: all 0.15s ease;
+}
+
+.md-typeset .md-button--primary {
+  background-color: var(--f5-primary-blue);
+  border-color: var(--f5-primary-blue);
+  color: white;
+}
+
+.md-typeset .md-button--primary:hover {
+  background-color: var(--f5-primary-blue-hover);
+  border-color: var(--f5-primary-blue-hover);
+}
+
+.md-typeset .md-button:not(.md-button--primary) {
+  border: 1px solid var(--f5-primary-blue);
+  color: var(--f5-primary-blue);
+  background-color: transparent;
+}
+
+.md-typeset .md-button:not(.md-button--primary):hover {
+  background-color: var(--f5-bg-note);
+}
+
+/* --------------------------------------------------------------------------
+   Hero Section
+   -------------------------------------------------------------------------- */
+.hero-section {
+  background: linear-gradient(135deg, var(--f5-primary-blue) 0%, #3D5FE0 50%, var(--f5-navy) 100%);
+  color: white;
+  padding: 2.5rem 2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 12px rgba(79, 115, 255, 0.25);
+}
+
+.hero-section h1,
+.hero-section p {
+  color: white;
+}
+
+.hero-section .md-button--primary {
+  background-color: white;
+  color: var(--f5-primary-blue);
+  border-color: white;
+}
+
+.hero-section .md-button--primary:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* --------------------------------------------------------------------------
+   Question Boxes (Sizing Guide Specific)
+   -------------------------------------------------------------------------- */
+.question-box {
+  border: 2px solid var(--f5-primary-blue);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  background: var(--f5-bg-card);
+}
+
+[data-md-color-scheme="slate"] .question-box {
+  background: var(--f5-bg-card);
+}
+
+.question-box h4 {
+  color: var(--f5-primary-blue);
+  margin-top: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Response Fields (Industry form standards)
+   -------------------------------------------------------------------------- */
+.response-field,
+.form-response-line {
+  background: transparent;
+  border: none;
+  border-bottom: 0.5pt solid #666;
+  border-radius: 0;
+  padding: 0.5rem 0;
+  margin: 0.5rem 0;
+  min-height: 0.5in; /* Standard ruled line height for handwriting */
+}
+
+[data-md-color-scheme="slate"] .response-field,
+[data-md-color-scheme="slate"] .form-response-line {
+  background: transparent;
+  border-bottom-color: #999;
+}
+
+/* --------------------------------------------------------------------------
+   Option Groups (Checkboxes/Radio)
+   -------------------------------------------------------------------------- */
+.option-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.option-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--f5-border);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.option-item:hover {
+  border-color: var(--f5-primary-blue);
+  background: var(--f5-bg-note);
+}
+
+/* --------------------------------------------------------------------------
+   Input Fields
+   -------------------------------------------------------------------------- */
+input[type="text"],
+input[type="number"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--f5-border);
+  border-radius: 4px;
+  font-size: 1rem;
+  margin: 0.5rem 0;
+  font-family: inherit;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--f5-primary-blue);
+  box-shadow: 0 0 0 3px rgba(79, 115, 255, 0.15);
+}
+
+/* --------------------------------------------------------------------------
+   Info Boxes
+   -------------------------------------------------------------------------- */
+.info-box {
+  background: rgba(79, 115, 255, 0.1);
+  border-left: 4px solid var(--f5-primary-blue);
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 0 4px 4px 0;
+}
+
+.warning-box {
+  background: #fff3e0;
+  border-left: 4px solid #ff9800;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 0 4px 4px 0;
+}
+
+.note-box {
+  background: var(--f5-bg-note);
+  border-left: 4px solid var(--f5-primary-blue);
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 0 4px 4px 0;
+}
+
+/* --------------------------------------------------------------------------
+   Sizing Cards
+   -------------------------------------------------------------------------- */
+.sizing-card {
+  border: 1px solid var(--f5-border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  background: var(--f5-bg-card);
+}
+
+.sizing-card h3 {
+  margin-top: 0;
+  color: var(--f5-primary-blue);
+}
+
+/* --------------------------------------------------------------------------
+   Section Numbers
+   -------------------------------------------------------------------------- */
+.section-number {
+  display: inline-block;
+  background: var(--f5-primary-blue);
+  color: white;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 2rem;
+  margin-right: 0.5rem;
+  font-weight: bold;
+}
+
+/* --------------------------------------------------------------------------
+   Calculator
+   -------------------------------------------------------------------------- */
+.calculator {
+  background: var(--f5-bg-page);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+  border: 1px solid var(--f5-border);
+}
+
+[data-md-color-scheme="slate"] .calculator {
+  background: var(--f5-bg-card);
+}
+
+.calculator label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.calculator input {
+  margin-bottom: 1rem;
+}
+
+/* --------------------------------------------------------------------------
+   Footer - Ensure visibility and sticky positioning
+   -------------------------------------------------------------------------- */
+.md-footer {
+  background-color: var(--f5-bg-card);
+  border-top: 1px solid var(--f5-border-header);
+  margin-top: auto;
+}
+
+.md-footer-meta {
+  background-color: var(--f5-bg-card);
+  padding: 0.75rem 0;
+}
+
+.md-footer-meta__inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+}
+
+/* Social icons container */
+.md-social {
+  display: flex !important;
+  gap: 0.75rem !important;
+  padding: 0.25rem 0 !important;
+}
+
+.md-social__link {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: var(--f5-text-secondary) !important;
+  font-size: 1.25rem !important;
+  transition: color 0.15s ease !important;
+}
+
+.md-social__link:hover {
+  color: var(--f5-primary-blue) !important;
+}
+
+.md-social__link svg {
+  width: 1.25rem !important;
+  height: 1.25rem !important;
+  fill: currentColor !important;
+}
+
+/* Footer navigation (prev/next) */
+.md-footer__inner {
+  background-color: var(--f5-bg-card);
+  border-top: 1px solid var(--f5-border);
+}
+
+.md-footer__link {
+  color: var(--f5-text-primary);
+}
+
+.md-footer__link:hover {
+  color: var(--f5-primary-blue);
+}
+
+.md-footer__title {
+  color: var(--f5-navy);
+}
+
+.md-footer__direction {
+  color: var(--f5-text-secondary);
+}
+
+/* --------------------------------------------------------------------------
+   Code Blocks
+   -------------------------------------------------------------------------- */
+.md-typeset code {
+  background-color: var(--f5-bg-page);
+  border: 1px solid var(--f5-border);
+  border-radius: 4px;
+  color: var(--f5-navy);
+  font-size: 0.875em;
+  padding: 0.1em 0.4em;
+}
+
+.md-typeset pre {
+  border-radius: 4px;
+}
+
+.md-typeset pre > code {
+  border: none;
+  padding: 1rem;
+}
+
+/* --------------------------------------------------------------------------
+   Tabs
+   -------------------------------------------------------------------------- */
+.md-typeset .tabbed-labels > label {
+  color: var(--f5-text-secondary);
+  font-weight: 500;
+}
+
+.md-typeset .tabbed-labels > label:hover {
+  color: var(--f5-primary-blue);
+}
+
+.md-typeset .tabbed-labels > label.active {
+  color: var(--f5-primary-blue);
+  border-color: var(--f5-primary-blue);
+}
+
+/* --------------------------------------------------------------------------
+   Per-Page PDF Download Button
+   -------------------------------------------------------------------------- */
+.md-content a[href$=".pdf"][download] {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.25rem;
+  margin: 1rem 0;
+  background-color: var(--f5-bg-note);
+  border: 1px solid var(--f5-primary-blue);
+  border-radius: 6px;
+  color: var(--f5-primary-blue);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* Hide the SVG icon */
+.md-content a[href$=".pdf"][download] svg {
+  display: none;
+}
+
+/* Add "Download PDF" text */
+.md-content a[href$=".pdf"][download]::before {
+  content: "Download PDF";
+}
+
+.md-content a[href$=".pdf"][download]:hover {
+  background-color: var(--f5-primary-blue);
+  color: white;
+}
+
+/* --------------------------------------------------------------------------
+   Print Styles (Industry PDF/Form Standards)
+   -------------------------------------------------------------------------- */
+@media print {
+  /* Page setup - 1 inch margins (industry standard) */
+  @page {
+    size: letter;
+    margin: 1in;
+  }
+
+  /* Typography - Unified with PDF output */
+  body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 11pt;
+    line-height: 1.5;
+  }
+
+  h1 { font-size: 18pt; font-weight: 700; line-height: 1.2; }
+  h2 { font-size: 14pt; font-weight: 700; line-height: 1.3; }
+  h3 { font-size: 12pt; font-weight: 600; line-height: 1.4; }
+
+  .md-sidebar,
+  .md-header,
+  .md-footer,
+  .md-search {
+    display: none !important;
+  }
+
+  .md-content {
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+  }
+
+  /* Hide per-page PDF download link in print */
+  .md-content a[href$=".pdf"][download] {
+    display: none !important;
+  }
+
+  .question-box {
+    page-break-inside: avoid;
+  }
+
+  /* Response fields - ruled lines for handwriting */
+  .response-field,
+  .form-response-line {
+    border: none !important;
+    border-bottom: 0.5pt solid #666 !important;
+    min-height: 0.5in !important;
+    background: transparent !important;
+  }
+
+  .hero-section {
+    background: var(--f5-primary-blue) !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Print-optimized table styles for questionnaires */
+  .md-typeset table:not([class]) {
+    border: 1px solid #333 !important;
+    font-size: 11pt !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .md-typeset table:not([class]) th {
+    background-color: #0F1E57 !important;
+    color: white !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    font-size: 10pt;
+    font-weight: 600;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .md-typeset table:not([class]) td {
+    border: 1px solid #ccc !important;
+    padding: 0.5rem 0.75rem;
+    min-height: 1.5rem;
+    background-color: transparent !important;
+    font-size: 11pt;
+  }
+
+  /* Dotted line for writable fields in print */
+  .md-typeset table:not([class]) td:not(:first-child) {
+    border-bottom: 1px dotted #666 !important;
+  }
+
+  .md-typeset table:not([class]) td:first-child {
+    font-weight: 600;
+    background-color: #f5f5f5 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Prevent tables from breaking across pages */
+  .md-typeset table:not([class]) {
+    page-break-inside: avoid;
+  }
+
+  .md-typeset table:not([class]) tr {
+    page-break-inside: avoid;
+  }
+
+  /* Form labels - 10pt standard */
+  .form-checkbox-label,
+  .form-radio-label,
+  label {
+    font-size: 10pt !important;
+    font-weight: 500 !important;
+  }
+
+  /* Radio and checkbox options for print (12pt × 12pt standard) */
+  .radio-option,
+  .checkbox-option {
+    display: inline-flex !important;
+    align-items: center !important;
+    padding: 2px 6px !important;
+    margin: 2px 4px !important;
+    font-size: 10pt !important;
+  }
+
+  .radio-option::before {
+    width: 12pt !important;
+    height: 12pt !important;
+    border: 1.5pt solid #4F73FF !important;
+    border-radius: 50% !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .checkbox-option::before {
+    width: 12pt !important;
+    height: 12pt !important;
+    border: 1.5pt solid #4F73FF !important;
+    border-radius: 2px !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Form checkbox/radio inputs */
+  .form-checkbox,
+  .form-radio {
+    width: 12pt !important;
+    height: 12pt !important;
+    border-width: 1.5pt !important;
+  }
+
+  /* Text inputs - bottom border only */
+  .form-text-input {
+    border: none !important;
+    border-bottom: 0.5pt solid #666 !important;
+    background: transparent !important;
+    font-size: 11pt !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Scrollbar Styling
+   -------------------------------------------------------------------------- */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--f5-bg-page);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--f5-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--f5-text-secondary);
+}
+
+/* --------------------------------------------------------------------------
+   Selection Highlight
+   -------------------------------------------------------------------------- */
+::selection {
+  background-color: rgba(79, 115, 255, 0.2);
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Adjustments
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 76.1875em) {
+  .md-content {
+    margin: 0.5rem;
+    padding: 1rem;
+  }
+}
+
+@media screen and (max-width: 59.9375em) {
+  .md-typeset h1 {
+    font-size: 1.75rem;
+  }
+
+  .md-typeset h2 {
+    font-size: 1.5rem;
+  }
+
+  .hero-section {
+    padding: 1.5rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Radio Button and Checkbox Option Styling
+   ( ) renders as radio (circle) - single-select
+   [ ] renders as checkbox (square) - multi-select
+   -------------------------------------------------------------------------- */
+
+/* Base option styling */
+.radio-option,
+.checkbox-option {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.5rem;
+  margin: 0.125rem 0.25rem;
+  border-radius: 4px;
+  cursor: default;
+  transition: background-color 0.15s ease;
+  white-space: nowrap;
+}
+
+/* Radio button - circle indicator (single-select) */
+.radio-option::before {
+  content: '';
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--f5-primary-blue);
+  border-radius: 50%; /* Circle for radio */
+  margin-right: 0.5rem;
+  flex-shrink: 0;
+  background-color: transparent;
+  transition: all 0.15s ease;
+}
+
+/* Checkbox - square indicator (multi-select) */
+.checkbox-option::before {
+  content: '';
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--f5-primary-blue);
+  border-radius: 2px; /* Square for checkbox */
+  margin-right: 0.5rem;
+  flex-shrink: 0;
+  background-color: transparent;
+  transition: all 0.15s ease;
+}
+
+/* Hover states */
+.radio-option:hover,
+.checkbox-option:hover {
+  background-color: var(--f5-bg-note);
+}
+
+.radio-option:hover::before,
+.checkbox-option:hover::before {
+  border-color: var(--f5-primary-blue-hover);
+  background-color: rgba(79, 115, 255, 0.1);
+}
+
+/* Dark mode adjustments */
+[data-md-color-scheme="slate"] .radio-option,
+[data-md-color-scheme="slate"] .checkbox-option {
+  color: var(--f5-text-primary);
+}
+
+[data-md-color-scheme="slate"] .radio-option:hover,
+[data-md-color-scheme="slate"] .checkbox-option:hover {
+  background-color: rgba(79, 115, 255, 0.15);
+}
+
+[data-md-color-scheme="slate"] .radio-option::before,
+[data-md-color-scheme="slate"] .checkbox-option::before {
+  border-color: var(--f5-primary-blue);
+}
+
+[data-md-color-scheme="slate"] .radio-option:hover::before,
+[data-md-color-scheme="slate"] .checkbox-option:hover::before {
+  background-color: rgba(79, 115, 255, 0.2);
+}
+
+/* Note: Do NOT use display:flex on td:has() - it breaks table layout */
+
+/* --------------------------------------------------------------------------
+   Interactive Form Elements (JavaScript-generated)
+   Transforms [ ] ( ) ___ patterns into actual form controls
+   -------------------------------------------------------------------------- */
+
+/* Note: Do NOT use display:flex on td elements - it breaks table layout */
+
+/* Checkbox label container (10pt form label standard) */
+.form-checkbox-label {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.5rem;
+  margin: 0.125rem 0.25rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  white-space: nowrap;
+  user-select: none;
+  font-size: var(--doc-label-size); /* 10pt form label */
+  font-weight: 500;
+  text-transform: none; /* Sentence-case only, never ALL CAPS */
+}
+
+.form-checkbox-label:hover {
+  background-color: var(--f5-bg-note);
+}
+
+/* Actual checkbox input (12pt × 12pt standard) */
+.form-checkbox {
+  width: 12pt;
+  height: 12pt;
+  margin: 0;
+  margin-right: 0.5rem;
+  accent-color: var(--f5-primary-blue);
+  cursor: pointer;
+  flex-shrink: 0;
+  border-width: 1.5pt;
+}
+
+/* Custom checkbox mark (visual indicator) */
+.form-checkbox-mark {
+  display: none; /* Hide when using native checkbox */
+}
+
+.form-checkbox-text {
+  color: var(--f5-text-primary);
+  font-size: var(--doc-label-size); /* 10pt */
+}
+
+/* Radio button label container (10pt form label standard) */
+.form-radio-label {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.5rem;
+  margin: 0.125rem 0.25rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  white-space: nowrap;
+  user-select: none;
+  font-size: var(--doc-label-size); /* 10pt form label */
+  font-weight: 500;
+  text-transform: none; /* Sentence-case only, never ALL CAPS */
+}
+
+.form-radio-label:hover {
+  background-color: var(--f5-bg-note);
+}
+
+/* Actual radio input (12pt × 12pt standard) */
+.form-radio {
+  width: 12pt;
+  height: 12pt;
+  margin: 0;
+  margin-right: 0.5rem;
+  accent-color: var(--f5-primary-blue);
+  cursor: pointer;
+  flex-shrink: 0;
+  border-width: 1.5pt;
+}
+
+/* Custom radio mark (visual indicator) */
+.form-radio-mark {
+  display: none; /* Hide when using native radio */
+}
+
+.form-radio-text {
+  color: var(--f5-text-primary);
+  font-size: var(--doc-label-size); /* 10pt */
+}
+
+/* Text input field (Document standard sizing) */
+.form-text-input {
+  min-width: 100px;
+  max-width: 200px;
+  padding: 0.375rem 0.625rem;
+  border: none;
+  border-bottom: 0.5pt solid #666;
+  border-radius: 0;
+  font-size: var(--doc-body-size); /* 11pt */
+  font-family: var(--md-text-font);
+  color: var(--f5-text-primary);
+  background-color: transparent;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.form-text-input::placeholder {
+  color: var(--f5-text-secondary);
+  opacity: 0.7;
+}
+
+.form-text-input:focus {
+  outline: none;
+  border-color: var(--f5-primary-blue);
+  box-shadow: 0 0 0 3px rgba(79, 115, 255, 0.15);
+}
+
+.form-text-input:hover:not(:focus) {
+  border-color: var(--f5-primary-blue-hover);
+}
+
+/* Dark mode adjustments for form elements */
+[data-md-color-scheme="slate"] .form-checkbox-label:hover,
+[data-md-color-scheme="slate"] .form-radio-label:hover {
+  background-color: rgba(79, 115, 255, 0.15);
+}
+
+[data-md-color-scheme="slate"] .form-text-input {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: var(--f5-border);
+  color: var(--f5-text-primary);
+}
+
+[data-md-color-scheme="slate"] .form-text-input::placeholder {
+  color: var(--f5-text-secondary);
+}
+
+[data-md-color-scheme="slate"] .form-text-input:focus {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: var(--f5-primary-blue);
+}
+
+/* Print styles for interactive form elements */
+@media print {
+  .form-checkbox-label,
+  .form-radio-label {
+    padding: 2px 4px !important;
+    margin: 1px 2px !important;
+  }
+
+  .form-checkbox,
+  .form-radio {
+    width: 12px !important;
+    height: 12px !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .form-text-input {
+    border: 1px solid #666 !important;
+    min-width: 80px !important;
+    background-color: white !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}

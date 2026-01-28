@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block extrahead %}
+  {{ super() }}
+  <!-- F5 Distributed Cloud Documentation Styles -->
+  <style>
+    /* Ensure Inter font is loaded */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+  </style>
+{% endblock %}
+
+{% block scripts %}
+  {{ super() }}
+  <script>
+    // Transform ( ) and [ ] patterns into styled radio/checkbox options
+    document.addEventListener('DOMContentLoaded', function() {
+      // Process table cells and list items for option patterns
+      const containers = document.querySelectorAll('.md-typeset td, .md-typeset li');
+
+      containers.forEach(function(container) {
+        // Skip if already processed or contains other elements we shouldn't modify
+        if (container.querySelector('.radio-option, .checkbox-option')) return;
+
+        let html = container.innerHTML;
+
+        // Pattern for radio buttons: ( ) followed by text until next ( ) or [ ] or end
+        // Matches: ( ) Option Text
+        const radioPattern = /\(\s*\)\s*([^(\[<\n]+?)(?=\s*\(\s*\)|\s*\[\s*\]|<|$)/g;
+
+        // Pattern for checkboxes: [ ] followed by text until next ( ) or [ ] or end
+        // Matches: [ ] Option Text
+        const checkboxPattern = /\[\s*\]\s*([^(\[<\n]+?)(?=\s*\(\s*\)|\s*\[\s*\]|<|$)/g;
+
+        // Check if this cell contains option patterns
+        const hasRadio = /\(\s*\)/.test(html);
+        const hasCheckbox = /\[\s*\]/.test(html);
+
+        if (hasRadio || hasCheckbox) {
+          // Replace radio button patterns first
+          html = html.replace(radioPattern, '<span class="radio-option">$1</span>');
+
+          // Replace checkbox patterns
+          html = html.replace(checkboxPattern, '<span class="checkbox-option">$1</span>');
+
+          container.innerHTML = html;
+        }
+      });
+    });
+  </script>
+{% endblock %}
