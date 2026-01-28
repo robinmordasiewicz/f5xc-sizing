@@ -29,15 +29,12 @@ jobs:
 
       - name: Build MkDocs site with PDF
         run: |
-          docker run --rm -e ENABLE_PDF_EXPORT=1 -v ${PWD}:/docs -u $(id -u):$(id -g) ghcr.io/robinmordasiewicz/f5xc-mkdocs:latest build
-
-      - name: Add interactive form fields to PDF
-        run: |
-          docker run --rm --entrypoint python3 -v ${PWD}:/docs -u $(id -u):$(id -g) ghcr.io/robinmordasiewicz/f5xc-mkdocs:latest \
-            /docs/scripts/add_pdf_forms.py \
-              --input /docs/site/pdf/document.pdf \
-              --output /docs/site/pdf/document.pdf \
-              --markdown-dir /docs/docs/
+          docker run --rm \
+            --entrypoint /bin/bash \
+            -v ${PWD}:/docs \
+            -u $(id -u):$(id -g) \
+            ghcr.io/robinmordasiewicz/f5xc-mkdocs:latest \
+            /docs/scripts/build.sh --ci --output-dir /docs/site
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
@@ -66,17 +63,16 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Build MkDocs site with PDF
-        run: |
-          docker run --rm -e ENABLE_PDF_EXPORT=1 -v ${PWD}:/docs -u $(id -u):$(id -g) ghcr.io/robinmordasiewicz/f5xc-mkdocs:latest build
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: github-pages
+          path: ./site-artifact
 
-      - name: Add interactive form fields to PDF
+      - name: Extract artifact
         run: |
-          docker run --rm --entrypoint python3 -v ${PWD}:/docs -u $(id -u):$(id -g) ghcr.io/robinmordasiewicz/f5xc-mkdocs:latest \
-            /docs/scripts/add_pdf_forms.py \
-              --input /docs/site/pdf/document.pdf \
-              --output /docs/site/pdf/document.pdf \
-              --markdown-dir /docs/docs/
+          mkdir -p ./site
+          tar -xf ./site-artifact/artifact.tar -C ./site
 
       - name: Deploy to gh-pages branch
         uses: peaceiris/actions-gh-pages@v4

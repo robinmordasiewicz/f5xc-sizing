@@ -1,120 +1,233 @@
-/* PDF Export Stylesheet - Override CSS grid for WeasyPrint compatibility */
+/* ==========================================================================
+   PDF Export Stylesheet - Industry PDF/Form Standards
+   Unified typography for exact visual match between HTML preview and PDF output
+   ========================================================================== */
 
-/* Disable grid layout for cards */
-.md-typeset .grid.cards {
-    display: block !important;
-}
-
-.md-typeset .grid.cards > ul {
-    display: block !important;
-}
-
-.md-typeset .grid.cards > ul > li {
-    display: block !important;
-    margin-bottom: 1em;
-    border: 1px solid #ddd;
-    padding: 1em;
-    border-radius: 4px;
-}
-
-/* Hero section styling */
-.hero-section {
-    text-align: center;
-    padding: 2em 0;
-}
-
-/* Hide download button in PDF */
-.md-button {
-    display: none !important;
-}
-
-/* Table improvements for PDF */
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-}
-
-th {
-    background-color: #f5f5f5;
-}
-
-/* Admonition fixes */
-.admonition {
-    border: 1px solid #448aff;
-    border-radius: 4px;
-    padding: 1em;
-    margin: 1em 0;
-}
-
-.admonition-title {
-    font-weight: bold;
-    margin-bottom: 0.5em;
-}
-
-/* Page break improvements */
-h1, h2 {
-    page-break-after: avoid;
-}
-
-.admonition, table, pre {
-    page-break-inside: avoid;
+/* --------------------------------------------------------------------------
+   Page Setup (Industry standard: 0.75 inch margins for professional density)
+   -------------------------------------------------------------------------- */
+@media print {
+  @page {
+    size: letter;
+    margin: 0.75in;
+  }
 }
 
 /* --------------------------------------------------------------------------
-   Radio Button and Checkbox Option Styling for PDF
+   Typography (Unified with HTML - Industry Standards)
    -------------------------------------------------------------------------- */
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 10pt;
+  line-height: 1.4;
+}
 
-/* Base option styling for print */
+h1 {
+  font-size: 14pt;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-top: 1em;
+  margin-bottom: 0.3em;
+}
+
+h2 {
+  font-size: 12pt;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-top: 0.8em;
+  margin-bottom: 0.2em;
+}
+
+h3 {
+  font-size: 11pt;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-top: 0.6em;
+  margin-bottom: 0.2em;
+}
+
+h4, h5, h6 {
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   Form Labels (9pt, sentence-case - Industry standard)
+   -------------------------------------------------------------------------- */
+.form-checkbox-label,
+.form-radio-label,
+label {
+  font-size: 9pt;
+  font-weight: 500;
+  text-transform: none; /* Sentence-case, never ALL CAPS */
+}
+
+/* --------------------------------------------------------------------------
+   Form Elements (10pt industry standard sizing)
+   -------------------------------------------------------------------------- */
+input[type="checkbox"],
+input[type="radio"],
+.form-checkbox,
+.form-radio {
+  width: 10pt;
+  height: 10pt;
+  border-width: 0.75pt;
+}
+
+/* --------------------------------------------------------------------------
+   Response Fields (Ruled lines for handwriting)
+   -------------------------------------------------------------------------- */
+.response-field,
+.form-response-line {
+  min-height: 0.5in;
+  border: none;
+  border-bottom: 0.5pt solid #666;
+  background: transparent;
+}
+
+/* Text inputs - bottom border only */
+.form-text-input {
+  border: none;
+  border-bottom: 0.5pt solid #666;
+  background: transparent;
+  font-size: 10pt;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* --------------------------------------------------------------------------
+   Disable grid layout for cards (WeasyPrint compatibility)
+   -------------------------------------------------------------------------- */
+.md-typeset .grid.cards {
+  display: block !important;
+}
+
+.md-typeset .grid.cards > ul {
+  display: block !important;
+}
+
+.md-typeset .grid.cards > ul > li {
+  display: block !important;
+  margin-bottom: 0.75em;
+  border: 1px solid #ddd;
+  padding: 0.5em;
+  border-radius: 4px;
+}
+
+/* --------------------------------------------------------------------------
+   Hero Section
+   -------------------------------------------------------------------------- */
+.hero-section {
+  text-align: center;
+  padding: 1em 0;
+}
+
+/* --------------------------------------------------------------------------
+   Hide interactive elements in PDF
+   -------------------------------------------------------------------------- */
+.md-button {
+  display: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   Table Styling (Document standards)
+   -------------------------------------------------------------------------- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 10pt;
+  margin: 0.5em 0;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 4px 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #0F1E57;
+  color: white;
+  font-size: 9pt;
+  font-weight: 600;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* --------------------------------------------------------------------------
+   Admonitions
+   -------------------------------------------------------------------------- */
+.admonition {
+  border: 1px solid #448aff;
+  border-radius: 4px;
+  padding: 0.5em;
+  margin: 0.5em 0;
+}
+
+.admonition-title {
+  font-weight: bold;
+  margin-bottom: 0.3em;
+}
+
+/* --------------------------------------------------------------------------
+   Page Break Control
+   -------------------------------------------------------------------------- */
+h1, h2 {
+  page-break-after: avoid;
+}
+
+.admonition, table, pre {
+  page-break-inside: avoid;
+}
+
+/* --------------------------------------------------------------------------
+   Radio Button and Checkbox Option Styling for PDF (10pt industry standard)
+   -------------------------------------------------------------------------- */
 .radio-option,
 .checkbox-option {
-    display: inline-flex;
-    align-items: center;
-    padding: 2px 6px;
-    margin: 2px 4px;
-    white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  padding: 1px 4px;
+  margin: 1px 3px;
+  white-space: nowrap;
+  font-size: 9pt;
 }
 
 /* Radio button - circle indicator (single-select) */
 .radio-option::before {
-    content: '';
-    display: inline-block;
-    width: 12px;
-    height: 12px;
-    border: 2px solid #4F73FF;
-    border-radius: 50%;
-    margin-right: 6px;
-    flex-shrink: 0;
-    background-color: transparent;
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
+  content: '';
+  display: inline-block;
+  width: 10pt;
+  height: 10pt;
+  border: 0.75pt solid #4F73FF;
+  border-radius: 50%;
+  margin-right: 4px;
+  flex-shrink: 0;
+  background-color: transparent;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
 }
 
 /* Checkbox - square indicator (multi-select) */
 .checkbox-option::before {
-    content: '';
-    display: inline-block;
-    width: 12px;
-    height: 12px;
-    border: 2px solid #4F73FF;
-    border-radius: 2px;
-    margin-right: 6px;
-    flex-shrink: 0;
-    background-color: transparent;
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
+  content: '';
+  display: inline-block;
+  width: 10pt;
+  height: 10pt;
+  border: 0.75pt solid #4F73FF;
+  border-radius: 2px;
+  margin-right: 4px;
+  flex-shrink: 0;
+  background-color: transparent;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
 }
 
-/* Table cells with options */
-td:has(.radio-option),
-td:has(.checkbox-option) {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 4px;
+/* --------------------------------------------------------------------------
+   Footer/Header Text (8pt standard)
+   -------------------------------------------------------------------------- */
+.pdf-footer,
+.pdf-header,
+footer,
+header {
+  font-size: 8pt;
+  line-height: 1.3;
 }
