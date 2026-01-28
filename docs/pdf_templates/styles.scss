@@ -1,11 +1,25 @@
 /* ==========================================================================
    F5 Distributed Cloud PDF Styles
    Custom styles for WeasyPrint PDF generation
+   Industry PDF/Form Standards - Unified Typography
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
-   Variables (matching web design system)
+   Variables (Industry standard unified typography)
    -------------------------------------------------------------------------- */
+$doc-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$doc-code-font: "SF Mono", Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+/* Standardized Sizes (pt-based for document consistency - Industry Standards) */
+$doc-body-size: 10pt;
+$doc-h1-size: 14pt;
+$doc-h2-size: 12pt;
+$doc-h3-size: 11pt;
+$doc-label-size: 9pt;
+$doc-small-size: 8pt;
+$doc-line-height: 1.4;
+
+/* Colors (matching web design system) */
 $f5-primary-blue: #4F73FF;
 $f5-navy: #0F1E57;
 $f5-text-primary: rgba(0, 0, 0, 0.87);
@@ -13,6 +27,107 @@ $f5-text-secondary: #6C778C;
 $f5-bg-page: #F7F8FA;
 $f5-bg-card: #FFFFFF;
 $f5-border: #E5E9F7;
+
+/* --------------------------------------------------------------------------
+   Page Setup (Industry standard: 0.75 inch margins for professional density)
+   -------------------------------------------------------------------------- */
+@page {
+    size: letter;
+    margin: 0.75in;
+}
+
+@page :first {
+    margin-top: 0.75in;
+}
+
+/* --------------------------------------------------------------------------
+   Typography (Unified with HTML output)
+   -------------------------------------------------------------------------- */
+body {
+    font-family: $doc-font;
+    font-size: $doc-body-size;
+    line-height: $doc-line-height;
+    color: $f5-text-primary;
+}
+
+h1 {
+    font-size: $doc-h1-size;
+    font-weight: 700;
+    color: $f5-navy;
+    line-height: 1.2;
+    margin-top: 1em;
+    margin-bottom: 0.3em;
+}
+
+h2 {
+    font-size: $doc-h2-size;
+    font-weight: 700;
+    color: $f5-navy;
+    line-height: 1.3;
+    margin-top: 0.8em;
+    margin-bottom: 0.2em;
+}
+
+h3 {
+    font-size: $doc-h3-size;
+    font-weight: 600;
+    color: $f5-navy;
+    line-height: 1.4;
+    margin-top: 0.6em;
+    margin-bottom: 0.2em;
+}
+
+h4, h5, h6 {
+    color: $f5-navy;
+    font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   Form Labels (10pt, sentence-case)
+   -------------------------------------------------------------------------- */
+.form-checkbox-label,
+.form-radio-label,
+label {
+    font-size: $doc-label-size;
+    font-weight: 500;
+    text-transform: none; /* Sentence-case, never ALL CAPS */
+}
+
+/* --------------------------------------------------------------------------
+   Form Elements (10pt × 10pt industry standard)
+   -------------------------------------------------------------------------- */
+input[type="checkbox"],
+input[type="radio"],
+.form-checkbox,
+.form-radio {
+    width: 10pt;
+    height: 10pt;
+    border-width: 0.75pt;
+}
+
+/* --------------------------------------------------------------------------
+   Response Fields (Ruled lines for handwriting)
+   -------------------------------------------------------------------------- */
+.response-field,
+.form-response-line {
+    min-height: 0.5in;
+    border: none !important;
+    border-bottom: 0.5pt solid #666 !important;
+    border-radius: 0 !important;
+    padding: 0.5em 0 !important;
+    margin: 0.5em 0 !important;
+    background: transparent !important;
+}
+
+/* Text input field */
+.form-text-input {
+    border: none !important;
+    border-bottom: 0.5pt solid #666 !important;
+    border-radius: 0 !important;
+    font-size: $doc-body-size;
+    font-family: $doc-font;
+    background-color: transparent !important;
+}
 
 /* --------------------------------------------------------------------------
    Override grid layouts - WeasyPrint doesn't support CSS grid properly
@@ -34,8 +149,8 @@ $f5-border: #E5E9F7;
 .grid.cards > ul > li,
 .md-typeset .grid > ul > li {
     display: block !important;
-    margin-bottom: 1.5em !important;
-    padding: 1em !important;
+    margin-bottom: 0.75em !important;
+    padding: 0.5em !important;
     border: 1px solid $f5-border !important;
     border-left: 4px solid $f5-primary-blue !important;
     border-radius: 4px !important;
@@ -47,8 +162,8 @@ $f5-border: #E5E9F7;
    -------------------------------------------------------------------------- */
 .hero-section {
     text-align: center;
-    padding: 2em;
-    margin-bottom: 2em;
+    padding: 1em;
+    margin-bottom: 1em;
     background: $f5-primary-blue !important;
     color: white !important;
     border-radius: 8px;
@@ -71,45 +186,6 @@ $f5-border: #E5E9F7;
 }
 
 /* --------------------------------------------------------------------------
-   Typography
-   -------------------------------------------------------------------------- */
-body {
-    font-family: Inter, "Inter Fallback", Helvetica, Arial, sans-serif;
-    font-size: 11pt;
-    line-height: 1.5;
-    color: $f5-text-primary;
-}
-
-h1 {
-    font-size: 24pt;
-    font-weight: 700;
-    color: $f5-navy;
-    margin-top: 1.5em;
-    margin-bottom: 0.5em;
-}
-
-h2 {
-    font-size: 18pt;
-    font-weight: 700;
-    color: $f5-navy;
-    margin-top: 1.2em;
-    margin-bottom: 0.4em;
-}
-
-h3 {
-    font-size: 14pt;
-    font-weight: 700;
-    color: $f5-navy;
-    margin-top: 1em;
-    margin-bottom: 0.3em;
-}
-
-h4, h5, h6 {
-    color: $f5-navy;
-    font-weight: 600;
-}
-
-/* --------------------------------------------------------------------------
    Links
    -------------------------------------------------------------------------- */
 a {
@@ -118,24 +194,25 @@ a {
 }
 
 /* --------------------------------------------------------------------------
-   Table styling
+   Table styling (Document standards)
    -------------------------------------------------------------------------- */
 table {
     width: 100% !important;
     border-collapse: collapse !important;
-    margin: 1em 0 !important;
-    font-size: 10pt !important;
+    margin: 0.5em 0 !important;
+    font-size: $doc-body-size !important;
 }
 
 th, td {
     border: 1px solid $f5-border !important;
-    padding: 8px 12px !important;
+    padding: 4px 8px !important;
     text-align: left !important;
 }
 
 th {
     background-color: $f5-navy !important;
     color: white !important;
+    font-size: $doc-label-size !important;
     font-weight: 600 !important;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
@@ -152,8 +229,8 @@ tr:nth-child(even) {
     border: none !important;
     border-left: 4px solid $f5-primary-blue !important;
     border-radius: 4px !important;
-    padding: 1em !important;
-    margin: 1em 0 !important;
+    padding: 0.5em !important;
+    margin: 0.5em 0 !important;
     background: rgba(79, 115, 255, 0.1) !important;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
@@ -181,7 +258,7 @@ tr:nth-child(even) {
 
 .admonition-title {
     font-weight: 600 !important;
-    margin-bottom: 0.5em !important;
+    margin-bottom: 0.3em !important;
     color: $f5-primary-blue;
 }
 
@@ -205,28 +282,16 @@ tr:nth-child(even) {
    Question boxes
    -------------------------------------------------------------------------- */
 .question-box {
-    border: 2px solid $f5-primary-blue !important;
-    border-radius: 8px !important;
-    padding: 1em !important;
-    margin: 1em 0 !important;
+    border: 1px solid $f5-primary-blue !important;
+    border-radius: 4px !important;
+    padding: 0.5em !important;
+    margin: 0.5em 0 !important;
     background: $f5-bg-card !important;
 }
 
 .question-box h4 {
     color: $f5-primary-blue !important;
     margin-top: 0 !important;
-}
-
-/* --------------------------------------------------------------------------
-   Response fields
-   -------------------------------------------------------------------------- */
-.response-field {
-    border: 1px solid $f5-border !important;
-    border-radius: 4px !important;
-    padding: 0.75em !important;
-    margin: 0.5em 0 !important;
-    min-height: 2em !important;
-    background: $f5-bg-card !important;
 }
 
 /* --------------------------------------------------------------------------
@@ -264,11 +329,12 @@ pre,
    -------------------------------------------------------------------------- */
 pre {
     background: $f5-bg-page !important;
-    padding: 1em !important;
+    padding: 0.5em !important;
     border-radius: 4px !important;
     border: 1px solid $f5-border !important;
     overflow-x: auto !important;
-    font-size: 9pt !important;
+    font-size: $doc-small-size !important;
+    font-family: $doc-code-font !important;
 }
 
 code {
@@ -277,6 +343,7 @@ code {
     border-radius: 3px !important;
     font-size: 0.9em !important;
     border: 1px solid $f5-border !important;
+    font-family: $doc-code-font !important;
 }
 
 pre > code {
@@ -307,7 +374,7 @@ pre > code {
 }
 
 .pdf-cover h2 {
-    font-size: 18pt;
+    font-size: $doc-h1-size;
     color: $f5-text-secondary;
 }
 
@@ -316,9 +383,9 @@ pre > code {
    -------------------------------------------------------------------------- */
 .sizing-card {
     border: 1px solid $f5-border !important;
-    border-radius: 8px !important;
-    padding: 1em !important;
-    margin: 1em 0 !important;
+    border-radius: 4px !important;
+    padding: 0.5em !important;
+    margin: 0.5em 0 !important;
     background: $f5-bg-card !important;
 }
 
@@ -341,7 +408,7 @@ pre > code {
     line-height: 1.5em;
     margin-right: 0.5em;
     font-weight: bold;
-    font-size: 10pt;
+    font-size: $doc-label-size;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
 }
@@ -351,9 +418,9 @@ pre > code {
    -------------------------------------------------------------------------- */
 .calculator {
     background: $f5-bg-page !important;
-    padding: 1em !important;
-    border-radius: 8px !important;
-    margin: 1em 0 !important;
+    padding: 0.5em !important;
+    border-radius: 4px !important;
+    margin: 0.5em 0 !important;
     border: 1px solid $f5-border !important;
 }
 
@@ -363,34 +430,77 @@ pre > code {
 .info-box {
     background: rgba(79, 115, 255, 0.1) !important;
     border-left: 4px solid $f5-primary-blue !important;
-    padding: 1em !important;
-    margin: 1em 0 !important;
+    padding: 0.5em !important;
+    margin: 0.5em 0 !important;
     border-radius: 0 4px 4px 0 !important;
 }
 
 .warning-box {
     background: rgba(255, 145, 0, 0.1) !important;
     border-left: 4px solid #FF9100 !important;
-    padding: 1em !important;
-    margin: 1em 0 !important;
+    padding: 0.5em !important;
+    margin: 0.5em 0 !important;
     border-radius: 0 4px 4px 0 !important;
 }
 
 .note-box {
     background: rgba(79, 115, 255, 0.1) !important;
     border-left: 4px solid $f5-primary-blue !important;
-    padding: 1em !important;
-    margin: 1em 0 !important;
+    padding: 0.5em !important;
+    margin: 0.5em 0 !important;
     border-radius: 0 4px 4px 0 !important;
 }
 
 /* --------------------------------------------------------------------------
-   Page margins and layout
+   Radio Button and Checkbox Option Styling (10pt industry standard)
    -------------------------------------------------------------------------- */
-@page {
-    margin: 2cm;
+.radio-option,
+.checkbox-option {
+    display: inline-flex;
+    align-items: center;
+    padding: 1px 4px;
+    margin: 1px 3px;
+    white-space: nowrap;
+    font-size: $doc-label-size;
 }
 
-@page :first {
-    margin-top: 0;
+/* Radio button - circle indicator (single-select) */
+.radio-option::before {
+    content: '';
+    display: inline-block;
+    width: 10pt;
+    height: 10pt;
+    border: 0.75pt solid $f5-primary-blue;
+    border-radius: 50%;
+    margin-right: 4px;
+    flex-shrink: 0;
+    background-color: transparent;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+
+/* Checkbox - square indicator (multi-select) */
+.checkbox-option::before {
+    content: '';
+    display: inline-block;
+    width: 10pt;
+    height: 10pt;
+    border: 0.75pt solid $f5-primary-blue;
+    border-radius: 2px;
+    margin-right: 4px;
+    flex-shrink: 0;
+    background-color: transparent;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+
+/* --------------------------------------------------------------------------
+   Footer/Header Text (9pt standard)
+   -------------------------------------------------------------------------- */
+.pdf-footer,
+.pdf-header,
+footer,
+header {
+    font-size: $doc-small-size;
+    line-height: 1.3;
 }

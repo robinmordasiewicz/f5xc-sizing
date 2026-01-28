@@ -6,7 +6,7 @@ services:
       - "8000:8000"
     volumes:
       - .:/docs
-    entrypoint: ["/bin/sh", "/docs/scripts/start-mkdocs.sh"]
+    entrypoint: ["/bin/bash", "/docs/scripts/build.sh", "--serve"]
 
   # Production-like build for testing PDF buttons and other build-time features
   mkdocs-test:
@@ -18,4 +18,4 @@ services:
       - "8001:8000"
     volumes:
       - .:/docs
-    entrypoint: ["/bin/sh", "/docs/scripts/test-build.sh"]
+    entrypoint: ["/bin/bash", "/docs/scripts/build.sh", "--test"]
